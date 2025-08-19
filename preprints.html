@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="theme-color" content="#0b0d10">
+  <title>Brodie Mangan | Preprints</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Preprints and ongoing research from Brodie Mangan, Cognitive Neuroscientist.">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Preprints | Brodie Mangan">
+<meta property="og:description" content="Author versions and preprints prior to peer review; including letters and commentary.">
+<meta property="og:url" content="https://brodiemangan.com/preprints.html">
+<meta property="og:image" content="https://brodiemangan.com/assets/portrait.png">
+<meta property="og:site_name" content="Brodie Mangan">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Preprints | Brodie Mangan">
+<meta name="twitter:description" content="Author versions and preprints prior to peer review; including letters and commentary.">
+<meta name="twitter:image" content="https://brodiemangan.com/assets/portrait.png">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="canonical" href="https://brodiemangan.com/preprints.html">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico?v=3">
+  <link rel="shortcut icon" href="assets/favicon.ico?v=3">
+
+
+  <style>
+    :root{ --glass-outline: rgba(255,255,255,.08); }
+    body{ background:url('assets/Background2.png') center/cover fixed no-repeat; }
+    body::before{
+      content:"";position:fixed;inset:0;pointer-events:none;background:inherit;
+      mix-blend-mode:screen;filter:saturate(1.25) brightness(1);opacity:.15;
+      animation:pulseBg 8s ease-in-out infinite;
+    }
+    @keyframes pulseBg{0%,100%{opacity:.15}50%{opacity:.35}}
+
+    /* Header with icon layout */
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .page-header h1 {
+      margin: 0;
+    }
+    .header-icon {
+      width: 96px;
+      height: auto;
+      flex-shrink: 0;
+    }
+
+    /* Preprints list */
+    .publication-list{list-style:none;padding:0;margin-top:1.5rem}
+    .publication-list li{margin-bottom:1.75rem;line-height:1.6}
+    .publication-list .authors{display:block;font-weight:700}
+    .publication-list .title{display:block;font-style:italic;margin-top:.25rem}
+    .publication-list .details{display:block;font-size:.9rem;color:#ccc;margin-top:.25rem}
+    .publication-list .details a{color:var(--accent);text-decoration:underline}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+<header class="masthead">
+  <nav class="nav">
+  <a href="index.html">Home</a>
+
+  <div class="dropdown">
+    <a class="dropbtn" tabindex="0">Publications ▾</a>
+    <div class="dropdown-content" role="menu">
+      <a role="menuitem" href="papers.html">PAPERS</a>
+      <a role="menuitem" href="preprints.html" aria-current="page">PREPRINTS</a>
+      <a role="menuitem" href="in-progress.html">IN-PROGRESS</a>
+    </div>
+  </div>
+
+  <a href="medium.html">Medium</a>
+  <a href="wand.html">WAND Protocol</a> 
+  <a href="reading-list.html">Reading List</a>
+
+  <div class="dropdown">
+    <a class="dropbtn" tabindex="0">CV ▾</a>
+    <div class="dropdown-content">
+      <a href="assets/Brodie_Mangan_CV.pdf" download="Brodie_Mangan_CV.pdf" type="application/pdf">Download PDF</a>
+    </div>
+  </div>
+
+  <a href="contact.html">Contact Me</a>
+</nav>
+
+</header>
+
+<main class="grid" id="main">
+  <section class="glass">
+    <div class="page-header">
+      <h1>Preprints</h1>
+      <img src="assets/preprint.png" alt="Preprint icon" class="header-icon">
+    </div>
+    <p>Preprints are author versions made public before formal peer review; content may change during review.</p>
+
+    <ul class="publication-list">
+      <li>
+        <span class="authors">Mangan, B. E.</span>
+        <span class="title">Restoration requires genuine fatigue: Strengthening green-space cognition research.</span>
+        <span class="details">
+          PsyArXiv preprint; Letter to the Editor submitted to the <em>Journal of Environmental Psychology</em>; Version 1; 2025.
+          <a href="https://osf.io/preprints/psyarxiv/ju76e" target="_blank" rel="noopener">Read on PsyArXiv</a>
+        </span>
+      </li>
+      <li>
+        <span class="authors">Mangan, B. E.</span>
+        <span class="title">WAND (Working-memory Active-fatigue with N-back Difficulty): A Modular Software Suite for Cognitive Fatigue Research.</span>
+        <span class="details">
+          Submitted to the <em>Journal of Open Source Software (JOSS)</em>; Version 1; 2025.
+          <a href="https://github.com/openjournals/joss-reviews/issues/8667" target="_blank" rel="noopener">Follow open peer review</a>
+        </span>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <ul class="footer-socials">
+    <li>
+      <a href="https://orcid.org/0009-0002-8466-5423" target="_blank" rel="noopener" aria-label="ORCiD Profile">
+        <i class="fa-brands fa-orcid" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/brodie-neuro" target="_blank" rel="noopener" aria-label="GitHub Profile">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+  <p>© <span id="y"></span> Brodie Mangan • GitHub Pages</p>
+</footer>
+
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>

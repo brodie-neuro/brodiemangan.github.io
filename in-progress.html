@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="theme-color" content="#0b0d10">
+  <title>Brodie Mangan | In-Progress</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="In-progress manuscripts and ongoing research status from Brodie Mangan, Cognitive Neuroscientist.">
+  
+  <meta property="og:type" content="website">
+<meta property="og:title" content="In-Progress | Brodie Mangan">
+<meta property="og:description" content="Ongoing manuscripts and concepts under review; methods and implementation details withheld to protect novelty.">
+<meta property="og:url" content="https://brodiemangan.com/in-progress.html">
+<meta property="og:image" content="https://brodiemangan.com/assets/portrait.png">
+<meta property="og:site_name" content="Brodie Mangan">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="In-Progress | Brodie Mangan">
+<meta name="twitter:description" content="Ongoing manuscripts and concepts under review; methods and implementation details withheld to protect novelty.">
+<meta name="twitter:image" content="https://brodiemangan.com/assets/portrait.png">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="canonical" href="https://brodiemangan.com/in-progress.html">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico?v=3">
+  <link rel="shortcut icon" href="assets/favicon.ico?v=3">
+
+
+  <style>
+    :root{ --glass-outline: rgba(255,255,255,.08); }
+    body{ background:url('assets/Background2.png') center/cover fixed no-repeat; }
+    body::before{
+      content:"";position:fixed;inset:0;pointer-events:none;background:inherit;
+      mix-blend-mode:screen;filter:saturate(1.25) brightness(1);opacity:.15;
+      animation:pulseBg 8s ease-in-out infinite;
+    }
+    @keyframes pulseBg{0%,100%{opacity:.15}50%{opacity:.35}}
+    
+    /* Header with icon layout */
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .page-header h1 {
+      margin: 0;
+    }
+    .header-icon {
+      width: 96px;
+      height: auto;
+      flex-shrink: 0;
+    }
+
+    /* Publications list */
+    .publication-list{list-style:none;padding:0;margin-top:1.5rem}
+    .publication-list li{margin-bottom:2.25rem;line-height:1.6}
+    .publication-list .authors{display:block;font-weight:700}
+    .publication-list .title{display:block;font-style:italic;margin-top:.25rem}
+    .publication-list .details{display:block;font-size:.9rem;color:#ccc;margin-top:.25rem}
+    .publication-list .details a{color:var(--accent);text-decoration:underline}
+    .note{font-size:.95rem;opacity:.95;margin:.25rem 0 0}
+    .badge{display:inline-block;font-size:.8rem;padding:.15rem .45rem;border:1px solid rgba(255,255,255,.25);border-radius:.5rem;margin-left:.35rem;vertical-align:middle;}
+  </style>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+<header class="masthead">
+   <nav class="nav">
+    <a href="index.html">Home</a>
+
+    <div class="dropdown">
+      <a class="dropbtn" tabindex="0">Publications ▾</a>
+      <div class="dropdown-content" role="menu">
+        <a role="menuitem" href="papers.html">PAPERS</a>
+        <a role="menuitem" href="preprints.html">PREPRINTS</a>
+        <a role="menuitem" href="in-progress.html" aria-current="page">IN-PROGRESS</a>
+      </div>
+    </div>
+
+    <a href="medium.html">Medium</a>
+    <a href="wand.html">WAND Protocol</a> 
+    <a href="reading-list.html">Reading List</a>
+
+    <div class="dropdown">
+      <a class="dropbtn" tabindex="0">CV ▾</a>
+      <div class="dropdown-content">
+        <a href="assets/Brodie_Mangan_CV.pdf" download="Brodie_Mangan_CV.pdf" type="application/pdf">Download PDF</a>
+      </div>
+    </div>
+
+    <a href="contact.html">Contact Me</a>
+  </nav>
+</header>
+
+<main class="grid" id="main">
+  <section class="glass">
+    <div class="page-header">
+      <h1>In-Progress</h1>
+      <img src="assets/progress.png" alt="In-progress icon" class="header-icon">
+    </div>
+    <p class="note">Entries here describe ongoing manuscripts at a high level, with methods and implementation details deliberately withheld during peer review to protect novelty.</p>
+
+    <ul class="publication-list">
+      <li>
+        <span class="authors">Mangan, B. E., Kourtis, D.</span>
+        <span class="title">
+          The Missing Link: Bridging Cognitive Fatigue with Working Memory
+          <span class="badge">Under review</span>
+        </span>
+        <span class="details">
+          Scope: Conceptual synthesis that unifies working-memory oscillatory dynamics with cognitive fatigue, outlining testable predictions and a measurement framework. Specifics withheld to protect novel theoretical linkage and prediction set.  
+        </span>
+      </li>
+      
+      <li>
+        <span class="authors">Mangan, B. E., Kourtis, D., & Tomaz, S. A.</span>
+        <span class="title">
+          WAND (Working-memory Adaptive-fatigue with N-back Difficulty): A Method for Inducing Cognitive Fatigue
+          <span class="badge">Manuscript in prep</span>
+        </span>
+        <span class="details">
+          Scope: Empirical validation of the WAND protocol, a novel open-source framework for inducing active cognitive fatigue. The study demonstrates the protocol's ability to systematically control for common confounds (e.g., learning effects, monotony) to produce a reliable decline in working memory performance at the behavioural level.
+        </span>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <ul class="footer-socials">
+    <li>
+      <a href="https://orcid.org/0009-0002-8466-5423" target="_blank" rel="noopener" aria-label="ORCiD Profile">
+        <i class="fa-brands fa-orcid" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/brodie-neuro" target="_blank" rel="noopener" aria-label="GitHub Profile">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+  <p>© <span id="y"></span> Brodie Mangan • GitHub Pages</p>
+</footer>
+
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>

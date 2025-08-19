@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://brodiemangan.com/sitemap.xml

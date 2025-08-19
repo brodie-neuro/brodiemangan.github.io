@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="theme-color" content="#0b0d10">
+  <title>Brodie Mangan | Cognitive Psychologist/Neuroscientist, University of Stirling</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="The official academic website of Brodie Mangan, a PhD researcher at the University of Stirling. Explore research on cognitive fatigue, working memory, and the WAND protocol.">
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Brodie Mangan | Cognitive Psychologist; Neuroscientist">
+<meta property="og:description" content="Research on cognitive fatigue; working memory; and the WAND protocol; PhD Researcher at the University of Stirling.">
+<meta property="og:url" content="https://brodiemangan.com/">
+<meta property="og:image" content="https://brodiemangan.com/assets/portrait.png">
+<meta property="og:site_name" content="Brodie Mangan">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Brodie Mangan | Cognitive Psychologist; Neuroscientist">
+<meta name="twitter:description" content="Research on cognitive fatigue; working memory; and the WAND protocol; PhD Researcher at the University of Stirling.">
+<meta name="twitter:image" content="https://brodiemangan.com/assets/portrait.png">
+
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico?v=3">
+  <link rel="shortcut icon" href="assets/favicon.ico?v=3">
+  <link rel="canonical" href="https://brodiemangan.com/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Brodie Mangan",
+    "jobTitle": "PhD Researcher",
+    "affiliation": { "@type": "Organization", "name": "University of Stirling" },
+    "url": "https://brodiemangan.com/",
+    "image": "https://brodiemangan.com/assets/portrait.png",
+    "sameAs": [
+  "https://orcid.org/0009-0002-8466-5423",
+  "https://github.com/brodie-neuro",
+  "https://www.linkedin.com/in/brodie-neuro"
+],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Glasgow",
+      "addressCountry": "GB"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root{ --glass-outline: rgba(255,255,255,.08); }
+
+    /* ------------------------------------------------------------------
+       0. Base wallpaper + gentle brightness pulse
+    ------------------------------------------------------------------ */
+    body{
+      background:url('assets/Background2.png') center/cover fixed no-repeat;
+    }
+    body::before{
+      content:"";position:fixed;inset:0;pointer-events:none;
+      background:inherit;mix-blend-mode:screen;
+      filter:saturate(1.25) brightness(1);opacity:.15;
+      animation:pulseBg 8s ease-in-out infinite;
+    }
+    @keyframes pulseBg{0%,100%{opacity:.15}50%{opacity:.35}}
+
+    /* ------------------------------------------------------------------
+       1. Navigation bar + mini underline (only span link width)
+    ------------------------------------------------------------------ */
+    .masthead{border-bottom:none;}               /* remove old full-width line */
+
+    .nav{
+      display:flex;gap:1rem;flex-wrap:wrap;
+      position:relative;padding-bottom:.4rem;
+    }
+    .nav::after{                                 /* new short rule */
+      content:"";
+      position:absolute;left:0;bottom:0;
+      width:100%;height:1px;
+      background:var(--glass-outline);
+      box-shadow:0 0 6px 0 var(--glass-outline);
+    }
+
+    .nav a{
+      color:var(--fg);text-decoration:none;
+      transition:color .22s ease,transform .22s ease;
+    }
+    .nav a:hover{color:var(--accent);transform:translateY(-1px)}
+
+    .dropdown{position:relative}
+    .dropbtn{cursor:pointer}
+    .dropdown-content{
+      display:none;flex-direction:column;position:absolute;top:100%;left:0;
+      background:var(--panel);border:1px solid var(--outline);
+      min-width:140px;z-index:40
+    }
+    .dropdown-content a{padding:.45rem .8rem;white-space:nowrap}
+    .dropdown-content a:hover{background:rgba(255,255,255,.06)}
+    .dropdown:hover .dropdown-content{display:flex}
+
+    /* ------------------------------------------------------------------
+       2. Portrait centred
+    ------------------------------------------------------------------ */
+    .portrait{display:block;margin:0 auto}
+
+    /* ------------------------------------------------------------------
+       3. Glassmorphic bio card with glowing edge
+    ------------------------------------------------------------------ */
+    .glass{
+      backdrop-filter:blur(12px) saturate(140%);
+      background:rgba(20,24,29,.55);
+      border:1px solid var(--glass-outline);
+      border-radius:18px;padding:2rem 2.2rem;
+      box-shadow:0 8px 22px rgba(0,0,0,.45);
+      animation:cardGlow 6s ease-in-out infinite;
+    }
+    @keyframes cardGlow{
+      0%,100%{box-shadow:0 8px 22px rgba(0,0,0,.45),0 0 0 0 rgba(0,255,255,.12)}
+      50%    {box-shadow:0 8px 22px rgba(0,0,0,.45),0 0 10px 2px rgba(0,255,255,.22)}
+    }
+
+    /* ------------------------------------------------------------------
+       4. Brain badge: fixed, hover scale, hide ≤1200 px
+    ------------------------------------------------------------------ */
+    #brain-badge{
+      position:fixed;top:1rem;right:1rem;z-index:35;
+      width:300px;height:300px;border-radius:50%;overflow:hidden;
+      pointer-events:auto;cursor:grab;transition:transform .25s ease;
+    }
+    #brain-badge:hover{transform:scale(1.04)}
+    @media(max-width:1200px){#brain-badge{display:none}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+<header class="masthead">
+  <nav class="nav">
+    <a href="index.html" aria-current="page">Home</a>
+
+    <div class="dropdown">
+      <a class="dropbtn" tabindex="0">Publications ▾</a>
+      <div class="dropdown-content" role="menu">
+        <a role="menuitem" href="papers.html">PAPERS</a>
+        <a role="menuitem" href="preprints.html">PREPRINTS</a>
+        <a role="menuitem" href="in-progress.html">IN-PROGRESS</a>
+      </div>
+    </div>
+
+    <a href="medium.html">Medium</a>
+    <a href="wand.html">WAND Protocol</a> 
+    <a href="reading-list.html">Reading List</a>
+    <div class="dropdown">
+      <a class="dropbtn" tabindex="0">CV ▾</a>
+      <div class="dropdown-content">
+        <a href="assets/Brodie_Mangan_CV.pdf" download="Brodie_Mangan_CV.pdf" type="application/pdf">Download PDF</a>
+      </div>
+    </div>
+
+    <a href="contact.html">Contact Me</a>
+  </nav>
+  <div id="brain-badge" aria-hidden="true"></div>
+</header>
+
+<main class="grid">
+  <aside class="left" id="main">
+    <img src="assets/portrait.png" alt="Portrait of Brodie Mangan" class="portrait">
+
+    <section class="bio glass">
+      <h1 class="name">Brodie Mangan</h1>
+      <p class="role">Cognitive Psychologist/Neuroscientist; PhD Researcher; University of Stirling</p>
+
+      <h2>About</h2>
+      <p>Hello there! I'm Brodie, and I currently study how cognition fails under sustained effort and how to measure recovery properly. Thinking is the seat of our being. When it becomes impaired, so does everything else: work, lifestyle, behaviour, and ultimately brain health itself, leading to accelerated ageing with profound consequences.</p>
+
+      <p>I'm interested in the full spectrum of cognitive function, not just where it fails. My research began with assessing green space exposure and exercise as interventions for acute cognitive benefits, but unfortunately, most studies never established genuine fatigue before measuring restoration. The evidence base was small and methodologically flawed.</p>
+
+      <p>To fix this, I developed the WAND model: Working Memory Active N-back Difficulty. These adaptive tasks hold participants in optimal challenge zones whilst mitigating the learning effects that plague fatigue studies. The intention is to very soon map these mechanisms through advanced EEG analysis, examining how brain frequencies interact to maintain cognitive functions such as working memory and cognitive control.</p>
+
+      <p>The goal is practical: create robust methods that induce and quantify cognitive fatigue mechanistically, so that interventions can be properly evaluated. This work spans neuroergonomics, risk mitigation, performance maintenance, healthier ageing, and stress management.</p>
+
+      <p>Having served as a paratrooper and having founded a small successful business as a personal health coach, I prioritise methods that work in real operational settings, not just laboratories.</p>
+    </section>
+  </aside>
+</main>
+
+<footer class="site-footer">
+  <ul class="footer-socials">
+    <li>
+      <a href="https://orcid.org/0009-0002-8466-5423" target="_blank" rel="noopener" aria-label="ORCiD Profile">
+        <i class="fa-brands fa-orcid" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/brodie-neuro" target="_blank" rel="noopener" aria-label="GitHub Profile">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+  <p>© <span id="y"></span> Brodie Mangan • GitHub Pages</p>
+</footer>
+
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+  }
+}
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'https://unpkg.com/three@0.160.0/examples/jsm/loaders/GLTFLoader.js';
+import { OrbitControls } from 'https://unpkg.com/three@0.160.0/examples/jsm/controls/OrbitControls.js';
+
+const mount   = document.getElementById('brain-badge');
+const scene   = new THREE.Scene();
+const camera  = new THREE.PerspectiveCamera(45, mount.clientWidth/mount.clientHeight, 0.1, 100);
+camera.position.set(0, 0, 3.6);
+
+const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:false });
+renderer.setSize(mount.clientWidth, mount.clientHeight);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+renderer.setClearColor(0x14181d);
+renderer.toneMappingExposure = 1.4;
+mount.appendChild(renderer.domElement);
+
+// lights
+scene.add(new THREE.AmbientLight(0xffffff,1.1));
+scene.add(new THREE.HemisphereLight(0xffe1ff,0x220022,0.8));
+const dir = new THREE.DirectionalLight(0xffffff,1.4);
+dir.position.set(2,5,5); scene.add(dir);
+
+// controls
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableZoom = false;
+controls.enablePan  = false;
+controls.enableDamping = true;
+controls.enabled = false;
+
+// colour morph targets
+const cHealthy  = new THREE.Color('#00cfff');
+const cFatigued = new THREE.Color('#ff6b00');
+const eHealthy  = new THREE.Color('#0090ff');
+const eFatigued = new THREE.Color('#550000');
+
+let materials = [];
+let autoRotate = true;
+
+// load brain
+new GLTFLoader().load('./assets/brain.glb', gltf=>{
+  const brain = gltf.scene;
+  brain.scale.set(1,1,1);
+  brain.position.y = -0.1;
+  scene.add(brain);
+
+  brain.traverse(c=>{ if(c.isMesh) materials.push(c.material); });
+  animate();
+});
+
+// hover handlers
+mount.addEventListener('pointerenter', ()=>{ autoRotate=false; controls.enabled=true; });
+mount.addEventListener('pointerleave', ()=>{ controls.enabled=false; autoRotate=true; });
+
+// resize
+window.addEventListener('resize', ()=>{
+  const {clientWidth:w, clientHeight:h}=mount;
+  camera.aspect = w/h; camera.updateProjectionMatrix();
+  renderer.setSize(w,h);
+});
+
+// animation loop
+function animate(){
+  requestAnimationFrame(animate);
+  if(autoRotate) scene.rotation.y += 0.005;
+  controls.update();
+
+  const t = (Math.sin(Date.now()*0.0008)+1)/2;
+  materials.forEach(m=>{
+    m.color.copy(cHealthy).lerp(cFatigued,t);
+    m.emissive.copy(eHealthy).lerp(eFatigued,t);
+    m.emissiveIntensity = 0.3*(1-t);
+    m.roughness = 0.15 + t*0.55;
+    m.metalness = 0.6  - t*0.5;
+  });
+  renderer.toneMappingExposure = 1.4 - t*0.4;
+
+  renderer.render(scene, camera);
+}
+</script>
+</body>
+</html>
