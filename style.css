@@ -1,0 +1,186 @@
+/* Sitewide icons */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css");
+
+/* Theme */
+:root{
+  --bg:#0b0d10;
+  --panel:#14181d;
+  --fg:#e9eef3;
+  --muted:#9aa6b2;
+  --accent:#4ea8ff;
+  --outline:#2a3038;
+  --glass-outline:rgba(255,255,255,.08);
+}
+
+/* Base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  color:var(--fg);
+  background:url('assets/Background2.png') center/cover fixed no-repeat;
+}
+
+/* Ambient overlay and gentle pulse */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;
+  background:inherit;mix-blend-mode:screen;
+  filter:saturate(1.25) brightness(1);opacity:.15;
+  animation:pulseBg 8s ease-in-out infinite;
+}
+@keyframes pulseBg{0%,100%{opacity:.15}50%{opacity:.35}
+}
+
+/* Skip to content */
+.skip-link{
+  position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden
+}
+.skip-link:focus{
+  left:0;top:0;width:auto;height:auto;padding:.6rem 1rem;
+  background:var(--accent);color:#14181d;border-radius:.5rem;z-index:1000
+}
+
+/* Masthead */
+.masthead{
+  position:sticky;top:0;z-index:20;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.6rem .9rem;border-bottom:1px solid var(--outline);
+  background:linear-gradient(180deg,rgba(255,255,255,.03),transparent 70%);
+}
+.nav{
+  display:flex;flex-wrap:wrap;gap:1rem;justify-content:flex-start;
+  position:relative;padding-bottom:.4rem;
+}
+.nav::after{
+  content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;
+  background:var(--glass-outline);box-shadow:0 0 6px 0 var(--glass-outline);
+}
+.nav a{color:var(--fg);text-decoration:none;transition:color .22s ease,transform .22s ease}
+.nav a:hover{color:var(--accent);transform:translateY(-1px)}
+.dropdown{position:relative}
+.dropbtn{cursor:pointer}
+.dropdown-content{
+  display:none;flex-direction:column;position:absolute;top:100%;left:0;
+  background:var(--panel);border:1px solid var(--outline);min-width:140px;z-index:40
+}
+.dropdown-content a{padding:.45rem .8rem;white-space:nowrap}
+.dropdown-content a:hover{background:rgba(255,255,255,.06)}
+.dropdown:hover .dropdown-content, .dropdown:focus-within .dropdown-content {display:flex}
+
+/* Brain badge */
+#brain-badge{
+  position:fixed;top:.6rem;right:.6rem;width:300px;height:300px;border-radius:50%;
+  overflow:hidden;pointer-events:none;border:1px solid var(--outline);
+  box-shadow:0 8px 22px rgba(0,0,0,.45);
+}
+
+/* Layout */
+.grid{display:grid;grid-template-columns:1fr;gap:1.2rem;max-width:1200px;margin:0 auto;padding:1.2rem}
+.left{position:relative}
+
+/* Portrait card */
+.portrait{
+  width:100%;max-width:360px;aspect-ratio:1/1;object-fit:cover;border-radius:16px;
+  border:1px solid var(--outline);box-shadow:0 10px 24px rgba(0,0,0,.35)
+}
+.bio{margin-top:1rem;background:var(--panel);padding:1rem;border:1px solid var(--outline);border-radius:14px}
+.name{margin:.2rem 0 0}
+.role{margin:0 0 .6rem;color:var(--muted)}
+
+/* Glass utility used on publication pages too */
+.glass{
+  backdrop-filter:blur(12px) saturate(140%);background:rgba(20,24,29,.55);
+  border:1px solid var(--glass-outline);border-radius:18px;padding:2rem 2.2rem;
+  box-shadow:0 8px 22px rgba(0,0,0,.45);animation:cardGlow 6s ease-in-out infinite
+}
+@keyframes cardGlow{
+  0%,100%{box-shadow:0 8px 22px rgba(0,0,0,.45),0 0 0 0 rgba(0,255,255,.12)}
+  50%{box-shadow:0 8px 22px rgba(0,0,0,.45),0 0 10px 2px rgba(0,255,255,.22)}
+}
+
+/* Publication lists */
+.publication-list{list-style:none;padding:0;margin-top:1.5rem}
+.publication-list li{margin-bottom:1.75rem;line-height:1.6}
+.publication-list .authors{display:block;font-weight:700}
+.publication-list .title{display:block;font-style:italic;margin-top:.25rem}
+.publication-list .details{display:block;font-size:.9rem;color:#ccc;margin-top:.25rem}
+.publication-list .details a{color:var(--accent);text-decoration:underline}
+.badge{display:inline-block;font-size:.8rem;padding:.15rem .45rem;border:1px solid rgba(255,255,255,.25);border-radius:.5rem;margin-left:.35rem;vertical-align:middle}
+
+/* Contact list; normalized spacing */
+.contact-list{display:flex;flex-direction:column;gap:.75rem;margin:1.5rem 0 0 0;padding:0;list-style:none}
+.contact-list li{margin:0}
+.contact-list a{
+  display:flex;align-items:center;gap:.8rem;text-decoration:none;color:var(--fg);
+  min-height:56px;width:100%;
+  background-color:rgba(255,255,255,.05);padding:.75rem 1.25rem;border-radius:8px;border:1px solid var(--glass-outline);
+  transition:background-color .2s ease,color .2s ease
+}
+.contact-list a:hover{background-color:rgba(255,255,255,.15);color:var(--accent)}
+.contact-list .icon{font-size:1.2rem;width:20px;text-align:center}
+
+/* Footer */
+.site-footer{border-top:1px solid var(--outline);color:var(--muted);text-align:center;padding:1rem;margin-top:1rem}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition:none !important}
+  body::before,.glass{animation:none}
+}
+
+/* Responsive; tablets */
+@media (max-width:900px){
+  #brain-badge{width:180px;height:180px}
+  .nav{gap:.6rem}
+}
+
+/* Responsive; phones; prevent header overflow and horizontal scrolling */
+@media (max-width:600px){
+  .masthead{padding:.5rem .75rem;overflow-x:hidden}
+  .nav{flex-wrap:wrap;gap:.8rem;max-width:100%}
+  .nav > *{flex:0 0 auto}
+  .nav a,.dropbtn{font-size:.95rem}
+  .dropdown-content{min-width:120px;right:0;left:auto}
+  #brain-badge{display:none}
+  html,body{overflow-x:hidden}
+}
+
+/* Footer social links */
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.footer-socials a {
+  color: var(--muted);
+  font-size: 1.5rem; /* Makes icons larger */
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.footer-socials a:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ------------------------------------------------------------------
+   5. Accessibility - Skip Link
+------------------------------------------------------------------ */
+.skip-link {
+  position: absolute;
+  top: -40px; /* Hide it off-screen */
+  left: 0;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 8px 12px;
+  z-index: 100;
+  transition: top 0.3s ease-in-out;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.skip-link:focus {
+  top: 0; /* Show it on screen when it receives keyboard focus */
+}
