@@ -126,6 +126,10 @@ body::before{
   body::before,.glass{animation:none}
 }
 
+@media (max-width:600px){
+  .wand-icon{width:160px}
+}
+
 /* Responsive; tablets */
 @media (max-width:900px){
   #brain-badge{width:180px;height:180px}
@@ -138,7 +142,19 @@ body::before{
   .nav{flex-wrap:wrap;gap:.8rem;max-width:100%}
   .nav > *{flex:0 0 auto}
   .nav a,.dropbtn{font-size:.95rem}
-  .dropdown-content{min-width:120px;right:0;left:auto}
+  /* Mobile nav; show submenus inline; no overlap */
+  .nav{flex-direction:column; align-items:flex-start;}
+  .dropdown{width:100%}
+  .dropbtn{display:inline-flex; align-items:center; padding:.25rem 0}
+  .dropdown-content{
+    position:static;
+    display:none;
+    min-width:0;
+    border:0;
+    background:transparent;
+    padding-left:.75rem;
+  }
+  .dropdown:focus-within .dropdown-content{display:block}
   #brain-badge{display:none}
   html,body{overflow-x:hidden}
 }
@@ -154,30 +170,10 @@ body::before{
 }
 .footer-socials a {
   color: var(--muted);
-  font-size: 1.5rem; /* Makes icons larger */
+  font-size: 1.5rem;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 .footer-socials a:hover {
   color: var(--accent);
   transform: translateY(-2px);
-}
-
-/* ------------------------------------------------------------------
-   5. Accessibility - Skip Link
------------------------------------------------------------------- */
-.skip-link {
-  position: absolute;
-  top: -40px; /* Hide it off-screen */
-  left: 0;
-  background: var(--accent);
-  color: var(--bg);
-  padding: 8px 12px;
-  z-index: 100;
-  transition: top 0.3s ease-in-out;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.skip-link:focus {
-  top: 0; /* Show it on screen when it receives keyboard focus */
 }
