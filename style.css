@@ -26,8 +26,7 @@ body::before{
   filter:saturate(1.25) brightness(1);opacity:.15;
   animation:pulseBg 8s ease-in-out infinite;
 }
-@keyframes pulseBg{0%,100%{opacity:.15}50%{opacity:.35}
-}
+@keyframes pulseBg{0%,100%{opacity:.15}50%{opacity:.35}}
 
 /* Skip to content */
 .skip-link{
@@ -41,12 +40,13 @@ body::before{
 /* Masthead */
 .masthead{
   position:sticky;top:0;z-index:20;
-  display:flex;align-items:center;justify-content:space-between;
+  display:flex;align-items:center;justify-content:center; /* center the whole bar */
   padding:.6rem .9rem;border-bottom:1px solid var(--outline);
   background:linear-gradient(180deg,rgba(255,255,255,.03),transparent 70%);
+  backdrop-filter:blur(8px);
 }
 .nav{
-  display:flex;flex-wrap:wrap;gap:1rem;justify-content:flex-start;
+  display:flex;flex-wrap:wrap;gap:1rem;justify-content:center; /* center links */
   position:relative;padding-bottom:.4rem;
 }
 .nav::after{
@@ -63,7 +63,8 @@ body::before{
 }
 .dropdown-content a{padding:.45rem .8rem;white-space:nowrap}
 .dropdown-content a:hover{background:rgba(255,255,255,.06)}
-.dropdown:hover .dropdown-content, .dropdown:focus-within .dropdown-content {display:flex}
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {display:flex}
 
 /* Brain badge */
 #brain-badge{
@@ -126,54 +127,41 @@ body::before{
   body::before,.glass{animation:none}
 }
 
-@media (max-width:600px){
-  .wand-icon{width:160px}
-}
-
 /* Responsive; tablets */
 @media (max-width:900px){
   #brain-badge{width:180px;height:180px}
   .nav{gap:.6rem}
 }
 
-/* Responsive; phones; prevent header overflow and horizontal scrolling */
+/* Responsive; phones */
 @media (max-width:600px){
-  .masthead{padding:.5rem .75rem;overflow-x:hidden}
-  .nav{flex-wrap:wrap;gap:.8rem;max-width:100%}
+  .masthead{padding:.5rem .75rem}
+  .nav{
+    flex-wrap:wrap;gap:.8rem;max-width:100%;
+    flex-direction:column;align-items:center; /* center items on phones */
+  }
   .nav > *{flex:0 0 auto}
   .nav a,.dropbtn{font-size:.95rem}
-  /* Mobile nav; show submenus inline; no overlap */
-  .nav{flex-direction:column; align-items:flex-start;}
+  /* Mobile submenu; inline; no overlap */
   .dropdown{width:100%}
-  .dropbtn{display:inline-flex; align-items:center; padding:.25rem 0}
   .dropdown-content{
-    position:static;
-    display:none;
-    min-width:0;
-    border:0;
-    background:transparent;
-    padding-left:.75rem;
+    position:static;display:none;min-width:0;border:0;background:transparent;
+    padding-left:.75rem;text-align:left; /* indent submenu for readability */
   }
   .dropdown:focus-within .dropdown-content{display:block}
   #brain-badge{display:none}
   html,body{overflow-x:hidden}
+  .wand-icon{width:160px}
 }
 
+/* Protocol content helper */
+.protocol-content{max-width:100%;overflow-x:auto;word-wrap:break-word}
+
 /* Footer social links */
-.footer-socials {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin: 0.5rem 0 0;
-  padding: 0;
-  list-style: none;
+.footer-socials{
+  display:flex;justify-content:center;gap:1rem;margin:.5rem 0 0;padding:0;list-style:none
 }
-.footer-socials a {
-  color: var(--muted);
-  font-size: 1.5rem;
-  transition: color 0.2s ease, transform 0.2s ease;
+.footer-socials a{
+  color:var(--muted);font-size:1.5rem;transition:color .2s ease,transform .2s ease
 }
-.footer-socials a:hover {
-  color: var(--accent);
-  transform: translateY(-2px);
-}
+.footer-socials a:hover{color:var(--accent);transform:translateY(-2px)}
