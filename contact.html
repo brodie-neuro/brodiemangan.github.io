@@ -21,15 +21,14 @@
 
 
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="icon" href="assets/favicon.ico" sizes="any">
   <link rel="canonical" href="https://brodiemangan.com/contact.html">
 
   <style>
-    /* Keep tiles the same length; match the longest item on desktop; full width on phones */
     .contact-list { width:max-content; max-width:100%; }
     @media (max-width:600px){ .contact-list{ width:100%; } }
 
-    /* Affiliation block */
     .affiliation-box{
       margin:2rem 0;
       padding:.9rem 1.2rem;
@@ -42,31 +41,78 @@
       box-shadow:0 8px 22px rgba(0,0,0,.25);
     }
     .affiliation-box strong{ color:#e5ecf3 }
-    /* Slightly more space under the intro paragraph for rhythm */
     .glass > p:first-of-type{ margin-bottom:1.25rem }
     
-    /* REVISED STYLES for the header icon layout */
     .page-header {
       display: flex;
       justify-content: space-between;
-      align-items: center; /* Vertically centers the title and icon */
+      align-items: center; 
       gap: 1.5rem;
-      margin-bottom: 0.5rem; /* Reduced the gap below the header */
+      margin-bottom: 0.5rem;
     }
-    .page-header h1 {
-      margin: 0;
-    }
+    .page-header h1 { margin: 0; }
     .header-icon {
-      width: 96px;  /* Increased width by 50% from 64px */
+      width: 96px;
       height: auto;
       flex-shrink: 0;
     }
 
-    /* Clear keyboard focus for accessibility */
     .contact-list a:focus-visible{
       outline:2px solid var(--accent);
       outline-offset:2px;
       background-color:rgba(255,255,255,.12);
+    }
+
+    /* --- NEW MOBILE NAVIGATION STYLES --- */
+    .mobile-nav-toggle { display: none; }
+    .mobile-nav { display: none; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+
+    @media (max-width: 900px) {
+        .nav { display: none; }
+        .masthead { justify-content: flex-end; padding-bottom: 0; border-bottom: none; }
+        
+        .mobile-nav-toggle {
+            display: block; background: none; border: none; cursor: pointer;
+            z-index: 1001; padding: .5rem; position: relative; width: 34px; height: 34px;
+        }
+        .hamburger {
+            width: 24px; height: 2px; background: var(--fg, #e9eef3); display: block;
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            transition: background 0.2s ease-out;
+        }
+        .hamburger::before, .hamburger::after {
+            content: ''; width: 24px; height: 2px; background: var(--fg, #e9eef3); display: block;
+            position: absolute; left: 0;
+            transition: transform 0.2s ease-out, top 0.2s ease-out;
+        }
+        .hamburger::before { top: -8px; }
+        .hamburger::after { top: 8px; }
+
+        body.nav-open .hamburger { background: transparent; }
+        body.nav-open .hamburger::before { transform: rotate(45deg); top: 0; }
+        body.nav-open .hamburger::after { transform: rotate(-45deg); top: 0; }
+
+        .mobile-nav {
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            position: fixed; top: 0; left: -100%; width: 100%; height: 100vh;
+            background: var(--bg, #0b0d10); z-index: 1000; transition: left 0.3s ease-in-out;
+            gap: 1rem; padding: 1rem; box-sizing: border-box; overflow-y: auto;
+        }
+        body.nav-open .mobile-nav { left: 0; }
+        body.nav-open { overflow: hidden; }
+        
+        .mobile-nav a, .mobile-nav .dropbtn {
+            color: var(--fg, #e9eef3); text-decoration: none; font-size: 1.5rem; padding: 0.5rem 1rem;
+            background: none; border: none; font: inherit; cursor: pointer;
+        }
+        .mobile-nav .dropdown { text-align: center; }
+        .mobile-nav .dropdown-content {
+            position: static; background: none; border: none; display: flex; box-shadow: none;
+            align-items: center; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem;
+        }
+        .mobile-nav .dropdown-content a { font-size: 1rem; color: var(--muted, #9aa6b2); }
+        .page-header { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -76,7 +122,6 @@
 <header class="masthead">
   <nav class="nav">
     <a href="index.html">Home</a>
-
     <div class="dropdown">
       <a class="dropbtn" tabindex="0">Publications ▾</a>
       <div class="dropdown-content" role="menu">
@@ -85,29 +130,57 @@
         <a role="menuitem" href="in-progress.html">IN-PROGRESS</a>
       </div>
     </div>
-
     <a href="medium.html">Medium</a>
     <a href="wand.html">WAND Protocol</a>
-    
     <div class="dropdown">
       <a class="dropbtn" tabindex="0">Conference Presentations ▾</a>
       <div class="dropdown-content" role="menu">
         <a role="menuitem" href="BACN.html">BACN 2025</a>
       </div>
     </div>
-
     <a href="reading-list.html">Reading List</a>
-
     <div class="dropdown">
       <a class="dropbtn" tabindex="0">CV ▾</a>
       <div class="dropdown-content">
         <a href="assets/Brodie_Mangan_CV.pdf" download="Brodie_Mangan_CV.pdf" type="application/pdf">Download PDF</a>
       </div>
     </div>
+    <a href="contact.html" aria-current="page">Contact Me</a>
+  </nav>
 
+  <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
+    <span class="sr-only">Menu</span>
+    <span class="hamburger"></span>
+  </button>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+    <a href="index.html">Home</a>
+    <div class="dropdown">
+      <button class="dropbtn">Publications</button>
+      <div class="dropdown-content" role="menu">
+        <a role="menuitem" href="papers.html">PAPERS</a>
+        <a role="menuitem" href="preprints.html">PREPRINTS</a>
+        <a role="menuitem" href="in-progress.html">IN-PROGRESS</a>
+      </div>
+    </div>
+    <a href="medium.html">Medium</a>
+    <a href="wand.html">WAND Protocol</a>
+    <div class="dropdown">
+      <button class="dropbtn">Conference Presentations</button>
+      <div class="dropdown-content" role="menu">
+        <a role="menuitem" href="BACN.html">BACN 2025</a>
+      </div>
+    </div>
+    <a href="reading-list.html">Reading List</a>
+    <div class="dropdown">
+      <button class="dropbtn">CV</button>
+      <div class="dropdown-content">
+        <a href="assets/Brodie_Mangan_CV.pdf" download>Download PDF</a>
+      </div>
+    </div>
     <a href="contact.html" aria-current="page">Contact Me</a>
 </nav>
-</header>
 
 <main class="grid" id="main">
   <section class="glass">
@@ -170,6 +243,17 @@
   <p>© <span id="y"></span> Brodie Mangan • GitHub Pages</p>
 </footer>
 
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+
+const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+const body = document.querySelector('body');
+
+mobileNavToggle.addEventListener('click', () => {
+    const isExpanded = mobileNavToggle.getAttribute('aria-expanded') === 'true';
+    mobileNavToggle.setAttribute('aria-expanded', !isExpanded);
+    body.classList.toggle('nav-open');
+});
+</script>
 </body>
 </html>
