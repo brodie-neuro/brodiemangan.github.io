@@ -4,7 +4,13 @@
   <meta charset="utf-8">
   <meta name="theme-color" content="#0b0d10">
   <title>Brodie Mangan | WAND Protocol</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- Mobile viewport with user zoom enabled -->
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1,
+                 minimum-scale=0.5, maximum-scale=5,
+                 user-scalable=yes, viewport-fit=cover">
+
   <meta name="description" content="An overview of the WAND Protocol, an open-source software suite for inducing and measuring active cognitive fatigue.">
 
   <meta property="og:type" content="website">
@@ -23,25 +29,81 @@
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico?v=3">
   <link rel="shortcut icon" href="assets/favicon.ico?v=3">
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "WAND (Working-memory Active-fatigue with N-back Difficulty)",
-  "description": "An open-source, modular software suite designed to induce and measure active cognitive fatigue with methodological precision.",
-  "applicationCategory": "ScientificApplication",
-  "operatingSystem": "Cross-platform",
-  "author": {
-    "@type": "Person",
-    "name": "Brodie E. Mangan"
-  },
-  "codeRepository": "https://github.com/brodie-neuro/WAND-practice-and-fatigue-induction",
-  "downloadUrl": "https://doi.org/10.5281/zenodo.15489704",
-  "citation": "Mangan, B. E. (2025). WAND (Working-memory Active-fatigue with N-back Difficulty): A Modular Software Suite for Cognitive Fatigue Research (Version 1.0.2) [Software]. Zenodo. https://doi.org/10.5281/zenodo.15389892"
-}
-</script>
+  <!-- Plausible Analytics (active). Change domain if serving on github.io -->
+  <script defer data-domain="brodiemangan.com" src="https://plausible.io/js/script.js"></script>
+
+  <!-- Google Analytics 4 (optional). Uncomment and insert your Measurement ID.
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+  </script>
+  -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "WAND (Working-memory Active-fatigue with N-back Difficulty)",
+    "description": "An open-source, modular software suite designed to induce and measure active cognitive fatigue with methodological precision.",
+    "applicationCategory": "ScientificApplication",
+    "operatingSystem": "Cross-platform",
+    "author": { "@type": "Person", "name": "Brodie E. Mangan" },
+    "codeRepository": "https://github.com/brodie-neuro/WAND-practice-and-fatigue-induction",
+    "downloadUrl": "https://doi.org/10.5281/zenodo.15489704",
+    "citation": "Mangan, B. E. (2025). WAND (Working-memory Active-fatigue with N-back Difficulty): A Modular Software Suite for Cognitive Fatigue Research (Version 1.0.2) [Software]. Zenodo. https://doi.org/10.5281/zenodo.15389892"
+  }
+  </script>
 
   <style>
+    /* ===== Mobile-safe reset and background ===== */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      -webkit-text-size-adjust: 100%;
+      background: #0b0d10;
+      color: var(--fg, #e8eef6);
+    }
+    /* Background image sits next to this HTML file */
+    body{
+      background-image: url('background2.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed; /* desktop look */
+    }
+    /* iOS safety on small screens */
+    @media (max-width: 900px){
+      body{ background-attachment: scroll; background-position: center top; }
+    }
+
+    /* Make embedded media fluid without affecting audio controls */
+    img, video, canvas, iframe { max-width: 100%; height: auto; }
+    a { word-break: break-word; }
+
+    /* ===== Page layout ===== */
+    main.grid{
+      display: block;
+      width: min(100%, 960px);
+      margin-inline: auto;
+      padding: clamp(12px, 3vw, 24px);
+    }
+    .glass{
+      width: 100%;
+      padding: clamp(16px, 4vw, 32px);
+      border-radius: 14px;
+      background: rgba(18,22,27,0.55);
+      border: 1px solid var(--glass-outline, rgba(255,255,255,.08));
+      backdrop-filter: blur(6px);
+    }
+
+    /* ===== WAND hero ===== */
     .wand-grid {
       display: grid;
       grid-template-columns: 2fr 1fr;
@@ -50,157 +112,140 @@
       margin-bottom: 2rem;
     }
     .wand-grid-text .role {
-      font-size: 1.1rem; 
-      color: var(--muted);
+      font-size: 1.1rem;
+      color: var(--muted, #9aa6b2);
       margin-top: 0.5rem;
     }
-    .wand-grid-text p {
-      max-width: 75ch;
-    }
-    .wand-grid-image {
-      text-align: center;
-    }
-    .wand-icon {
-      width: 240px;
-      max-width: 100%;
-      height: auto;
-    }
+    .wand-grid-text p { max-width: 75ch; }
+    .wand-grid-image { text-align: center; }
+    .wand-icon { width: 240px; max-width: 100%; height: auto; }
+
+    /* ===== Features ===== */
     .features-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
-        margin-top: 2.5rem;
-        padding-top: 1.5rem;
-        border-top: 1px solid var(--glass-outline);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--glass-outline, rgba(255,255,255,.08));
     }
-    .feature-item h3 {
-        color: var(--accent);
-        margin-bottom: 0.5rem;
-    }
-    .feature-item p {
-        font-size: 0.95rem;
-        color: var(--muted);
-    }
+    .feature-item h3 { color: var(--accent, #7bdff6); margin-bottom: 0.5rem; }
+    .feature-item p { font-size: 0.95rem; color: var(--muted, #9aa6b2); }
+
     .video-placeholder {
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        background-color: rgba(0,0,0,0.3);
-        border: 1px dashed var(--outline);
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 2.5rem 0;
-        font-style: italic;
-        color: var(--muted);
-    }
-    .cta-buttons {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 1rem;
-        margin: 2.5rem 0;
-        padding-top: 1.5rem;
-        border-top: 1px solid var(--glass-outline);
-    }
-    .cta-buttons a, .cta-buttons a:visited {
-        display: inline-block;
-        padding: 0.75rem 1.5rem;
-        background-color: rgba(78, 168, 255, 0.15);
-        border: 1px solid var(--accent);
-        border-radius: 8px;
-        text-decoration: none;
-        color: var(--accent);
-        font-weight: bold;
-        transition: background-color 0.2s ease, color 0.2s ease;
-    }
-    .cta-buttons a:hover {
-        background-color: var(--accent);
-        color: #14181d;
-    }
-    .cite-box {
-        background-color: rgba(0,0,0,0.2);
-        padding: 1.5rem;
-        border-radius: 8px;
-        border: 1px solid var(--outline);
-        font-family: monospace;
-        font-size: 0.9rem;
-        line-height: 1.6;
-        white-space: pre-wrap;
-        word-wrap: break-word;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background-color: rgba(0,0,0,0.3);
+      border: 1px dashed var(--outline, rgba(255,255,255,.2));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 2.5rem 0;
+      font-style: italic;
+      color: var(--muted, #9aa6b2);
+      text-align: center;
+      padding: 1rem;
     }
 
-    /* --- NEW MOBILE NAVIGATION & RESPONSIVE STYLES --- */
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2.5rem 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--glass-outline, rgba(255,255,255,.08));
+    }
+    .cta-buttons a,
+    .cta-buttons a:visited {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: rgba(78,168,255,0.15);
+      border: 1px solid var(--accent, #7bdff6);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--accent, #7bdff6);
+      font-weight: bold;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    .cta-buttons a:hover { background-color: var(--accent, #7bdff6); color: #14181d; }
+
+    .cite-box {
+      background-color: rgba(0,0,0,0.2);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid var(--outline, rgba(255,255,255,.2));
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    /* ===== Navigation: single menu per breakpoint ===== */
     .mobile-nav-toggle { display: none; }
-    .mobile-nav { display: none; }
+    .mobile-nav { display: none; } /* hide drawer on desktop */
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
-    
+    header.masthead { position: relative; z-index: 1002; }
+    .nav a { color: var(--fg, #e8eef6); text-decoration: none; }
+
     @media (max-width: 900px) {
       .nav { display: none; }
-      .masthead { justify-content: flex-end; padding-bottom: 0; border-bottom: none; }
+      .masthead { display: flex; justify-content: flex-end; padding-bottom: 0; border-bottom: none; }
 
       .mobile-nav-toggle {
-            display: block; background: none; border: none; cursor: pointer;
-            z-index: 1001; padding: .5rem; position: relative; width: 34px; height: 34px;
+        display: block; background: none; border: none; cursor: pointer;
+        z-index: 1003; padding: .5rem; position: relative; width: 34px; height: 34px;
       }
       .hamburger {
-            width: 24px; height: 2px; background: var(--fg, #e9eef3); display: block;
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            transition: background 0.2s ease-out;
+        width: 24px; height: 2px; background: var(--fg, #e9eef3); display: block;
+        position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+        transition: background 0.2s ease-out;
       }
       .hamburger::before, .hamburger::after {
-            content: ''; width: 24px; height: 2px; background: var(--fg, #e9eef3); display: block;
-            position: absolute; left: 0;
-            transition: transform 0.2s ease-out, top 0.2s ease-out;
+        content: ''; width: 24px; height: 2px; background: var(--fg, #e9eef3); display: block;
+        position: absolute; left: 0; transition: transform 0.2s ease-out, top 0.2s ease-out;
       }
       .hamburger::before { top: -8px; }
-      .hamburger::after { top: 8px; }
-
+      .hamburger::after  { top:  8px; }
       body.nav-open .hamburger { background: transparent; }
       body.nav-open .hamburger::before { transform: rotate(45deg); top: 0; }
-      body.nav-open .hamburger::after { transform: rotate(-45deg); top: 0; }
+      body.nav-open .hamburger::after  { transform: rotate(-45deg); top: 0; }
 
-      .mobile-nav {
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            position: fixed; top: 0; left: -100%; width: 100%; height: 100vh;
-            background: var(--bg, #0b0d10); z-index: 1000; transition: left 0.3s ease-in-out;
-            gap: 1rem; padding: 1rem; box-sizing: border-box; overflow-y: auto;
+      nav.mobile-nav{
+        position: fixed; inset: 0; left: -100%;
+        width: 100%; height: 100dvh;
+        background: var(--bg, #0b0d10);
+        z-index: 1002; transition: left .3s ease-in-out;
+        display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;
+        padding: 1rem; overflow-y: auto;
       }
-      body.nav-open .mobile-nav { left: 0; }
+      body.nav-open nav.mobile-nav{ left: 0; }
       body.nav-open { overflow: hidden; }
-        
+
       .mobile-nav a, .mobile-nav .dropbtn {
-            color: var(--fg, #e9eef3); text-decoration: none; font-size: 1.5rem; padding: 0.5rem 1rem;
-            background: none; border: none; font: inherit; cursor: pointer;
+        color: var(--fg, #e9eef3); text-decoration: none; font-size: 1.5rem; padding: 0.5rem 1rem;
+        background: none; border: none; font: inherit; cursor: pointer;
       }
       .mobile-nav .dropdown { text-align: center; }
       .mobile-nav .dropdown-content {
-            position: static; background: none; border: none; display: flex; box-shadow: none;
-            align-items: center; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem;
+        position: static; background: none; border: none; display: flex; box-shadow: none;
+        align-items: center; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem;
       }
       .mobile-nav .dropdown-content a { font-size: 1rem; color: var(--muted, #9aa6b2); }
 
-      /* Responsive stacking for .wand-grid on mobile */
+      /* Stack hero on small screens */
       .wand-grid {
-        grid-template-columns: 1fr; /* Stack columns on small screens */
-        gap: 1.5rem; /* Adjust gap for stacking */
-        text-align: center; /* Center align text when stacked */
-        margin-bottom: 1.5rem; /* Adjust bottom margin */
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
       }
-      .wand-grid-image {
-        order: -1; /* Move image above text on mobile */
-        margin-bottom: 0; /* Remove extra margin */
-      }
-      .wand-grid-text h1, .wand-grid-text .role {
-        text-align: center; /* Center align title and role */
-      }
-      .wand-grid-text p {
-        text-align: left; /* Keep paragraphs left-aligned but allow them to span full width */
-        max-width: 100%; /* Allow paragraphs to take full width */
-      }
-      .wand-icon {
-        width: 180px; /* Make icon slightly smaller on mobile */
-      }
+      .wand-grid-image { order: -1; margin-bottom: 0; }
+      .wand-grid-text h1, .wand-grid-text .role { text-align: center; }
+      .wand-grid-text p { text-align: left; max-width: 100%; }
+      .wand-icon { width: 180px; }
     }
   </style>
 </head>
@@ -222,7 +267,7 @@
 
     <a href="medium.html">Medium</a>
     <a href="wand.html" aria-current="page">WAND Protocol</a>
-    
+
     <div class="dropdown">
       <a class="dropbtn" tabindex="0">Conference Presentations ▾</a>
       <div class="dropdown-content" role="menu">
@@ -278,13 +323,13 @@
 
 <main class="grid" id="main">
   <section class="glass">
-    
+
     <div class="wand-grid">
       <div class="wand-grid-text">
         <h1>The WAND Protocol</h1>
         <p class="role">An Open-Source Software Suite for Inducing and Measuring Cognitive Fatigue</p>
-        <p>The scientific study of cognitive fatigue is limited by methodological imprecision, with paradigms often unable to distinguish genuine fatigue from confounds like boredom and task-learning. This leads to contradictory findings and makes it near-impossible to test potential interventions.</p>
-        <p>To overcome these issues, I developed the WAND model, an open-source, modular software suite designed to induce  cognitive fatigue with high precision.</p>
+        <p>The scientific study of cognitive fatigue is limited by methodological imprecision, with paradigms often unable to distinguish genuine fatigue from confounds like boredom and task learning. This leads to contradictory findings and makes it near impossible to test potential interventions.</p>
+        <p>To overcome these issues, I developed the WAND model, an open source, modular software suite designed to induce cognitive fatigue with high precision.</p>
       </div>
       <div class="wand-grid-image">
         <img src="assets/wand.png" alt="WAND Protocol icon" class="wand-icon">
@@ -292,32 +337,32 @@
     </div>
 
     <div class="video-placeholder">
-        <p>Video Demonstration Coming Soon</p>
+      <p>Video Demonstration Coming Soon</p>
     </div>
 
     <div class="features-grid">
       <div class="feature-item">
         <h3>Adaptive Difficulty</h3>
-        <p>Dynamically adjusts task difficulty based on real-time performance to keep each participant in their "optimal challenge zone," ensuring sustained cognitive engagement without causing frustration or disengagement.</p>
+        <p>Dynamically adjusts task difficulty based on real time performance to keep each participant in the optimal challenge zone, ensuring sustained cognitive engagement without frustration or disengagement.</p>
       </div>
       <div class="feature-item">
         <h3>Performance Plateauing</h3>
-        <p>Includes a preliminary calibration phase that mitigates task-learning effects by ensuring participants reach a stable performance baseline before the main fatigue induction begins.</p>
+        <p>Includes a preliminary calibration phase that mitigates task learning effects by ensuring participants reach a stable performance baseline before the main fatigue induction begins.</p>
       </div>
       <div class="feature-item">
         <h3>Task Variability</h3>
-        <p>Rotates between three complementary non-verbal N-back tasks (Sequential, Spatial, and Dual) to sustain high-effort engagement and counteract the onset of monotony-induced passive fatigue.</p>
+        <p>Rotates between three complementary non verbal N back tasks, Sequential, Spatial, and Dual, to sustain high effort engagement and counteract monotony induced passive fatigue.</p>
       </div>
       <div class="feature-item">
         <h3>Precision Measurement</h3>
-        <p>Integrates embedded "mini-distractors" to probe inhibitory control under load and employs robust signal detection metrics (d' and A') to provide a pure measure of cognitive decline, independent of response bias.</p>
+        <p>Integrates embedded mini distractors to probe inhibitory control under load and uses robust signal detection metrics, d′ and A′, to provide a pure measure of cognitive decline independent of response bias.</p>
       </div>
     </div>
 
     <div class="cta-buttons">
-      <a href="https://github.com/brodie-neuro/WAND-practice-and-fatigue-induction" target="_blank" rel="noopener">View on GitHub</a>
-      <a href="https://doi.org/10.5281/zenodo.15489704" target="_blank" rel="noopener">Download from Zenodo</a>
-      <a href="preprints.html">Read the JOSS Paper</a>
+      <a id="cta-github" href="https://github.com/brodie-neuro/WAND-practice-and-fatigue-induction" target="_blank" rel="noopener">View on GitHub</a>
+      <a id="cta-zenodo" href="https://doi.org/10.5281/zenodo.15489704" target="_blank" rel="noopener">Download from Zenodo</a>
+      <a id="cta-joss" href="preprints.html">Read the JOSS Paper</a>
     </div>
 
     <h2>How to Cite</h2>
@@ -346,16 +391,34 @@
 </footer>
 
 <script>
-document.getElementById('y').textContent = new Date().getFullYear();
+  // Footer year
+  document.getElementById('y').textContent = new Date().getFullYear();
 
-const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-const body = document.querySelector('body');
-
-mobileNavToggle.addEventListener('click', () => {
+  // Mobile nav toggle
+  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+  const bodyEl = document.body;
+  mobileNavToggle.addEventListener('click', () => {
     const isExpanded = mobileNavToggle.getAttribute('aria-expanded') === 'true';
-    mobileNavToggle.setAttribute('aria-expanded', !isExpanded);
-    body.classList.toggle('nav-open');
-});
+    mobileNavToggle.setAttribute('aria-expanded', String(!isExpanded));
+    bodyEl.classList.toggle('nav-open');
+  });
+
+  // Analytics: track CTA clicks (Plausible, and GA4 if enabled)
+  (function(){
+    function track(name, props){
+      if (window.plausible) window.plausible(name, {props: props || {}});
+      if (window.gtag) window.gtag('event', name.replace(/\s+/g,'_').toLowerCase(), props || {});
+    }
+    const map = [
+      ['#cta-github',  'CTA GitHub'],
+      ['#cta-zenodo',  'CTA Zenodo'],
+      ['#cta-joss',    'CTA JOSS']
+    ];
+    map.forEach(([sel, evt])=>{
+      const el = document.querySelector(sel);
+      if (el) el.addEventListener('click', ()=>track(evt, {href: el.href}));
+    });
+  })();
 </script>
 
 </body>
