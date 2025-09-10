@@ -180,15 +180,26 @@
       }
       .mobile-nav .dropdown-content a { font-size: 1rem; color: var(--muted, #9aa6b2); }
 
-      /* Responsive stacking for this specific page */
+      /* Responsive stacking for .wand-grid on mobile */
       .wand-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        text-align: center;
+        grid-template-columns: 1fr; /* Stack columns on small screens */
+        gap: 1.5rem; /* Adjust gap for stacking */
+        text-align: center; /* Center align text when stacked */
+        margin-bottom: 1.5rem; /* Adjust bottom margin */
       }
       .wand-grid-image {
-        order: -1; 
-        margin-bottom: 1.5rem;
+        order: -1; /* Move image above text on mobile */
+        margin-bottom: 0; /* Remove extra margin */
+      }
+      .wand-grid-text h1, .wand-grid-text .role {
+        text-align: center; /* Center align title and role */
+      }
+      .wand-grid-text p {
+        text-align: left; /* Keep paragraphs left-aligned but allow them to span full width */
+        max-width: 100%; /* Allow paragraphs to take full width */
+      }
+      .wand-icon {
+        width: 180px; /* Make icon slightly smaller on mobile */
       }
     }
   </style>
