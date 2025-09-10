@@ -129,6 +129,57 @@
     }
     #brain-badge:hover{transform:scale(1.04)}
     @media(max-width:1200px){#brain-badge{display:none}}
+    
+    /* --- NEW MOBILE NAVIGATION STYLES --- */
+    .mobile-nav-toggle { display: none; }
+    .mobile-nav { display: none; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+
+    @media (max-width: 900px) {
+        .nav { display: none; }
+        .masthead { justify-content: flex-end; }
+        
+        .mobile-nav-toggle {
+            display: block; background: none; border: none; cursor: pointer;
+            z-index: 1001; padding: .5rem; position: relative; width: 34px; height: 34px;
+        }
+        .hamburger {
+            width: 24px; height: 2px; background: var(--fg); display: block;
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            transition: background 0.2s ease-out;
+        }
+        .hamburger::before, .hamburger::after {
+            content: ''; width: 24px; height: 2px; background: var(--fg); display: block;
+            position: absolute; left: 0;
+            transition: transform 0.2s ease-out, top 0.2s ease-out;
+        }
+        .hamburger::before { top: -8px; }
+        .hamburger::after { top: 8px; }
+
+        body.nav-open .hamburger { background: transparent; }
+        body.nav-open .hamburger::before { transform: rotate(45deg); top: 0; }
+        body.nav-open .hamburger::after { transform: rotate(-45deg); top: 0; }
+
+        .mobile-nav {
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            position: fixed; top: 0; left: -100%; width: 100%; height: 100vh;
+            background: var(--bg, #0b0d10); z-index: 1000; transition: left 0.3s ease-in-out;
+            gap: 1rem; padding: 1rem; box-sizing: border-box; overflow-y: auto;
+        }
+        body.nav-open .mobile-nav { left: 0; }
+        body.nav-open { overflow: hidden; }
+        
+        .mobile-nav a, .mobile-nav .dropbtn {
+            color: var(--fg); text-decoration: none; font-size: 1.5rem; padding: 0.5rem 1rem;
+            background: none; border: none; font: inherit; cursor: pointer;
+        }
+        .mobile-nav .dropdown { text-align: center; }
+        .mobile-nav .dropdown-content {
+            position: static; background: none; border: none; display: flex; box-shadow: none;
+            align-items: center; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem;
+        }
+        .mobile-nav .dropdown-content a { font-size: 1rem; color: var(--muted); }
+    }
   </style>
 </head>
 <body>
@@ -136,7 +187,6 @@
 <header class="masthead">
   <nav class="nav">
     <a href="index.html" aria-current="page">Home</a>
-
     <div class="dropdown">
       <a class="dropbtn" tabindex="0">Publications ▾</a>
       <div class="dropdown-content" role="menu">
@@ -145,30 +195,58 @@
         <a role="menuitem" href="in-progress.html">IN-PROGRESS</a>
       </div>
     </div>
-
     <a href="medium.html">Medium</a>
     <a href="wand.html">WAND Protocol</a>
-    
     <div class="dropdown">
       <a class="dropbtn" tabindex="0">Conference Presentations ▾</a>
       <div class="dropdown-content" role="menu">
         <a role="menuitem" href="BACN.html">BACN 2025</a>
       </div>
     </div>
-
     <a href="reading-list.html">Reading List</a>
-
     <div class="dropdown">
       <a class="dropbtn" tabindex="0">CV ▾</a>
       <div class="dropdown-content">
         <a href="assets/Brodie_Mangan_CV.pdf" download="Brodie_Mangan_CV.pdf" type="application/pdf">Download PDF</a>
       </div>
     </div>
-
     <a href="contact.html">Contact Me</a>
-</nav>
+  </nav>
+  
+  <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
+    <span class="sr-only">Menu</span>
+    <span class="hamburger"></span>
+  </button>
   <div id="brain-badge" aria-hidden="true"></div>
 </header>
+
+<nav class="mobile-nav" id="mobile-nav">
+    <a href="index.html" aria-current="page">Home</a>
+    <div class="dropdown">
+      <button class="dropbtn">Publications</button>
+      <div class="dropdown-content">
+        <a href="papers.html">PAPERS</a>
+        <a href="preprints.html">PREPRINTS</a>
+        <a href="in-progress.html">IN-PROGRESS</a>
+      </div>
+    </div>
+    <a href="medium.html">Medium</a>
+    <a href="wand.html">WAND Protocol</a>
+    <div class="dropdown">
+      <button class="dropbtn">Conference Presentations</button>
+      <div class="dropdown-content">
+        <a href="BACN.html">BACN 2025</a>
+      </div>
+    </div>
+    <a href="reading-list.html">Reading List</a>
+    <div class="dropdown">
+      <button class="dropbtn">CV</button>
+      <div class="dropdown-content">
+        <a href="assets/Brodie_Mangan_CV.pdf" download>Download PDF</a>
+      </div>
+    </div>
+    <a href="contact.html">Contact Me</a>
+</nav>
 
 <main class="grid">
   <aside class="left" id="main">
@@ -208,7 +286,18 @@
   <p>© <span id="y"></span> Brodie Mangan • GitHub Pages</p>
 </footer>
 
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+
+const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+const body = document.querySelector('body');
+
+mobileNavToggle.addEventListener('click', () => {
+    const isExpanded = mobileNavToggle.getAttribute('aria-expanded') === 'true';
+    mobileNavToggle.setAttribute('aria-expanded', !isExpanded);
+    body.classList.toggle('nav-open');
+});
+</script>
 
 <script type="importmap">
 {
@@ -223,79 +312,83 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'https://unpkg.com/three@0.160.0/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'https://unpkg.com/three@0.160.0/examples/jsm/controls/OrbitControls.js';
 
-const mount   = document.getElementById('brain-badge');
-const scene   = new THREE.Scene();
-const camera  = new THREE.PerspectiveCamera(45, mount.clientWidth/mount.clientHeight, 0.1, 100);
-camera.position.set(0, 0, 3.6);
+if(document.getElementById('brain-badge')) {
+    const mount   = document.getElementById('brain-badge');
+    const scene   = new THREE.Scene();
+    const camera  = new THREE.PerspectiveCamera(45, mount.clientWidth/mount.clientHeight, 0.1, 100);
+    camera.position.set(0, 0, 3.6);
 
-const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:false });
-renderer.setSize(mount.clientWidth, mount.clientHeight);
-renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
-renderer.setClearColor(0x14181d);
-renderer.toneMappingExposure = 1.4;
-mount.appendChild(renderer.domElement);
+    const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:false });
+    renderer.setSize(mount.clientWidth, mount.clientHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+    renderer.setClearColor(0x14181d);
+    renderer.toneMappingExposure = 1.4;
+    mount.appendChild(renderer.domElement);
 
-// lights
-scene.add(new THREE.AmbientLight(0xffffff,1.1));
-scene.add(new THREE.HemisphereLight(0xffe1ff,0x220022,0.8));
-const dir = new THREE.DirectionalLight(0xffffff,1.4);
-dir.position.set(2,5,5); scene.add(dir);
+    // lights
+    scene.add(new THREE.AmbientLight(0xffffff,1.1));
+    scene.add(new THREE.HemisphereLight(0xffe1ff,0x220022,0.8));
+    const dir = new THREE.DirectionalLight(0xffffff,1.4);
+    dir.position.set(2,5,5); scene.add(dir);
 
-// controls
-const controls = new OrbitControls(camera, renderer.domElement);
-controls.enableZoom = false;
-controls.enablePan  = false;
-controls.enableDamping = true;
-controls.enabled = false;
+    // controls
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableZoom = false;
+    controls.enablePan  = false;
+    controls.enableDamping = true;
+    controls.enabled = false;
 
-// colour morph targets
-const cHealthy  = new THREE.Color('#00cfff');
-const cFatigued = new THREE.Color('#ff6b00');
-const eHealthy  = new THREE.Color('#0090ff');
-const eFatigued = new THREE.Color('#550000');
+    // colour morph targets
+    const cHealthy  = new THREE.Color('#00cfff');
+    const cFatigued = new THREE.Color('#ff6b00');
+    const eHealthy  = new THREE.Color('#0090ff');
+    const eFatigued = new THREE.Color('#550000');
 
-let materials = [];
-let autoRotate = true;
+    let materials = [];
+    let autoRotate = true;
 
-// load brain
-new GLTFLoader().load('./assets/brain.glb', gltf=>{
-  const brain = gltf.scene;
-  brain.scale.set(1,1,1);
-  brain.position.y = -0.1;
-  scene.add(brain);
+    // load brain
+    new GLTFLoader().load('./assets/brain.glb', gltf=>{
+      const brain = gltf.scene;
+      brain.scale.set(1,1,1);
+      brain.position.y = -0.1;
+      scene.add(brain);
 
-  brain.traverse(c=>{ if(c.isMesh) materials.push(c.material); });
-  animate();
-});
+      brain.traverse(c=>{ if(c.isMesh) materials.push(c.material); });
+      animate();
+    });
 
-// hover handlers
-mount.addEventListener('pointerenter', ()=>{ autoRotate=false; controls.enabled=true; });
-mount.addEventListener('pointerleave', ()=>{ controls.enabled=false; autoRotate=true; });
+    // hover handlers
+    mount.addEventListener('pointerenter', ()=>{ autoRotate=false; controls.enabled=true; });
+    mount.addEventListener('pointerleave', ()=>{ controls.enabled=false; autoRotate=true; });
 
-// resize
-window.addEventListener('resize', ()=>{
-  const {clientWidth:w, clientHeight:h}=mount;
-  camera.aspect = w/h; camera.updateProjectionMatrix();
-  renderer.setSize(w,h);
-});
+    // resize
+    window.addEventListener('resize', ()=>{
+        if (mount && mount.clientWidth > 0 && mount.clientHeight > 0) {
+            const {clientWidth:w, clientHeight:h}=mount;
+            camera.aspect = w/h; camera.updateProjectionMatrix();
+            renderer.setSize(w,h);
+        }
+    });
 
-// animation loop
-function animate(){
-  requestAnimationFrame(animate);
-  if(autoRotate) scene.rotation.y += 0.005;
-  controls.update();
+    // animation loop
+    function animate(){
+      requestAnimationFrame(animate);
+      if(autoRotate) scene.rotation.y += 0.005;
+      controls.update();
 
-  const t = (Math.sin(Date.now()*0.0008)+1)/2;
-  materials.forEach(m=>{
-    m.color.copy(cHealthy).lerp(cFatigued,t);
-    m.emissive.copy(eHealthy).lerp(eFatigued,t);
-    m.emissiveIntensity = 0.3*(1-t);
-    m.roughness = 0.15 + t*0.55;
-    m.metalness = 0.6  - t*0.5;
-  });
-  renderer.toneMappingExposure = 1.4 - t*0.4;
+      const t = (Math.sin(Date.now()*0.0008)+1)/2;
+      materials.forEach(m=>{
+        m.color.copy(cHealthy).lerp(cFatigued,t);
+        m.emissive.copy(eHealthy).lerp(eFatigued,t);
+        m.emissiveIntensity = 0.3*(1-t);
+        m.roughness = 0.15 + t*0.55;
+        m.metalness = 0.6  - t*0.5;
+      });
+      renderer.toneMappingExposure = 1.4 - t*0.4;
 
-  renderer.render(scene, camera);
+      renderer.render(scene, camera);
+    }
 }
 </script>
 </body>
