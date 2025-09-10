@@ -18,19 +18,28 @@
   <meta property="og:url" content="https://brodiemangan.com/BACN.html">
   <meta property="og:image" content="https://brodiemangan.com/assets/wand-poster-preview.png">
   <meta property="og:site_name" content="Brodie Mangan">
-
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="BACN 2025 Poster | Brodie Mangan">
-  <meta name="twitter:description" content="Supplementary material for the poster: Isolating Active Cognitive Fatigue, A Validation of the WAND Protocol.">
-  <meta name="twitter:image" content="https://brodiemangan.com/assets/wand-poster-preview.png">
 
   <link rel="stylesheet" href="style.css">
   <link rel="canonical" href="https://brodiemangan.com/BACN.html">
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico?v=3">
   <link rel="shortcut icon" href="assets/favicon.ico?v=3">
 
+  <!-- Plausible Analytics (active). Replace domain if needed. -->
+  <script defer data-domain="brodiemangan.com" src="https://plausible.io/js/script.js"></script>
+
+  <!-- Google Analytics 4 (optional). Uncomment and add your Measurement ID.
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+  </script>
+  -->
+
   <style>
-    /* Core reset and layout guards */
+    /* Reset and layout guards */
     *, *::before, *::after { box-sizing: border-box; }
     html, body {
       margin: 0;
@@ -42,10 +51,12 @@
       background: #0b0d10;
       color: var(--fg, #e8eef6);
     }
-    img, video, audio, canvas, iframe { max-width: 100%; height: auto; }
+    /* Do not include audio here */
+    img, video, canvas, iframe { max-width: 100%; height: auto; }
     a { word-break: break-word; }
 
     :root{ --glass-outline: rgba(255,255,255,.08); --accent:#7bdff6; --bg:#0b0d10; --fg:#e8eef6; --muted:#a2b3c2; }
+
     body{
       background:url('assets/background2.png') center/cover fixed no-repeat;
     }
@@ -60,9 +71,6 @@
       padding: clamp(12px, 3vw, 24px);
     }
     .glass { width: 100%; padding: clamp(16px, 4vw, 32px); border-radius: 14px; background: rgba(18,22,27,0.55); border: 1px solid var(--glass-outline); backdrop-filter: blur(6px); }
-
-    .centered-icon-container { display:flex; justify-content:center; align-items:center; margin-bottom: 2rem; }
-    .header-icon { width: 144px; height: auto; }
 
     .poster-section { text-align:center; margin-bottom:2.5rem; }
     .poster-image {
@@ -85,8 +93,9 @@
     }
     .download-button:hover { background-color: var(--accent); color:#14181d; }
 
+    /* Audio block */
     .audio-container { text-align:center; margin: 2rem 0; }
-    .audio-container audio { width: 100%; max-width: 600px; }
+    .audio-container audio { width: 100%; max-width: 600px; min-height: 36px; display:block; margin: 0 auto; }
 
     .content-section h2, .content-section h3 { border-bottom:1px solid var(--glass-outline); padding-bottom:.5rem; margin-top:2.5rem; margin-bottom:1rem; }
     .content-section ul { list-style-type: disc; padding-left: 20px; }
@@ -102,7 +111,7 @@
     header.masthead{ position:relative; z-index:1002; }
     .nav a{ color: var(--fg); text-decoration:none; }
 
-    /* NEW: hide the mobile drawer on desktop to prevent double menu */
+    /* Hide the mobile drawer on desktop */
     .mobile-nav { display: none; }
 
     @media (max-width: 850px) {
@@ -215,7 +224,7 @@
     <section class="glass">
       <div class="audio-container">
         <h3>Poster Audio Walkthrough</h3>
-        <audio controls>
+        <audio controls preload="metadata">
           <source src="assets/bacnaudio.mp3" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
@@ -271,8 +280,10 @@
   </footer>
 
   <script>
+    // Footer year
     document.getElementById('y').textContent = new Date().getFullYear();
 
+    // Mobile nav
     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
     const body = document.body;
     mobileNavToggle.addEventListener('click', () => {
@@ -280,6 +291,32 @@
       mobileNavToggle.setAttribute('aria-expanded', String(!isExpanded));
       body.classList.toggle('nav-open');
     });
+
+    // Analytics events, safe if Plausible or GA4 is absent
+    (function(){
+      const audio = document.querySelector('.audio-container audio');
+      if (audio) {
+        let playedOnce = false;
+        audio.addEventListener('play', function(){
+          if(!playedOnce){
+            playedOnce = true;
+            if (window.plausible) window.plausible('Audio Play', {props:{file:'bacnaudio.mp3'}});
+            if (window.gtag) gtag('event','audio_play',{event_category:'Media', event_label:'BACN audio'});
+          }
+        });
+        audio.addEventListener('ended', function(){
+          if (window.plausible) window.plausible('Audio Complete', {props:{file:'bacnaudio.mp3'}});
+          if (window.gtag) gtag('event','audio_complete',{event_category:'Media', event_label:'BACN audio'});
+        });
+      }
+      const posterBtn = document.querySelector('.download-button');
+      if (posterBtn) {
+        posterBtn.addEventListener('click', function(){
+          if (window.plausible) window.plausible('Poster Download', {props:{file:'BACNP.png'}});
+          if (window.gtag) gtag('event','download',{event_category:'Poster', event_label:'BACNP.png'});
+        });
+      }
+    })();
   </script>
 </body>
 </html>
