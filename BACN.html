@@ -26,7 +26,7 @@
 
   <style>
     :root{ --glass-outline: rgba(255,255,255,.08); }
-    body{ background:url('assets/background2.png') centre/cover fixed no-repeat; }
+    body{ background:url('assets/background2.png') center/cover fixed no-repeat; }
     body::before{
       content:"";position:fixed;inset:0;pointer-events:none;background:inherit;
       mix-blend-mode:screen;filter:saturate(1.25) brightness(1);opacity:.15;
@@ -34,10 +34,10 @@
     }
     @keyframes pulseBg{0%,100%{opacity:.15}50%{opacity:.35}}
     
-    .centred-icon-container {
+    .centered-icon-container {
       display: flex;
-      justify-content: centre;
-      align-items: centre;
+      justify-content: center;
+      align-items: center;
       margin-bottom: 2rem;
     }
     .header-icon {
@@ -45,8 +45,8 @@
       height: auto;
     }
 
-    .poster-section { /* Renamed for clarity to group poster and download */
-      text-align: centre;
+    .poster-section {
+      text-align: center;
       margin-bottom: 2.5rem;
     }
     .poster-image {
@@ -66,20 +66,20 @@
       display: inline-block;
       margin-top: 1.5rem;
       padding: 0.8rem 1.5rem;
-      background-colour: rgba(255, 255, 255, 0.1);
+      background-color: rgba(255, 255, 255, 0.1);
       border: 1px solid var(--glass-outline);
       border-radius: 8px;
       text-decoration: none;
-      colour: var(--fg);
+      color: var(--fg);
       font-weight: bold;
-      transition: background-colour 0.2s ease, colour 0.2s ease;
+      transition: background-color 0.2s ease, color 0.2s ease;
     }
     .download-button:hover {
-       background-colour: var(--accent);
-       colour: #14181d;
+       background-color: var(--accent);
+       color: #14181d;
     }
     .audio-container {
-      text-align: centre;
+      text-align: center;
       margin: 2.5rem 0;
     }
     .audio-container audio {
@@ -112,11 +112,104 @@
        padding-left: 2em;
     }
     .reference-list a {
-       colour: var(--accent);
+       color: var(--accent);
        text-decoration: none;
     }
     .reference-list a:hover {
        text-decoration: underline;
+    }
+
+    /* ------------------------------------------------------------------
+       Mobile Navigation & Responsive Styles
+    ------------------------------------------------------------------ */
+    .mobile-nav-toggle { display: none; }
+
+    @media (max-width: 850px) {
+        .masthead {
+            display: flex;
+            justify-content: flex-end; /* Align hamburger to the right */
+            align-items: center;
+        }
+        .nav {
+            display: none;
+        }
+        .mobile-nav-toggle {
+            display: block;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 1rem;
+        }
+        .mobile-nav-toggle .hamburger {
+            width: 24px;
+            height: 2px;
+            background: var(--fg);
+            display: block;
+            position: relative;
+            transition: background 0.2s ease-out;
+        }
+        .mobile-nav-toggle .hamburger::before,
+        .mobile-nav-toggle .hamburger::after {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--fg);
+            display: block;
+            position: absolute;
+            transition: transform 0.2s ease-out;
+        }
+        .mobile-nav-toggle .hamburger::before { top: -8px; }
+        .mobile-nav-toggle .hamburger::after { top: 8px; }
+
+        body.nav-open .mobile-nav-toggle .hamburger { background: transparent; }
+        body.nav-open .mobile-nav-toggle .hamburger::before { transform: rotate(45deg) translate(5px, 6px); }
+        body.nav-open .mobile-nav-toggle .hamburger::after { transform: rotate(-45deg) translate(5px, -6px); }
+        
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100vh;
+            background: var(--bg);
+            z-index: 1000;
+            transition: left 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        body.nav-open .mobile-nav {
+            left: 0;
+        }
+        .mobile-nav a, .mobile-nav .dropbtn {
+            color: var(--fg);
+            text-decoration: none;
+            font-size: 1.5rem;
+            padding: 0.5rem 1rem;
+        }
+        .mobile-nav .dropdown {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .mobile-nav .dropdown-content {
+            position: static;
+            background: none;
+            border: none;
+            display: flex; 
+            align-items: center;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        .mobile-nav .dropdown-content a {
+            font-size: 1rem;
+            color: var(--muted);
+        }
+        .glass { padding: 1.5rem; }
     }
   </style>
 </head>
@@ -125,7 +218,6 @@
 <header class="masthead">
    <nav class="nav">
     <a href="index.html">Home</a>
-
     <div class="dropdown">
       <a class="dropbtn" tabindex="0">Publications ▾</a>
       <div class="dropdown-content" role="menu">
@@ -134,29 +226,58 @@
         <a role="menuitem" href="in-progress.html">IN-PROGRESS</a>
       </div>
     </div>
-
     <a href="medium.html">Medium</a>
     <a href="wand.html">WAND Protocol</a>
-    
     <div class="dropdown">
       <a class="dropbtn" tabindex="0">Conference Presentations ▾</a>
       <div class="dropdown-content" role="menu">
         <a role="menuitem" href="BACN.html" aria-current="page">BACN 2025</a>
       </div>
     </div>
-
     <a href="reading-list.html">Reading List</a>
-
     <div class="dropdown">
       <a class="dropbtn" tabindex="0">CV ▾</a>
       <div class="dropdown-content">
         <a href="assets/Brodie_Mangan_CV.pdf" download="Brodie_Mangan_CV.pdf" type="application/pdf">Download PDF</a>
       </div>
     </div>
-
     <a href="contact.html">Contact Me</a>
    </nav>
+   <!-- Hamburger Button -->
+  <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
+    <span class="sr-only">Menu</span>
+    <span class="hamburger"></span>
+  </button>
 </header>
+
+<!-- Mobile Navigation Menu -->
+<nav class="mobile-nav" id="mobile-nav">
+    <a href="index.html">Home</a>
+    <div class="dropdown">
+      <a class="dropbtn">Publications</a>
+      <div class="dropdown-content" role="menu">
+        <a role="menuitem" href="papers.html">PAPERS</a>
+        <a role="menuitem" href="preprints.html">PREPRINTS</a>
+        <a role="menuitem" href="in-progress.html">IN-PROGRESS</a>
+      </div>
+    </div>
+    <a href="medium.html">Medium</a>
+    <a href="wand.html">WAND Protocol</a>
+    <div class="dropdown">
+      <a class="dropbtn" aria-current="page">Conference Presentations</a>
+      <div class="dropdown-content" role="menu">
+        <a role="menuitem" href="BACN.html">BACN 2025</a>
+      </div>
+    </div>
+    <a href="reading-list.html">Reading List</a>
+    <div class="dropdown">
+      <a class="dropbtn">CV</a>
+      <div class="dropdown-content">
+        <a href="assets/Brodie_Mangan_CV.pdf" download="Brodie_Mangan_CV.pdf" type="application/pdf">Download PDF</a>
+      </div>
+    </div>
+    <a href="contact.html">Contact Me</a>
+</nav>
 
 <main class="grid" id="main">
   <section class="glass">
@@ -230,6 +351,19 @@
   <p>© <span id="y"></span> Brodie Mangan • GitHub Pages</p>
 </footer>
 
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script>
+// Year for footer
+document.getElementById('y').textContent = new Date().getFullYear();
+
+// Mobile Navigation Toggle
+const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+const body = document.querySelector('body');
+
+mobileNavToggle.addEventListener('click', () => {
+    const isExpanded = mobileNavToggle.getAttribute('aria-expanded') === 'true';
+    mobileNavToggle.setAttribute('aria-expanded', !isExpanded);
+    body.classList.toggle('nav-open');
+});
+</script>
 </body>
 </html>
