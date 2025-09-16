@@ -25,20 +25,46 @@
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico?v=3">
   <link rel="shortcut icon" href="assets/favicon.ico?v=3">
 
-  <!-- Plausible Analytics (active). Replace domain if needed. -->
   <script defer data-domain="brodiemangan.com" src="https://plausible.io/js/script.js"></script>
 
-  <!-- Google Analytics 4 (optional). Uncomment and add your Measurement ID.
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
-  </script>
-  -->
-
   <style>
+    /* Award Section Styling */
+    .award-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: clamp(16px, 4vw, 32px);
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--glass-outline);
+    }
+    .award-image {
+      flex: 1 1 200px; /* Flex properties for responsive resizing */
+    }
+    .award-image img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--glass-outline);
+    }
+    .award-text {
+      flex: 2 1 300px; /* Allows text to take up more space */
+    }
+    .award-text h3 {
+      margin-top: 0;
+      color: var(--accent); /* Uses your site's accent color */
+      font-size: 1.5rem;
+    }
+    .award-text p {
+      margin-bottom: 0;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    @media (max-width: 650px) {
+      .award-section {
+        text-align: center;
+      }
+    }
+
     /* Reset and layout guards */
     *, *::before, *::after { box-sizing: border-box; }
     html, body {
@@ -222,6 +248,15 @@
 
   <main class="grid" id="main">
     <section class="glass">
+      <div class="award-section">
+        <div class="award-image">
+          <img src="meposter.png" alt="Brodie Mangan with his award-winning poster at BACN 2025.">
+        </div>
+        <div class="award-text">
+          <h3>BACN 2025 Poster Prize Winner</h3>
+          <p>I am honoured that this poster was awarded the poster prize at the British Association for Cognitive Neuroscience conference 2025. Thank you to everybody involved in the conference.</p>
+        </div>
+      </div>
       <div class="audio-container">
         <h3>Poster Audio Walkthrough</h3>
         <audio controls preload="metadata">
