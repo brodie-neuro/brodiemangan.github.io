@@ -1,23 +1,27 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="theme-color" content="#0b0d10">
   <title>Brodie Mangan | Cognitive Psychologist/Neuroscientist, University of Stirling</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Brodie Mangan, a PhD researcher at the University of Stirling. Research on physical activity, cognitive fatigue, working memory, and brain function.">
+  <meta name="description"
+    content="Brodie Mangan, a PhD researcher at the University of Stirling. Research on physical activity, cognitive fatigue, working memory, and brain function.">
 
   <meta property="og:type" content="website">
-<meta property="og:title" content="Brodie Mangan | Cognitive Psychologist; Neuroscientist">
-<meta property="og:description" content="Research on physical activity, cognitive fatigue, working memory, and brain function. PhD Researcher at the University of Stirling.">
-<meta property="og:url" content="https://brodiemangan.com/">
-<meta property="og:image" content="https://brodiemangan.com/assets/portrait.png">
-<meta property="og:site_name" content="Brodie Mangan">
+  <meta property="og:title" content="Brodie Mangan | Cognitive Psychologist; Neuroscientist">
+  <meta property="og:description"
+    content="Research on physical activity, cognitive fatigue, working memory, and brain function. PhD Researcher at the University of Stirling.">
+  <meta property="og:url" content="https://brodiemangan.com/">
+  <meta property="og:image" content="https://brodiemangan.com/assets/portrait.png">
+  <meta property="og:site_name" content="Brodie Mangan">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Brodie Mangan | Cognitive Psychologist; Neuroscientist">
-<meta name="twitter:description" content="Research on physical activity, cognitive fatigue, working memory, and brain function. PhD Researcher at the University of Stirling.">
-<meta name="twitter:image" content="https://brodiemangan.com/assets/portrait.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Brodie Mangan | Cognitive Psychologist; Neuroscientist">
+  <meta name="twitter:description"
+    content="Research on cognitive fatigue; working memory; and the WAND protocol; PhD Researcher at the University of Stirling.">
+  <meta name="twitter:image" content="https://brodiemangan.com/assets/portrait.png">
 
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico?v=3">
   <link rel="shortcut icon" href="assets/favicon.ico?v=3">
@@ -48,179 +52,363 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    :root{ --glass-outline: rgba(255,255,255,.08); }
+    :root {
+      --glass-outline: rgba(255, 255, 255, .08);
+    }
 
     /* ------------------------------------------------------------------
        0. Base wallpaper + gentle brightness pulse
     ------------------------------------------------------------------ */
-    body{
-      background:url('assets/background2.png') center/cover fixed no-repeat;
+    body {
+      background: url('assets/background2.png') center/cover fixed no-repeat;
     }
-    body::before{
-      content:"";position:fixed;inset:0;pointer-events:none;
-      background:inherit;mix-blend-mode:screen;
-      filter:saturate(1.25) brightness(1);opacity:.15;
-      animation:pulseBg 8s ease-in-out infinite;
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: inherit;
+      mix-blend-mode: screen;
+      filter: saturate(1.25) brightness(1);
+      opacity: .15;
+      animation: pulseBg 8s ease-in-out infinite;
     }
-    @keyframes pulseBg{0%,100%{opacity:.15}50%{opacity:.35}}
+
+    @keyframes pulseBg {
+
+      0%,
+      100% {
+        opacity: .15
+      }
+
+      50% {
+        opacity: .35
+      }
+    }
 
     /* ------------------------------------------------------------------
        1. Navigation bar + mini underline (only span link width)
     ------------------------------------------------------------------ */
-    .masthead{border-bottom:none;}               /* remove old full-width line */
-
-    .nav{
-      display:flex;gap:1rem;flex-wrap:wrap;
-      position:relative;padding-bottom:.4rem;
-    }
-    .nav::after{                                 /* new short rule */
-      content:"";
-      position:absolute;left:0;bottom:0;
-      width:100%;height:1px;
-      background:var(--glass-outline);
-      box-shadow:0 0 6px 0 var(--glass-outline);
+    .masthead {
+      border-bottom: none;
     }
 
-    .nav a{
-      color:var(--fg);text-decoration:none;
-      transition:color .22s ease,transform .22s ease;
-    }
-    .nav a:hover{color:var(--accent);transform:translateY(-1px)}
+    /* remove old full-width line */
 
-    .dropdown{position:relative}
-    .dropbtn{cursor:pointer}
-    .dropdown-content{
-      display:none;flex-direction:column;position:absolute;top:100%;left:0;
-      background:var(--panel);border:1px solid var(--outline);
-      min-width:140px;z-index:40
+    .nav {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      position: relative;
+      padding-bottom: .4rem;
     }
-    .dropdown-content a{padding:.45rem .8rem;white-space:nowrap}
-    .dropdown-content a:hover{background:rgba(255,255,255,.06)}
-    .dropdown:hover .dropdown-content{display:flex}
+
+    .nav::after {
+      /* new short rule */
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--glass-outline);
+      box-shadow: 0 0 6px 0 var(--glass-outline);
+    }
+
+    .nav a {
+      color: var(--fg);
+      text-decoration: none;
+      transition: color .22s ease, transform .22s ease;
+    }
+
+    .nav a:hover {
+      color: var(--accent);
+      transform: translateY(-1px)
+    }
+
+    .dropdown {
+      position: relative
+    }
+
+    .dropbtn {
+      cursor: pointer
+    }
+
+    .dropdown-content {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--panel);
+      border: 1px solid var(--outline);
+      min-width: 140px;
+      z-index: 40
+    }
+
+    .dropdown-content a {
+      padding: .45rem .8rem;
+      white-space: nowrap
+    }
+
+    .dropdown-content a:hover {
+      background: rgba(255, 255, 255, .06)
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: flex
+    }
 
     /* ------------------------------------------------------------------
        2. Portrait centred
     ------------------------------------------------------------------ */
-    .portrait{display:block;margin:0 auto}
+    .portrait {
+      display: block;
+      margin: 0 auto
+    }
 
     /* ------------------------------------------------------------------
        3. Glassmorphic bio card with glowing edge
     ------------------------------------------------------------------ */
-    .glass{
-      backdrop-filter:blur(12px) saturate(140%);
-      background:rgba(20,24,29,.55);
-      border:1px solid var(--glass-outline);
-      border-radius:18px;padding:2rem 2.2rem;
-      box-shadow:0 8px 22px rgba(0,0,0,.45);
-      animation:cardGlow 6s ease-in-out infinite;
+    .glass {
+      backdrop-filter: blur(12px) saturate(140%);
+      background: rgba(20, 24, 29, .55);
+      border: 1px solid var(--glass-outline);
+      border-radius: 18px;
+      padding: 2rem 2.2rem;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, .45);
+      animation: cardGlow 6s ease-in-out infinite;
     }
-    @keyframes cardGlow{
-      0%,100%{box-shadow:0 8px 22px rgba(0,0,0,.45),0 0 0 0 rgba(0,255,255,.12)}
-      50%    {box-shadow:0 8px 22px rgba(0,0,0,.45),0 0 10px 2px rgba(0,255,255,.22)}
+
+    @keyframes cardGlow {
+
+      0%,
+      100% {
+        box-shadow: 0 8px 22px rgba(0, 0, 0, .45), 0 0 0 0 rgba(0, 255, 255, .12)
+      }
+
+      50% {
+        box-shadow: 0 8px 22px rgba(0, 0, 0, .45), 0 0 10px 2px rgba(0, 255, 255, .22)
+      }
     }
 
     /* ------------------------------------------------------------------
        4. Brain badge: fixed, hover scale, hide ≤1200 px
     ------------------------------------------------------------------ */
-    #brain-badge{
-      position:fixed;top:1rem;right:1rem;z-index:35;
-      width:300px;height:300px;border-radius:50%;overflow:hidden;
-      pointer-events:auto;cursor:grab;transition:transform .25s ease;
+    #brain-badge {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 35;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      overflow: hidden;
+      pointer-events: auto;
+      cursor: grab;
+      transition: transform .25s ease;
     }
-    #brain-badge:hover{transform:scale(1.04)}
-    @media(max-width:1200px){#brain-badge{display:none}}
-    
+
+    #brain-badge:hover {
+      transform: scale(1.04)
+    }
+
+    @media(max-width:1200px) {
+      #brain-badge {
+        display: none
+      }
+    }
+
     /* --- NEW MOBILE NAVIGATION STYLES --- */
-    .mobile-nav-toggle { display: none; }
-    .mobile-nav { display: none; }
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .mobile-nav-toggle {
+      display: none;
+    }
+
+    .mobile-nav {
+      display: none;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
 
     @media (max-width: 900px) {
-        .nav { display: none; }
-        .masthead { justify-content: flex-end; }
-        
-        .mobile-nav-toggle {
-            display: block; background: none; border: none; cursor: pointer;
-            z-index: 1001; padding: .5rem; position: relative; width: 34px; height: 34px;
-        }
-        .hamburger {
-            width: 24px; height: 2px; background: var(--fg); display: block;
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            transition: background 0.2s ease-out;
-        }
-        .hamburger::before, .hamburger::after {
-            content: ''; width: 24px; height: 2px; background: var(--fg); display: block;
-            position: absolute; left: 0;
-            transition: transform 0.2s ease-out, top 0.2s ease-out;
-        }
-        .hamburger::before { top: -8px; }
-        .hamburger::after { top: 8px; }
+      .nav {
+        display: none;
+      }
 
-        body.nav-open .hamburger { background: transparent; }
-        body.nav-open .hamburger::before { transform: rotate(45deg); top: 0; }
-        body.nav-open .hamburger::after { transform: rotate(-45deg); top: 0; }
+      .masthead {
+        justify-content: flex-end;
+      }
 
-        .mobile-nav {
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            position: fixed; top: 0; left: -100%; width: 100%; height: 100vh;
-            background: var(--bg, #0b0d10); z-index: 1000; transition: left 0.3s ease-in-out;
-            gap: 1rem; padding: 1rem; box-sizing: border-box; overflow-y: auto;
-        }
-        body.nav-open .mobile-nav { left: 0; }
-        body.nav-open { overflow: hidden; }
-        
-        .mobile-nav a, .mobile-nav .dropbtn {
-            color: var(--fg); text-decoration: none; font-size: 1.5rem; padding: 0.5rem 1rem;
-            background: none; border: none; font: inherit; cursor: pointer;
-        }
-        .mobile-nav .dropdown { text-align: center; }
-        .mobile-nav .dropdown-content {
-            position: static; background: none; border: none; display: flex; box-shadow: none;
-            align-items: center; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem;
-        }
-        .mobile-nav .dropdown-content a { font-size: 1rem; color: var(--muted); }
+      .mobile-nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+        padding: .5rem;
+        position: relative;
+        width: 34px;
+        height: 34px;
+      }
+
+      .hamburger {
+        width: 24px;
+        height: 2px;
+        background: var(--fg);
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: background 0.2s ease-out;
+      }
+
+      .hamburger::before,
+      .hamburger::after {
+        content: '';
+        width: 24px;
+        height: 2px;
+        background: var(--fg);
+        display: block;
+        position: absolute;
+        left: 0;
+        transition: transform 0.2s ease-out, top 0.2s ease-out;
+      }
+
+      .hamburger::before {
+        top: -8px;
+      }
+
+      .hamburger::after {
+        top: 8px;
+      }
+
+      body.nav-open .hamburger {
+        background: transparent;
+      }
+
+      body.nav-open .hamburger::before {
+        transform: rotate(45deg);
+        top: 0;
+      }
+
+      body.nav-open .hamburger::after {
+        transform: rotate(-45deg);
+        top: 0;
+      }
+
+      .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: var(--bg, #0b0d10);
+        z-index: 1000;
+        transition: left 0.3s ease-in-out;
+        gap: 1rem;
+        padding: 1rem;
+        box-sizing: border-box;
+        overflow-y: auto;
+      }
+
+      body.nav-open .mobile-nav {
+        left: 0;
+      }
+
+      body.nav-open {
+        overflow: hidden;
+      }
+
+      .mobile-nav a,
+      .mobile-nav .dropbtn {
+        color: var(--fg);
+        text-decoration: none;
+        font-size: 1.5rem;
+        padding: 0.5rem 1rem;
+        background: none;
+        border: none;
+        font: inherit;
+        cursor: pointer;
+      }
+
+      .mobile-nav .dropdown {
+        text-align: center;
+      }
+
+      .mobile-nav .dropdown-content {
+        position: static;
+        background: none;
+        border: none;
+        display: flex;
+        box-shadow: none;
+        align-items: center;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .mobile-nav .dropdown-content a {
+        font-size: 1rem;
+        color: var(--muted);
+      }
     }
   </style>
 </head>
+
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-<header class="masthead">
-  <nav class="nav">
-    <a href="index.html" aria-current="page">Home</a>
-    <div class="dropdown">
-      <a class="dropbtn" tabindex="0">Publications ▾</a>
-      <div class="dropdown-content" role="menu">
-        <a role="menuitem" href="papers.html">PAPERS</a>
-        <a role="menuitem" href="preprints.html">PREPRINTS</a>
-        <a role="menuitem" href="in-progress.html">IN-PROGRESS</a>
+  <header class="masthead">
+    <nav class="nav">
+      <a href="index.html" aria-current="page">Home</a>
+      <div class="dropdown">
+        <a class="dropbtn" tabindex="0">Publications ▾</a>
+        <div class="dropdown-content" role="menu">
+          <a role="menuitem" href="papers.html">PAPERS</a>
+          <a role="menuitem" href="preprints.html">PREPRINTS</a>
+          <a role="menuitem" href="in-progress.html">IN-PROGRESS</a>
+        </div>
       </div>
-    </div>
-    <a href="medium.html">Medium</a>
-    <a href="wand.html">WAND Protocol</a>
-    <div class="dropdown">
-      <a class="dropbtn" tabindex="0">Conference Presentations ▾</a>
-      <div class="dropdown-content" role="menu">
-        <a role="menuitem" href="BACN.html">BACN 2025</a>
+      <a href="medium.html">Medium</a>
+      <a href="wand.html">WAND Protocol</a>
+      <div class="dropdown">
+        <a class="dropbtn" tabindex="0">Conference Presentations ▾</a>
+        <div class="dropdown-content" role="menu">
+          <a role="menuitem" href="BACN.html">BACN 2025</a>
+        </div>
       </div>
-    </div>
-    <a href="reading-list.html">Reading List</a>
-    <div class="dropdown">
-      <a class="dropbtn" tabindex="0">CV ▾</a>
-      <div class="dropdown-content">
-        <a href="assets/Brodie_Mangan_CV.pdf" download="Brodie_Mangan_CV.pdf" type="application/pdf">Download PDF</a>
+      <a href="reading-list.html">Reading List</a>
+      <div class="dropdown">
+        <a class="dropbtn" tabindex="0">CV ▾</a>
+        <div class="dropdown-content">
+          <a href="assets/Brodie_Mangan_CV.pdf" download="Brodie_Mangan_CV.pdf" type="application/pdf">Download PDF</a>
+        </div>
       </div>
-    </div>
-    <a href="contact.html">Contact Me</a>
-  </nav>
-  
-  <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
-    <span class="sr-only">Menu</span>
-    <span class="hamburger"></span>
-  </button>
-  <div id="brain-badge" aria-hidden="true"></div>
-</header>
+      <a href="contact.html">Contact Me</a>
+    </nav>
 
-<nav class="mobile-nav" id="mobile-nav">
+    <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
+      <span class="sr-only">Menu</span>
+      <span class="hamburger"></span>
+    </button>
+    <div id="brain-badge" aria-hidden="true"></div>
+  </header>
+
+  <nav class="mobile-nav" id="mobile-nav">
     <a href="index.html" aria-current="page">Home</a>
     <div class="dropdown">
       <button class="dropbtn">Publications</button>
@@ -246,58 +434,71 @@
       </div>
     </div>
     <a href="contact.html">Contact Me</a>
-</nav>
+  </nav>
 
-<main class="grid">
-  <aside class="left" id="main">
-    <img src="assets/portrait.png" alt="Portrait of Brodie Mangan" class="portrait">
+  <main class="grid">
+    <aside class="left" id="main">
+      <img src="assets/portrait.png" alt="Portrait of Brodie Mangan" class="portrait">
 
-    <section class="bio glass">
-      <h1 class="name">Brodie Mangan</h1>
-      <p class="role">Cognitive Psychologist/Neuroscientist; PhD Researcher; University of Stirling</p>
+      <section class="bio glass">
+        <h1 class="name">Brodie Mangan</h1>
+        <p class="role">Cognitive Psychologist/Neuroscientist; PhD Researcher; University of Stirling</p>
 
-      <h2>About</h2>
-      <p>Hello there! I'm Brodie. My research sits at the intersection of physical activity, cognitive fatigue, and brain function. I'm interested in how sustained cognitive effort degrades working memory and executive function, and whether physical activity and environmental interventions can buffer or reverse that decline. These questions matter most during development, when the brain is most responsive to intervention and the consequences of getting it wrong are greatest.</p>
+        <h2>About</h2>
+        <p>Hello there! I'm Brodie. My research sits at the intersection of physical activity, cognitive fatigue, and
+          brain function. I'm interested in how sustained cognitive effort degrades working memory and executive
+          function, and whether physical activity and environmental interventions can buffer or reverse that decline.
+          These questions matter most during development, when the brain is most responsive to intervention and the
+          consequences of getting it wrong are greatest.</p>
 
-      <p>My PhD began with the applied question of whether green space exposure and exercise improve cognitive outcomes. I quickly found that the field lacked the methodological foundations to answer it: most studies never verified genuine fatigue before claiming restoration, and induction paradigms were confounded. Rather than building on unstable ground, I went back to first principles.</p>
+        <p>My PhD began with the applied question of whether green space exposure and exercise improve cognitive
+          outcomes. I quickly found that the field lacked the methodological foundations to answer it: most studies
+          never verified genuine fatigue before claiming restoration, and induction paradigms were confounded. Rather
+          than building on unstable ground, I went back to first principles.</p>
 
-      <p>The result is a self-directed research programme spanning theory, tools, and empirical validation. I developed a neurophysiological framework linking active cognitive fatigue to the breakdown of working memory's oscillatory architecture, built WAND — an open-source adaptive N-back suite that resolves the confounds I identified — and am now running an EEG study testing these predictions directly. In parallel, I wrote a critique of the nature-cognition literature's departure from its own theoretical requirements.</p>
+        <p>The result is a self-directed research programme spanning theory, tools, and empirical validation. I
+          developed a neurophysiological framework linking active cognitive fatigue to the breakdown of working memory's
+          oscillatory architecture, built WAND — an open-source adaptive N-back suite that resolves the confounds I
+          identified — and am now running an EEG study testing these predictions directly. In parallel, I wrote a
+          critique of the nature-cognition literature's departure from its own theoretical requirements.</p>
 
-      <p>Before academia, I served as a paratrooper in the Parachute Regiment and spent over a decade as a personal trainer. I've seen cognitive performance degrade under real-world stress and physical demands, and I bring that practical understanding to the questions I study in the lab.</p>
-    </section>
-  </aside>
-</main>
+        <p>Before academia, I served as a paratrooper in the Parachute Regiment and spent over a decade as a personal
+          trainer. I've seen cognitive performance degrade under real-world stress and physical demands, and I bring
+          that practical understanding to the questions I study in the lab.</p>
+      </section>
+    </aside>
+  </main>
 
-<footer class="site-footer">
-  <ul class="footer-socials">
-    <li>
-      <a href="https://orcid.org/0009-0002-8466-5423" target="_blank" rel="noopener" aria-label="ORCiD Profile">
-        <i class="fa-brands fa-orcid" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li>
-      <a href="https://github.com/brodie-neuro" target="_blank" rel="noopener" aria-label="GitHub Profile">
-        <i class="fa-brands fa-github" aria-hidden="true"></i>
-      </a>
-    </li>
-  </ul>
-  <p>© <span id="y"></span> Brodie Mangan • GitHub Pages</p>
-</footer>
+  <footer class="site-footer">
+    <ul class="footer-socials">
+      <li>
+        <a href="https://orcid.org/0009-0002-8466-5423" target="_blank" rel="noopener" aria-label="ORCiD Profile">
+          <i class="fa-brands fa-orcid" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/brodie-neuro" target="_blank" rel="noopener" aria-label="GitHub Profile">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+        </a>
+      </li>
+    </ul>
+    <p>© <span id="y"></span> Brodie Mangan • GitHub Pages</p>
+  </footer>
 
-<script>
-document.getElementById('y').textContent = new Date().getFullYear();
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
 
-const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-const body = document.querySelector('body');
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const body = document.querySelector('body');
 
-mobileNavToggle.addEventListener('click', () => {
-    const isExpanded = mobileNavToggle.getAttribute('aria-expanded') === 'true';
-    mobileNavToggle.setAttribute('aria-expanded', !isExpanded);
-    body.classList.toggle('nav-open');
-});
-</script>
+    mobileNavToggle.addEventListener('click', () => {
+      const isExpanded = mobileNavToggle.getAttribute('aria-expanded') === 'true';
+      mobileNavToggle.setAttribute('aria-expanded', !isExpanded);
+      body.classList.toggle('nav-open');
+    });
+  </script>
 
-<script type="importmap">
+  <script type="importmap">
 {
   "imports": {
     "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
@@ -305,89 +506,90 @@ mobileNavToggle.addEventListener('click', () => {
 }
 </script>
 
-<script type="module">
-import * as THREE from 'three';
-import { GLTFLoader } from 'https://unpkg.com/three@0.160.0/examples/jsm/loaders/GLTFLoader.js';
-import { OrbitControls } from 'https://unpkg.com/three@0.160.0/examples/jsm/controls/OrbitControls.js';
+  <script type="module">
+    import * as THREE from 'three';
+    import { GLTFLoader } from 'https://unpkg.com/three@0.160.0/examples/jsm/loaders/GLTFLoader.js';
+    import { OrbitControls } from 'https://unpkg.com/three@0.160.0/examples/jsm/controls/OrbitControls.js';
 
-if(document.getElementById('brain-badge')) {
-    const mount   = document.getElementById('brain-badge');
-    const scene   = new THREE.Scene();
-    const camera  = new THREE.PerspectiveCamera(45, mount.clientWidth/mount.clientHeight, 0.1, 100);
-    camera.position.set(0, 0, 3.6);
+    if (document.getElementById('brain-badge')) {
+      const mount = document.getElementById('brain-badge');
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(45, mount.clientWidth / mount.clientHeight, 0.1, 100);
+      camera.position.set(0, 0, 3.6);
 
-    const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:false });
-    renderer.setSize(mount.clientWidth, mount.clientHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
-    renderer.setClearColor(0x14181d);
-    renderer.toneMappingExposure = 1.4;
-    mount.appendChild(renderer.domElement);
+      const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+      renderer.setSize(mount.clientWidth, mount.clientHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setClearColor(0x14181d);
+      renderer.toneMappingExposure = 1.4;
+      mount.appendChild(renderer.domElement);
 
-    // lights
-    scene.add(new THREE.AmbientLight(0xffffff,1.1));
-    scene.add(new THREE.HemisphereLight(0xffe1ff,0x220022,0.8));
-    const dir = new THREE.DirectionalLight(0xffffff,1.4);
-    dir.position.set(2,5,5); scene.add(dir);
+      // lights
+      scene.add(new THREE.AmbientLight(0xffffff, 1.1));
+      scene.add(new THREE.HemisphereLight(0xffe1ff, 0x220022, 0.8));
+      const dir = new THREE.DirectionalLight(0xffffff, 1.4);
+      dir.position.set(2, 5, 5); scene.add(dir);
 
-    // controls
-    const controls = new OrbitControls(camera, renderer.domElement);
-    controls.enableZoom = false;
-    controls.enablePan  = false;
-    controls.enableDamping = true;
-    controls.enabled = false;
+      // controls
+      const controls = new OrbitControls(camera, renderer.domElement);
+      controls.enableZoom = false;
+      controls.enablePan = false;
+      controls.enableDamping = true;
+      controls.enabled = false;
 
-    // colour morph targets
-    const cHealthy  = new THREE.Color('#00cfff');
-    const cFatigued = new THREE.Color('#ff6b00');
-    const eHealthy  = new THREE.Color('#0090ff');
-    const eFatigued = new THREE.Color('#550000');
+      // colour morph targets
+      const cHealthy = new THREE.Color('#00cfff');
+      const cFatigued = new THREE.Color('#ff6b00');
+      const eHealthy = new THREE.Color('#0090ff');
+      const eFatigued = new THREE.Color('#550000');
 
-    let materials = [];
-    let autoRotate = true;
+      let materials = [];
+      let autoRotate = true;
 
-    // load brain
-    new GLTFLoader().load('./assets/brain.glb', gltf=>{
-      const brain = gltf.scene;
-      brain.scale.set(1,1,1);
-      brain.position.y = -0.1;
-      scene.add(brain);
+      // load brain
+      new GLTFLoader().load('./assets/brain.glb', gltf => {
+        const brain = gltf.scene;
+        brain.scale.set(1, 1, 1);
+        brain.position.y = -0.1;
+        scene.add(brain);
 
-      brain.traverse(c=>{ if(c.isMesh) materials.push(c.material); });
-      animate();
-    });
-
-    // hover handlers
-    mount.addEventListener('pointerenter', ()=>{ autoRotate=false; controls.enabled=true; });
-    mount.addEventListener('pointerleave', ()=>{ controls.enabled=false; autoRotate=true; });
-
-    // resize
-    window.addEventListener('resize', ()=>{
-        if (mount && mount.clientWidth > 0 && mount.clientHeight > 0) {
-            const {clientWidth:w, clientHeight:h}=mount;
-            camera.aspect = w/h; camera.updateProjectionMatrix();
-            renderer.setSize(w,h);
-        }
-    });
-
-    // animation loop
-    function animate(){
-      requestAnimationFrame(animate);
-      if(autoRotate) scene.rotation.y += 0.005;
-      controls.update();
-
-      const t = (Math.sin(Date.now()*0.0008)+1)/2;
-      materials.forEach(m=>{
-        m.color.copy(cHealthy).lerp(cFatigued,t);
-        m.emissive.copy(eHealthy).lerp(eFatigued,t);
-        m.emissiveIntensity = 0.3*(1-t);
-        m.roughness = 0.15 + t*0.55;
-        m.metalness = 0.6  - t*0.5;
+        brain.traverse(c => { if (c.isMesh) materials.push(c.material); });
+        animate();
       });
-      renderer.toneMappingExposure = 1.4 - t*0.4;
 
-      renderer.render(scene, camera);
+      // hover handlers
+      mount.addEventListener('pointerenter', () => { autoRotate = false; controls.enabled = true; });
+      mount.addEventListener('pointerleave', () => { controls.enabled = false; autoRotate = true; });
+
+      // resize
+      window.addEventListener('resize', () => {
+        if (mount && mount.clientWidth > 0 && mount.clientHeight > 0) {
+          const { clientWidth: w, clientHeight: h } = mount;
+          camera.aspect = w / h; camera.updateProjectionMatrix();
+          renderer.setSize(w, h);
+        }
+      });
+
+      // animation loop
+      function animate() {
+        requestAnimationFrame(animate);
+        if (autoRotate) scene.rotation.y += 0.005;
+        controls.update();
+
+        const t = (Math.sin(Date.now() * 0.0008) + 1) / 2;
+        materials.forEach(m => {
+          m.color.copy(cHealthy).lerp(cFatigued, t);
+          m.emissive.copy(eHealthy).lerp(eFatigued, t);
+          m.emissiveIntensity = 0.3 * (1 - t);
+          m.roughness = 0.15 + t * 0.55;
+          m.metalness = 0.6 - t * 0.5;
+        });
+        renderer.toneMappingExposure = 1.4 - t * 0.4;
+
+        renderer.render(scene, camera);
+      }
     }
-}
-</script>
+  </script>
 </body>
+
 </html>

@@ -1,23 +1,25 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="theme-color" content="#0b0d10">
   <title>Brodie Mangan | Papers</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Peer-reviewed publications from Brodie Mangan, Cognitive Neuroscientist.">
-  
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Papers | Brodie Mangan">
-<meta property="og:description" content="Peer-reviewed publications in cognitive and environmental psychology, and neuroscience.">
-<meta property="og:url" content="https://brodiemangan.com/papers.html">
-<meta property="og:image" content="https://brodiemangan.com/assets/portrait.png">
-<meta property="og:site_name" content="Brodie Mangan">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Papers | Brodie Mangan">
-<meta name="twitter:description" content="Peer-reviewed publications in cognitive psychology and neuroscience.">
-<meta name="twitter:image" content="https://brodiemangan.com/assets/portrait.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Papers | Brodie Mangan">
+  <meta property="og:description"
+    content="Peer-reviewed publications in cognitive and environmental psychology, and neuroscience.">
+  <meta property="og:url" content="https://brodiemangan.com/papers.html">
+  <meta property="og:image" content="https://brodiemangan.com/assets/portrait.png">
+  <meta property="og:site_name" content="Brodie Mangan">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Papers | Brodie Mangan">
+  <meta name="twitter:description" content="Peer-reviewed publications in cognitive psychology and neuroscience.">
+  <meta name="twitter:image" content="https://brodiemangan.com/assets/portrait.png">
 
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico?v=3">
@@ -26,20 +28,39 @@
   <link rel="canonical" href="https://brodiemangan.com/papers.html">
 
   <style>
-    :root{ --glass-outline: rgba(255,255,255,.08); }
+    :root {
+      --glass-outline: rgba(255, 255, 255, .08);
+    }
 
     /* Base styles */
-    body{
-      background:url('assets/background2.png') center/cover fixed no-repeat;
+    body {
+      background: url('assets/background2.png') center/cover fixed no-repeat;
     }
-    body::before{
-      content:"";position:fixed;inset:0;pointer-events:none;
-      background:inherit;mix-blend-mode:screen;
-      filter:saturate(1.25) brightness(1);opacity:.15;
-      animation:pulseBg 8s ease-in-out infinite;
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: inherit;
+      mix-blend-mode: screen;
+      filter: saturate(1.25) brightness(1);
+      opacity: .15;
+      animation: pulseBg 8s ease-in-out infinite;
     }
-    @keyframes pulseBg{0%,100%{opacity:.15}50%{opacity:.35}}
-    
+
+    @keyframes pulseBg {
+
+      0%,
+      100% {
+        opacity: .15
+      }
+
+      50% {
+        opacity: .35
+      }
+    }
+
     /* Header with icon layout */
     .page-header {
       display: flex;
@@ -48,137 +69,250 @@
       gap: 1.5rem;
       margin-bottom: 1rem;
     }
+
     .page-header h1 {
       margin: 0;
     }
+
     .header-icon {
       width: 96px;
       height: auto;
       flex-shrink: 0;
     }
-    
+
     /* STYLES FOR PUBLICATIONS */
     .publication-list {
-        list-style: none;
-        padding: 0;
-        margin-top: 1.5rem;
+      list-style: none;
+      padding: 0;
+      margin-top: 1.5rem;
     }
+
     .publication-list li {
-        margin-bottom: 1.75rem;
-        line-height: 1.6;
+      margin-bottom: 1.75rem;
+      line-height: 1.6;
     }
+
     .publication-list .authors {
-        display: block;
-        font-weight: bold;
+      display: block;
+      font-weight: bold;
     }
+
     .publication-list .title {
-        display: block;
-        font-style: italic;
-        margin-top: 0.25rem;
+      display: block;
+      font-style: italic;
+      margin-top: 0.25rem;
     }
+
     .publication-list .details {
-        display: block;
-        font-size: 0.9rem;
-        color: #ccc;
-        margin-top: 0.25rem;
+      display: block;
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-top: 0.25rem;
     }
+
     .publication-list .details a {
-        color: var(--accent);
-        text-decoration: underline;
-        font-weight: bold;
+      color: var(--accent);
+      text-decoration: underline;
+      font-weight: bold;
     }
 
     /* --- NEW MOBILE NAVIGATION STYLES --- */
-    .mobile-nav-toggle { display: none; }
-    .mobile-nav { display: none; }
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .mobile-nav-toggle {
+      display: none;
+    }
+
+    .mobile-nav {
+      display: none;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
 
     @media (max-width: 900px) {
-        .nav { display: none; }
-        .masthead { justify-content: flex-end; padding-bottom: 0; border-bottom: none; } /* Adjust masthead for mobile */
-        
-        .mobile-nav-toggle {
-            display: block; background: none; border: none; cursor: pointer;
-            z-index: 1001; padding: .5rem; position: relative; width: 34px; height: 34px;
-        }
-        .hamburger {
-            width: 24px; height: 2px; background: var(--fg, #e9eef3); display: block;
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            transition: background 0.2s ease-out;
-        }
-        .hamburger::before, .hamburger::after {
-            content: ''; width: 24px; height: 2px; background: var(--fg, #e9eef3); display: block;
-            position: absolute; left: 0;
-            transition: transform 0.2s ease-out, top 0.2s ease-out;
-        }
-        .hamburger::before { top: -8px; }
-        .hamburger::after { top: 8px; }
+      .nav {
+        display: none;
+      }
 
-        body.nav-open .hamburger { background: transparent; }
-        body.nav-open .hamburger::before { transform: rotate(45deg); top: 0; }
-        body.nav-open .hamburger::after { transform: rotate(-45deg); top: 0; }
+      .masthead {
+        justify-content: flex-end;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
 
-        .mobile-nav {
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            position: fixed; top: 0; left: -100%; width: 100%; height: 100vh;
-            background: var(--bg, #0b0d10); z-index: 1000; transition: left 0.3s ease-in-out;
-            gap: 1rem; padding: 1rem; box-sizing: border-box; overflow-y: auto;
-        }
-        body.nav-open .mobile-nav { left: 0; }
-        body.nav-open { overflow: hidden; }
-        
-        .mobile-nav a, .mobile-nav .dropbtn {
-            color: var(--fg, #e9eef3); text-decoration: none; font-size: 1.5rem; padding: 0.5rem 1rem;
-            background: none; border: none; font: inherit; cursor: pointer;
-        }
-        .mobile-nav .dropdown { text-align: center; }
-        .mobile-nav .dropdown-content {
-            position: static; background: none; border: none; display: flex; box-shadow: none;
-            align-items: center; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem;
-        }
-        .mobile-nav .dropdown-content a { font-size: 1rem; color: var(--muted, #9aa6b2); }
-        .page-header { flex-direction: column; align-items: flex-start; }
+      /* Adjust masthead for mobile */
+
+      .mobile-nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+        padding: .5rem;
+        position: relative;
+        width: 34px;
+        height: 34px;
+      }
+
+      .hamburger {
+        width: 24px;
+        height: 2px;
+        background: var(--fg, #e9eef3);
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: background 0.2s ease-out;
+      }
+
+      .hamburger::before,
+      .hamburger::after {
+        content: '';
+        width: 24px;
+        height: 2px;
+        background: var(--fg, #e9eef3);
+        display: block;
+        position: absolute;
+        left: 0;
+        transition: transform 0.2s ease-out, top 0.2s ease-out;
+      }
+
+      .hamburger::before {
+        top: -8px;
+      }
+
+      .hamburger::after {
+        top: 8px;
+      }
+
+      body.nav-open .hamburger {
+        background: transparent;
+      }
+
+      body.nav-open .hamburger::before {
+        transform: rotate(45deg);
+        top: 0;
+      }
+
+      body.nav-open .hamburger::after {
+        transform: rotate(-45deg);
+        top: 0;
+      }
+
+      .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: var(--bg, #0b0d10);
+        z-index: 1000;
+        transition: left 0.3s ease-in-out;
+        gap: 1rem;
+        padding: 1rem;
+        box-sizing: border-box;
+        overflow-y: auto;
+      }
+
+      body.nav-open .mobile-nav {
+        left: 0;
+      }
+
+      body.nav-open {
+        overflow: hidden;
+      }
+
+      .mobile-nav a,
+      .mobile-nav .dropbtn {
+        color: var(--fg, #e9eef3);
+        text-decoration: none;
+        font-size: 1.5rem;
+        padding: 0.5rem 1rem;
+        background: none;
+        border: none;
+        font: inherit;
+        cursor: pointer;
+      }
+
+      .mobile-nav .dropdown {
+        text-align: center;
+      }
+
+      .mobile-nav .dropdown-content {
+        position: static;
+        background: none;
+        border: none;
+        display: flex;
+        box-shadow: none;
+        align-items: center;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .mobile-nav .dropdown-content a {
+        font-size: 1rem;
+        color: var(--muted, #9aa6b2);
+      }
+
+      .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
+
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-<header class="masthead">
-  <nav class="nav">
-    <a href="index.html">Home</a>
-    <div class="dropdown">
-      <a class="dropbtn" tabindex="0">Publications ▾</a>
-      <div class="dropdown-content" role="menu">
-        <a role="menuitem" href="papers.html" aria-current="page">PAPERS</a>
-        <a role="menuitem" href="preprints.html">PREPRINTS</a>
-        <a role="menuitem" href="in-progress.html">IN-PROGRESS</a>
+  <header class="masthead">
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <a class="dropbtn" tabindex="0">Publications ▾</a>
+        <div class="dropdown-content" role="menu">
+          <a role="menuitem" href="papers.html" aria-current="page">PAPERS</a>
+          <a role="menuitem" href="preprints.html">PREPRINTS</a>
+          <a role="menuitem" href="in-progress.html">IN-PROGRESS</a>
+        </div>
       </div>
-    </div>
-    <a href="medium.html">Medium</a>
-    <a href="wand.html">WAND Protocol</a>
-    <div class="dropdown">
-      <a class="dropbtn" tabindex="0">Conference Presentations ▾</a>
-      <div class="dropdown-content" role="menu">
-        <a role="menuitem" href="BACN.html">BACN 2025</a>
+      <a href="medium.html">Medium</a>
+      <a href="wand.html">WAND Protocol</a>
+      <div class="dropdown">
+        <a class="dropbtn" tabindex="0">Conference Presentations ▾</a>
+        <div class="dropdown-content" role="menu">
+          <a role="menuitem" href="BACN.html">BACN 2025</a>
+        </div>
       </div>
-    </div>
-    <a href="reading-list.html">Reading List</a>
-    <div class="dropdown">
-      <a class="dropbtn" tabindex="0">CV ▾</a>
-      <div class="dropdown-content">
-        <a href="assets/Brodie_Mangan_CV.pdf" download="Brodie_Mangan_CV.pdf" type="application/pdf">Download PDF</a>
+      <a href="reading-list.html">Reading List</a>
+      <div class="dropdown">
+        <a class="dropbtn" tabindex="0">CV ▾</a>
+        <div class="dropdown-content">
+          <a href="assets/Brodie_Mangan_CV.pdf" download="Brodie_Mangan_CV.pdf" type="application/pdf">Download PDF</a>
+        </div>
       </div>
-    </div>
-    <a href="contact.html">Contact Me</a>
-  </nav>
+      <a href="contact.html">Contact Me</a>
+    </nav>
 
-  <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
-    <span class="sr-only">Menu</span>
-    <span class="hamburger"></span>
-  </button>
-</header>
+    <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
+      <span class="sr-only">Menu</span>
+      <span class="hamburger"></span>
+    </button>
+  </header>
 
-<nav class="mobile-nav" id="mobile-nav">
+  <nav class="mobile-nav" id="mobile-nav">
     <a href="index.html">Home</a>
     <div class="dropdown">
       <button class="dropbtn" aria-current="page">Publications</button>
@@ -204,57 +338,69 @@
       </div>
     </div>
     <a href="contact.html">Contact Me</a>
-</nav>
+  </nav>
 
-<main class="grid" id="main">
-  <section class="glass">
-    <div class="page-header">
+  <main class="grid" id="main">
+    <section class="glass">
+      <div class="page-header">
         <h1>Peer-Reviewed Papers</h1>
         <img src="assets/reviewed.png" alt="Peer-reviewed icon" class="header-icon">
-    </div>
-    <p>This section lists published, peer-reviewed articles.</p>
+      </div>
+      <p>This section lists published, peer-reviewed articles.</p>
 
-    <ul class="publication-list">
+      <ul class="publication-list">
+        <li>
+          <span class="authors">Mangan, B. E.</span>
+          <span class="title">Operational Drift: Why Validated Fatigue Induction is the Missing Link in Nature
+            Restoration Research.</span>
+          <span class="details"><em>Frontiers in Psychology</em>, 2026.
+            <a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1780136/abstract"
+              target="_blank" rel="noopener">DOI:
+              10.3389/fpsyg.2026.1780136</a>
+          </span>
+        </li>
+        <li>
+          <span class="authors">Mangan, B. E., &amp; Kourtis, D.</span>
+          <span class="title">The Missing Link: Bridging Cognitive Fatigue with Working Memory.</span>
+          <span class="details"><em>Journal of Cognitive Neuroscience</em>, 2025.
+            <a href="https://direct.mit.edu/jocn/article-abstract/doi/10.1162/JOCN.a.2398/133446/The-Missing-Link-Bridging-Cognitive-Fatigue-with"
+              target="_blank" rel="noopener">DOI: 10.1162/JOCN.a.2398</a>
+          </span>
+        </li>
+      </ul>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <ul class="footer-socials">
       <li>
-        <span class="authors">Mangan, B. E., &amp; Kourtis, D.</span>
-        <span class="title">The Missing Link: Bridging Cognitive Fatigue with Working Memory</span>
-        <span class="details">Journal of Cognitive Neuroscience, Online Early (2025).
-          <a href="https://doi.org/10.1162/JOCN.a.2398" target="_blank" rel="noopener">DOI: 10.1162/JOCN.a.2398</a>
-        </span>
+        <a href="https://orcid.org/0009-0002-8466-5423" target="_blank" rel="noopener" aria-label="ORCiD Profile">
+          <i class="fa-brands fa-orcid" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/brodie-neuro" target="_blank" rel="noopener" aria-label="GitHub Profile">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+        </a>
       </li>
     </ul>
+    <p>© <span id="y"></span> Brodie Mangan • GitHub Pages</p>
+  </footer>
 
-  </section>
-</main>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
 
-<footer class="site-footer">
-  <ul class="footer-socials">
-    <li>
-      <a href="https://orcid.org/0009-0002-8466-5423" target="_blank" rel="noopener" aria-label="ORCiD Profile">
-        <i class="fa-brands fa-orcid" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li>
-      <a href="https://github.com/brodie-neuro" target="_blank" rel="noopener" aria-label="GitHub Profile">
-        <i class="fa-brands fa-github" aria-hidden="true"></i>
-      </a>
-    </li>
-  </ul>
-  <p>© <span id="y"></span> Brodie Mangan • GitHub Pages</p>
-</footer>
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const body = document.querySelector('body');
 
-<script>
-document.getElementById('y').textContent = new Date().getFullYear();
-
-const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-const body = document.querySelector('body');
-
-mobileNavToggle.addEventListener('click', () => {
-    const isExpanded = mobileNavToggle.getAttribute('aria-expanded') === 'true';
-    mobileNavToggle.setAttribute('aria-expanded', !isExpanded);
-    body.classList.toggle('nav-open');
-});
-</script>
+    mobileNavToggle.addEventListener('click', () => {
+      const isExpanded = mobileNavToggle.getAttribute('aria-expanded') === 'true';
+      mobileNavToggle.setAttribute('aria-expanded', !isExpanded);
+      body.classList.toggle('nav-open');
+    });
+  </script>
 
 </body>
+
 </html>
