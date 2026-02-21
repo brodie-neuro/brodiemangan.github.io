@@ -12,6 +12,15 @@
 /* Base */
 *{box-sizing:border-box}
 html,body{height:100%}
+
+/* Elegant section dividers */
+hr.section-divider {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--glass-outline) 15%, var(--glass-outline) 85%, transparent 100%);
+  margin: 1.5rem 0 2rem;
+}
+
 body{
   margin:0;
   font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
