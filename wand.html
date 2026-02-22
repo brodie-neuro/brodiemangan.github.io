@@ -1,27 +1,30 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="theme-color" content="#0b0d10">
   <title>Brodie Mangan | WAND Protocol</title>
 
   <!-- Mobile viewport with user zoom enabled -->
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1,
+  <meta name="viewport" content="width=device-width, initial-scale=1,
                  minimum-scale=0.5, maximum-scale=5,
                  user-scalable=yes, viewport-fit=cover">
 
-  <meta name="description" content="An overview of the WAND Protocol, an open-source software suite for inducing and measuring active cognitive fatigue.">
+  <meta name="description"
+    content="An overview of the WAND Protocol, an open-source software suite for inducing and measuring active cognitive fatigue.">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="The WAND Protocol | Brodie Mangan">
-  <meta property="og:description" content="An open-source, modular software suite designed to induce active cognitive fatigue with methodological precision.">
+  <meta property="og:description"
+    content="An open-source, modular software suite designed to induce active cognitive fatigue with methodological precision.">
   <meta property="og:url" content="https://brodiemangan.com/wand.html">
   <meta property="og:image" content="https://brodiemangan.com/assets/portrait.png">
   <meta property="og:site_name" content="Brodie Mangan">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The WAND Protocol | Brodie Mangan">
-  <meta name="twitter:description" content="An open-source, modular software suite designed to induce active cognitive fatigue with methodological precision.">
+  <meta name="twitter:description"
+    content="An open-source, modular software suite designed to induce active cognitive fatigue with methodological precision.">
   <meta name="twitter:image" content="https://brodiemangan.com/assets/portrait.png">
 
   <link rel="stylesheet" href="style.css">
@@ -59,8 +62,14 @@
 
   <style>
     /* ===== Mobile-safe reset and background ===== */
-    *, *::before, *::after { box-sizing: border-box; }
-    html, body {
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
       margin: 0;
       padding: 0;
       width: 100%;
@@ -70,36 +79,52 @@
       background: #0b0d10;
       color: var(--fg, #e8eef6);
     }
+
     /* Background image sits next to this HTML file */
-    body{
+    body {
       background-image: url('background2.png');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      background-attachment: fixed; /* desktop look */
+      background-attachment: fixed;
+      /* desktop look */
     }
+
     /* iOS safety on small screens */
-    @media (max-width: 900px){
-      body{ background-attachment: scroll; background-position: center top; }
+    @media (max-width: 900px) {
+      body {
+        background-attachment: scroll;
+        background-position: center top;
+      }
     }
 
     /* Make embedded media fluid without affecting audio controls */
-    img, video, canvas, iframe { max-width: 100%; height: auto; }
-    a { word-break: break-word; }
+    img,
+    video,
+    canvas,
+    iframe {
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      word-break: break-word;
+    }
 
     /* ===== Page layout ===== */
-    main.grid{
+    main.grid {
       display: block;
       width: min(100%, 960px);
       margin-inline: auto;
       padding: clamp(12px, 3vw, 24px);
     }
-    .glass{
+
+    .glass {
       width: 100%;
       padding: clamp(16px, 4vw, 32px);
       border-radius: 14px;
-      background: rgba(18,22,27,0.55);
-      border: 1px solid var(--glass-outline, rgba(255,255,255,.08));
+      background: rgba(18, 22, 27, 0.55);
+      border: 1px solid var(--glass-outline, rgba(255, 255, 255, .08));
       backdrop-filter: blur(6px);
     }
 
@@ -111,14 +136,26 @@
       gap: 2.5rem;
       margin-bottom: 2rem;
     }
+
     .wand-grid-text .role {
       font-size: 1.1rem;
       color: var(--muted, #9aa6b2);
       margin-top: 0.5rem;
     }
-    .wand-grid-text p { max-width: 75ch; }
-    .wand-grid-image { text-align: center; }
-    .wand-icon { width: 240px; max-width: 100%; height: auto; }
+
+    .wand-grid-text p {
+      max-width: 75ch;
+    }
+
+    .wand-grid-image {
+      text-align: center;
+    }
+
+    .wand-icon {
+      width: 240px;
+      max-width: 100%;
+      height: auto;
+    }
 
     /* ===== Features ===== */
     .features-grid {
@@ -127,16 +164,24 @@
       gap: 1.5rem;
       margin-top: 2.5rem;
       padding-top: 1.5rem;
-      border-top: 1px solid var(--glass-outline, rgba(255,255,255,.08));
+      border-top: 1px solid var(--glass-outline, rgba(255, 255, 255, .08));
     }
-    .feature-item h3 { color: var(--accent, #7bdff6); margin-bottom: 0.5rem; }
-    .feature-item p { font-size: 0.95rem; color: var(--muted, #9aa6b2); }
+
+    .feature-item h3 {
+      color: var(--accent, #7bdff6);
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-item p {
+      font-size: 0.95rem;
+      color: var(--muted, #9aa6b2);
+    }
 
     .video-placeholder {
       width: 100%;
       aspect-ratio: 16 / 9;
-      background-color: rgba(0,0,0,0.3);
-      border: 1px dashed var(--outline, rgba(255,255,255,.2));
+      background-color: rgba(0, 0, 0, 0.3);
+      border: 1px dashed var(--outline, rgba(255, 255, 255, .2));
       border-radius: 8px;
       display: flex;
       align-items: center;
@@ -155,13 +200,14 @@
       gap: 1rem;
       margin: 2.5rem 0;
       padding-top: 1.5rem;
-      border-top: 1px solid var(--glass-outline, rgba(255,255,255,.08));
+      border-top: 1px solid var(--glass-outline, rgba(255, 255, 255, .08));
     }
+
     .cta-buttons a,
     .cta-buttons a:visited {
       display: inline-block;
       padding: 0.75rem 1.5rem;
-      background-color: rgba(78,168,255,0.15);
+      background-color: rgba(78, 168, 255, 0.15);
       border: 1px solid var(--accent, #7bdff6);
       border-radius: 8px;
       text-decoration: none;
@@ -169,13 +215,17 @@
       font-weight: bold;
       transition: background-color 0.2s ease, color 0.2s ease;
     }
-    .cta-buttons a:hover { background-color: var(--accent, #7bdff6); color: #14181d; }
+
+    .cta-buttons a:hover {
+      background-color: var(--accent, #7bdff6);
+      color: #14181d;
+    }
 
     .cite-box {
-      background-color: rgba(0,0,0,0.2);
+      background-color: rgba(0, 0, 0, 0.2);
       padding: 1.5rem;
       border-radius: 8px;
-      border: 1px solid var(--outline, rgba(255,255,255,.2));
+      border: 1px solid var(--outline, rgba(255, 255, 255, .2));
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
       font-size: 0.9rem;
       line-height: 1.6;
@@ -184,56 +234,164 @@
     }
 
     /* ===== Navigation: single menu per breakpoint ===== */
-    .mobile-nav-toggle { display: none; }
-    .mobile-nav { display: none; } /* hide drawer on desktop */
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
-    header.masthead { position: relative; z-index: 1002; }
-    .nav a { color: var(--fg, #e8eef6); text-decoration: none; }
+    .mobile-nav-toggle {
+      display: none;
+    }
+
+    .mobile-nav {
+      display: none;
+    }
+
+    /* hide drawer on desktop */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+
+    header.masthead {
+      position: relative;
+      z-index: 1002;
+    }
+
+    .nav a {
+      color: var(--fg, #e8eef6);
+      text-decoration: none;
+    }
 
     @media (max-width: 900px) {
-      .nav { display: none; }
-      .masthead { display: flex; justify-content: flex-end; padding-bottom: 0; border-bottom: none; }
+      .nav {
+        display: none;
+      }
+
+      .masthead {
+        display: flex;
+        justify-content: flex-end;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
 
       .mobile-nav-toggle {
-        display: block; background: none; border: none; cursor: pointer;
-        z-index: 1003; padding: .5rem; position: relative; width: 34px; height: 34px;
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1003;
+        padding: .5rem;
+        position: relative;
+        width: 34px;
+        height: 34px;
       }
+
       .hamburger {
-        width: 24px; height: 2px; background: var(--fg, #e9eef3); display: block;
-        position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+        width: 24px;
+        height: 2px;
+        background: var(--fg, #e9eef3);
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         transition: background 0.2s ease-out;
       }
-      .hamburger::before, .hamburger::after {
-        content: ''; width: 24px; height: 2px; background: var(--fg, #e9eef3); display: block;
-        position: absolute; left: 0; transition: transform 0.2s ease-out, top 0.2s ease-out;
-      }
-      .hamburger::before { top: -8px; }
-      .hamburger::after  { top:  8px; }
-      body.nav-open .hamburger { background: transparent; }
-      body.nav-open .hamburger::before { transform: rotate(45deg); top: 0; }
-      body.nav-open .hamburger::after  { transform: rotate(-45deg); top: 0; }
 
-      nav.mobile-nav{
-        position: fixed; inset: 0; left: -100%;
-        width: 100%; height: 100dvh;
+      .hamburger::before,
+      .hamburger::after {
+        content: '';
+        width: 24px;
+        height: 2px;
+        background: var(--fg, #e9eef3);
+        display: block;
+        position: absolute;
+        left: 0;
+        transition: transform 0.2s ease-out, top 0.2s ease-out;
+      }
+
+      .hamburger::before {
+        top: -8px;
+      }
+
+      .hamburger::after {
+        top: 8px;
+      }
+
+      body.nav-open .hamburger {
+        background: transparent;
+      }
+
+      body.nav-open .hamburger::before {
+        transform: rotate(45deg);
+        top: 0;
+      }
+
+      body.nav-open .hamburger::after {
+        transform: rotate(-45deg);
+        top: 0;
+      }
+
+      nav.mobile-nav {
+        position: fixed;
+        inset: 0;
+        left: -100%;
+        width: 100%;
+        height: 100dvh;
         background: var(--bg, #0b0d10);
-        z-index: 1002; transition: left .3s ease-in-out;
-        display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;
-        padding: 1rem; overflow-y: auto;
+        z-index: 1002;
+        transition: left .3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem;
+        overflow-y: auto;
       }
-      body.nav-open nav.mobile-nav{ left: 0; }
-      body.nav-open { overflow: hidden; }
 
-      .mobile-nav a, .mobile-nav .dropbtn {
-        color: var(--fg, #e9eef3); text-decoration: none; font-size: 1.5rem; padding: 0.5rem 1rem;
-        background: none; border: none; font: inherit; cursor: pointer;
+      body.nav-open nav.mobile-nav {
+        left: 0;
       }
-      .mobile-nav .dropdown { text-align: center; }
+
+      body.nav-open {
+        overflow: hidden;
+      }
+
+      .mobile-nav a,
+      .mobile-nav .dropbtn {
+        color: var(--fg, #e9eef3);
+        text-decoration: none;
+        font-size: 1.5rem;
+        padding: 0.5rem 1rem;
+        background: none;
+        border: none;
+        font: inherit;
+        cursor: pointer;
+      }
+
+      .mobile-nav .dropdown {
+        text-align: center;
+      }
+
       .mobile-nav .dropdown-content {
-        position: static; background: none; border: none; display: flex; box-shadow: none;
-        align-items: center; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem;
+        position: static;
+        background: none;
+        border: none;
+        display: flex;
+        box-shadow: none;
+        align-items: center;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
       }
-      .mobile-nav .dropdown-content a { font-size: 1rem; color: var(--muted, #9aa6b2); }
+
+      .mobile-nav .dropdown-content a {
+        font-size: 1rem;
+        color: var(--muted, #9aa6b2);
+      }
 
       /* Stack hero on small screens */
       .wand-grid {
@@ -242,58 +400,74 @@
         text-align: center;
         margin-bottom: 1.5rem;
       }
-      .wand-grid-image { order: -1; margin-bottom: 0; }
-      .wand-grid-text h1, .wand-grid-text .role { text-align: center; }
-      .wand-grid-text p { text-align: left; max-width: 100%; }
-      .wand-icon { width: 180px; }
+
+      .wand-grid-image {
+        order: -1;
+        margin-bottom: 0;
+      }
+
+      .wand-grid-text h1,
+      .wand-grid-text .role {
+        text-align: center;
+      }
+
+      .wand-grid-text p {
+        text-align: left;
+        max-width: 100%;
+      }
+
+      .wand-icon {
+        width: 180px;
+      }
     }
   </style>
 </head>
+
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-<header class="masthead">
-  <nav class="nav">
-    <a href="index.html">Home</a>
+  <header class="masthead">
+    <nav class="nav">
+      <a href="index.html">Home</a>
 
-    <div class="dropdown">
-      <a class="dropbtn" tabindex="0">Publications ▾</a>
-      <div class="dropdown-content" role="menu">
-        <a role="menuitem" href="papers.html">PAPERS</a>
-        <a role="menuitem" href="preprints.html">PREPRINTS</a>
-        <a role="menuitem" href="in-progress.html">IN-PROGRESS</a>
+      <div class="dropdown">
+        <a class="dropbtn" tabindex="0">Publications ▾</a>
+        <div class="dropdown-content" role="menu">
+          <a role="menuitem" href="papers.html">PAPERS</a>
+          <a role="menuitem" href="preprints.html">PREPRINTS</a>
+          <a role="menuitem" href="in-progress.html">IN-PROGRESS</a>
+        </div>
       </div>
-    </div>
 
-    <a href="medium.html">Medium</a>
-    <a href="wand.html" aria-current="page">WAND Protocol</a>
+      <a href="medium.html">Medium</a>
+      <a href="wand.html" aria-current="page">WAND Protocol</a>
 
-    <div class="dropdown">
-      <a class="dropbtn" tabindex="0">Conference Presentations ▾</a>
-      <div class="dropdown-content" role="menu">
-        <a role="menuitem" href="BACN.html">BACN 2025</a>
+      <div class="dropdown">
+        <a class="dropbtn" tabindex="0">Conference Presentations ▾</a>
+        <div class="dropdown-content" role="menu">
+          <a role="menuitem" href="BACN.html">BACN 2025</a>
+        </div>
       </div>
-    </div>
 
-    <a href="reading-list.html">Reading List</a>
+      <a href="reading-list.html">Reading List</a>
 
-    <div class="dropdown">
-      <a class="dropbtn" tabindex="0">CV ▾</a>
-      <div class="dropdown-content">
-        <a href="assets/Brodie_Mangan_CV.pdf" download="Brodie_Mangan_CV.pdf" type="application/pdf">Download PDF</a>
+      <div class="dropdown">
+        <a class="dropbtn" tabindex="0">CV ▾</a>
+        <div class="dropdown-content">
+          <a href="assets/Brodie_Mangan_CV.pdf" download="Brodie_Mangan_CV.pdf" type="application/pdf">Download PDF</a>
+        </div>
       </div>
-    </div>
 
-    <a href="contact.html">Contact Me</a>
-  </nav>
+      <a href="contact.html">Contact Me</a>
+    </nav>
 
-  <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
-    <span class="sr-only">Menu</span>
-    <span class="hamburger"></span>
-  </button>
-</header>
+    <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
+      <span class="sr-only">Menu</span>
+      <span class="hamburger"></span>
+    </button>
+  </header>
 
-<nav class="mobile-nav" id="mobile-nav">
+  <nav class="mobile-nav" id="mobile-nav">
     <a href="index.html">Home</a>
     <div class="dropdown">
       <button class="dropbtn">Publications</button>
@@ -319,107 +493,126 @@
       </div>
     </div>
     <a href="contact.html">Contact Me</a>
-</nav>
+  </nav>
 
-<main class="grid" id="main">
-  <section class="glass">
+  <main class="grid" id="main">
+    <section class="glass">
 
-    <div class="wand-grid">
-      <div class="wand-grid-text">
-        <h1>The WAND Protocol</h1>
-        <p class="role">An Open-Source Software Suite for Inducing and Measuring Cognitive Fatigue</p>
-        <p>The scientific study of cognitive fatigue is limited by methodological imprecision, with paradigms often unable to distinguish genuine fatigue from confounds like boredom and task learning. This leads to contradictory findings and makes it near impossible to test potential interventions.</p>
-        <p>To overcome these issues, I developed the WAND model, an open source, modular software suite designed to induce cognitive fatigue with high precision.</p>
+      <div class="wand-grid">
+        <div class="wand-grid-text">
+          <h1>The WAND Protocol</h1>
+          <p class="role">An Open-Source Cognitive Fatigue Research Suite Built on PsychoPy</p>
+          <p>WAND is an open-source cognitive fatigue research suite that provides adaptive N-back tasks (Sequential,
+            Spatial, Dual) calibrated to individual performance, a Practice Plateau Protocol to eliminate learning
+            effects, and comprehensive Signal Detection Theory metrics (d′, criterion, hit rate) in every CSV output.
+          </p>
+          <p>No coding required. WAND includes a professional GUI that lets you configure entire experiments visually.
+            Current release: <strong>v1.2.0</strong>.</p>
+        </div>
+        <div class="wand-grid-image">
+          <img src="assets/wand.png" alt="WAND Protocol icon" class="wand-icon">
+        </div>
       </div>
-      <div class="wand-grid-image">
-        <img src="assets/wand.png" alt="WAND Protocol icon" class="wand-icon">
+
+      <div class="features-grid">
+        <div class="feature-item">
+          <h3>🎯 Adaptive Difficulty</h3>
+          <p>Dynamically adjusts task difficulty based on real-time performance to keep each participant in the optimal
+            challenge zone, ensuring sustained cognitive engagement without frustration or disengagement.</p>
+        </div>
+        <div class="feature-item">
+          <h3>📊 Performance Plateauing</h3>
+          <p>Includes a preliminary calibration phase that mitigates task learning effects by ensuring participants
+            reach a stable performance baseline before the main fatigue induction begins.</p>
+        </div>
+        <div class="feature-item">
+          <h3>🔄 Task Variability</h3>
+          <p>Rotates between three complementary non-verbal N-back tasks — Sequential, Spatial, and Dual — to sustain
+            high-effort engagement and counteract monotony-induced passive fatigue.</p>
+        </div>
+        <div class="feature-item">
+          <h3>🧪 Precision Measurement</h3>
+          <p>Full Signal Detection Theory metrics (d′, criterion, hits, false alarms) in all output. Embedded
+            mini-distractors probe inhibitory control under load, providing a pure measure of cognitive decline
+            independent of response bias.</p>
+        </div>
+        <div class="feature-item">
+          <h3>🖥️ GUI Launcher</h3>
+          <p>Multi-page wizard for complete experiment customisation. Includes a visual Block Builder with drag-and-drop
+            interface for experiment design — no scripting required.</p>
+        </div>
+        <div class="feature-item">
+          <h3>🧠 EEG Integration</h3>
+          <p>Built-in EEG trigger support with auto-detection of TriggerBox and parallel port hardware. Run
+            <code>wand-eeg-test</code> to verify your setup before data collection.</p>
+        </div>
       </div>
-    </div>
 
-    <div class="video-placeholder">
-      <p>Video Demonstration Coming Soon</p>
-    </div>
-
-    <div class="features-grid">
-      <div class="feature-item">
-        <h3>Adaptive Difficulty</h3>
-        <p>Dynamically adjusts task difficulty based on real time performance to keep each participant in the optimal challenge zone, ensuring sustained cognitive engagement without frustration or disengagement.</p>
+      <div class="cta-buttons">
+        <a id="cta-github" href="https://github.com/brodie-neuro/WAND-practice-and-fatigue-induction" target="_blank"
+          rel="noopener">View on GitHub</a>
+        <a id="cta-zenodo" href="https://doi.org/10.5281/zenodo.15489704" target="_blank" rel="noopener">Download from
+          Zenodo</a>
+        <a id="cta-joss" href="preprints.html">Read the JOSS Paper</a>
       </div>
-      <div class="feature-item">
-        <h3>Performance Plateauing</h3>
-        <p>Includes a preliminary calibration phase that mitigates task learning effects by ensuring participants reach a stable performance baseline before the main fatigue induction begins.</p>
+
+      <h2>How to Cite</h2>
+      <p>If you use the WAND software in your research, please cite the following publication:</p>
+      <div class="cite-box">
+        Mangan, B. E. (2025). WAND (Working-memory Active-fatigue with N-back Difficulty): A Modular Software Suite for
+        Cognitive Fatigue Research (Version 1.2.0) [Software]. Zenodo. https://doi.org/10.5281/zenodo.15489704
       </div>
-      <div class="feature-item">
-        <h3>Task Variability</h3>
-        <p>Rotates between three complementary non verbal N back tasks, Sequential, Spatial, and Dual, to sustain high effort engagement and counteract monotony induced passive fatigue.</p>
-      </div>
-      <div class="feature-item">
-        <h3>Precision Measurement</h3>
-        <p>Integrates embedded mini distractors to probe inhibitory control under load and uses robust signal detection metrics, d′ and A′, to provide a pure measure of cognitive decline independent of response bias.</p>
-      </div>
-    </div>
 
-    <div class="cta-buttons">
-      <a id="cta-github" href="https://github.com/brodie-neuro/WAND-practice-and-fatigue-induction" target="_blank" rel="noopener">View on GitHub</a>
-      <a id="cta-zenodo" href="https://doi.org/10.5281/zenodo.15489704" target="_blank" rel="noopener">Download from Zenodo</a>
-      <a id="cta-joss" href="preprints.html">Read the JOSS Paper</a>
-    </div>
+    </section>
+  </main>
 
-    <h2>How to Cite</h2>
-    <p>If you use the WAND software in your research, please cite the following publication:</p>
-    <div class="cite-box">
-      Mangan, B. E. (2025). WAND (Working-memory Active-fatigue with N-back Difficulty): A Modular Software Suite for Cognitive Fatigue Research (Version 1.0.2) [Software]. Zenodo. https://doi.org/10.5281/zenodo.15389892
-    </div>
+  <footer class="site-footer">
+    <ul class="footer-socials">
+      <li>
+        <a href="https://orcid.org/0009-0002-8466-5423" target="_blank" rel="noopener" aria-label="ORCiD Profile">
+          <i class="fa-brands fa-orcid" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/brodie-neuro" target="_blank" rel="noopener" aria-label="GitHub Profile">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+        </a>
+      </li>
+    </ul>
+    <p>© <span id="y"></span> Brodie Mangan • GitHub Pages</p>
+  </footer>
 
-  </section>
-</main>
+  <script>
+    // Footer year
+    document.getElementById('y').textContent = new Date().getFullYear();
 
-<footer class="site-footer">
-  <ul class="footer-socials">
-    <li>
-      <a href="https://orcid.org/0009-0002-8466-5423" target="_blank" rel="noopener" aria-label="ORCiD Profile">
-        <i class="fa-brands fa-orcid" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li>
-      <a href="https://github.com/brodie-neuro" target="_blank" rel="noopener" aria-label="GitHub Profile">
-        <i class="fa-brands fa-github" aria-hidden="true"></i>
-      </a>
-    </li>
-  </ul>
-  <p>© <span id="y"></span> Brodie Mangan • GitHub Pages</p>
-</footer>
-
-<script>
-  // Footer year
-  document.getElementById('y').textContent = new Date().getFullYear();
-
-  // Mobile nav toggle
-  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-  const bodyEl = document.body;
-  mobileNavToggle.addEventListener('click', () => {
-    const isExpanded = mobileNavToggle.getAttribute('aria-expanded') === 'true';
-    mobileNavToggle.setAttribute('aria-expanded', String(!isExpanded));
-    bodyEl.classList.toggle('nav-open');
-  });
-
-  // Analytics: track CTA clicks (Plausible, and GA4 if enabled)
-  (function(){
-    function track(name, props){
-      if (window.plausible) window.plausible(name, {props: props || {}});
-      if (window.gtag) window.gtag('event', name.replace(/\s+/g,'_').toLowerCase(), props || {});
-    }
-    const map = [
-      ['#cta-github',  'CTA GitHub'],
-      ['#cta-zenodo',  'CTA Zenodo'],
-      ['#cta-joss',    'CTA JOSS']
-    ];
-    map.forEach(([sel, evt])=>{
-      const el = document.querySelector(sel);
-      if (el) el.addEventListener('click', ()=>track(evt, {href: el.href}));
+    // Mobile nav toggle
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const bodyEl = document.body;
+    mobileNavToggle.addEventListener('click', () => {
+      const isExpanded = mobileNavToggle.getAttribute('aria-expanded') === 'true';
+      mobileNavToggle.setAttribute('aria-expanded', String(!isExpanded));
+      bodyEl.classList.toggle('nav-open');
     });
-  })();
-</script>
+
+    // Analytics: track CTA clicks (Plausible, and GA4 if enabled)
+    (function () {
+      function track(name, props) {
+        if (window.plausible) window.plausible(name, { props: props || {} });
+        if (window.gtag) window.gtag('event', name.replace(/\s+/g, '_').toLowerCase(), props || {});
+      }
+      const map = [
+        ['#cta-github', 'CTA GitHub'],
+        ['#cta-zenodo', 'CTA Zenodo'],
+        ['#cta-joss', 'CTA JOSS']
+      ];
+      map.forEach(([sel, evt]) => {
+        const el = document.querySelector(sel);
+        if (el) el.addEventListener('click', () => track(evt, { href: el.href }));
+      });
+    })();
+  </script>
 
 </body>
+
 </html>
