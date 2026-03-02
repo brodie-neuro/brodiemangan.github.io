@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#0b0d10">
+    <title>Brodie Mangan | Consulting</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description"
+        content="Freelance consulting in EEG methodology, statistical analysis, research methods, and academic editing.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Consulting | Brodie Mangan">
+    <meta property="og:description"
+        content="Freelance consulting in EEG methodology, statistical analysis, research methods, and academic editing.">
+    <meta property="og:url" content="https://brodiemangan.com/consulting.html">
+    <meta property="og:image" content="https://brodiemangan.com/assets/portrait.png">
+    <meta property="og:site_name" content="Brodie Mangan">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Consulting | Brodie Mangan">
+    <meta name="twitter:description"
+        content="Freelance consulting in EEG methodology, statistical analysis, research methods, and academic editing.">
+    <meta name="twitter:image" content="https://brodiemangan.com/assets/portrait.png">
+
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" href="assets/favicon.ico" sizes="any">
+    <link rel="canonical" href="https://brodiemangan.com/consulting.html">
+
+    <style>
+        .glass>p:first-of-type {
+            margin-bottom: 1.25rem
+        }
+
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header h1 {
+            margin: 0;
+        }
+
+        .consulting-contact {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 8px;
+            border-left: 3px solid var(--accent);
+        }
+
+        .consulting-contact a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .consulting-contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- NEW MOBILE NAVIGATION STYLES --- */
+        .mobile-nav-toggle {
+            display: none;
+        }
+
+        .mobile-nav {
+            display: none;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        @media (max-width: 900px) {
+            .nav {
+                display: none;
+            }
+
+            .masthead {
+                justify-content: flex-end;
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+
+            .mobile-nav-toggle {
+                display: block;
+                background: none;
+                border: none;
+                cursor: pointer;
+                z-index: 1001;
+                padding: .5rem;
+                position: relative;
+                width: 34px;
+                height: 34px;
+            }
+
+            .hamburger {
+                width: 24px;
+                height: 2px;
+                background: var(--fg, #e9eef3);
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: background 0.2s ease-out;
+            }
+
+            .hamburger::before,
+            .hamburger::after {
+                content: '';
+                width: 24px;
+                height: 2px;
+                background: var(--fg, #e9eef3);
+                display: block;
+                position: absolute;
+                left: 0;
+                transition: transform 0.2s ease-out, top 0.2s ease-out;
+            }
+
+            .hamburger::before {
+                top: -8px;
+            }
+
+            .hamburger::after {
+                top: 8px;
+            }
+
+            body.nav-open .hamburger {
+                background: transparent;
+            }
+
+            body.nav-open .hamburger::before {
+                transform: rotate(45deg);
+                top: 0;
+            }
+
+            body.nav-open .hamburger::after {
+                transform: rotate(-45deg);
+                top: 0;
+            }
+
+            .mobile-nav {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100vh;
+                background: var(--bg, #0b0d10);
+                z-index: 1000;
+                transition: left 0.3s ease-in-out;
+                gap: 1rem;
+                padding: 1rem;
+                box-sizing: border-box;
+                overflow-y: auto;
+            }
+
+            body.nav-open .mobile-nav {
+                left: 0;
+            }
+
+            body.nav-open {
+                overflow: hidden;
+            }
+
+            .mobile-nav a,
+            .mobile-nav .dropbtn {
+                color: var(--fg, #e9eef3);
+                text-decoration: none;
+                font-size: 1.5rem;
+                padding: 0.5rem 1rem;
+                background: none;
+                border: none;
+                font: inherit;
+                cursor: pointer;
+            }
+
+            .mobile-nav .dropdown {
+                text-align: center;
+            }
+
+            .mobile-nav .dropdown-content {
+                position: static;
+                background: none;
+                border: none;
+                display: flex;
+                box-shadow: none;
+                align-items: center;
+                flex-direction: column;
+                gap: 0.5rem;
+                margin-top: 0.5rem;
+            }
+
+            .mobile-nav .dropdown-content a {
+                font-size: 1rem;
+                color: var(--muted, #9aa6b2);
+            }
+
+            .page-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="masthead">
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <a class="dropbtn" tabindex="0">Publications ▾</a>
+                <div class="dropdown-content" role="menu">
+                    <a role="menuitem" href="papers.html">PAPERS</a>
+                    <a role="menuitem" href="preprints.html">PREPRINTS</a>
+                    <a role="menuitem" href="in-progress.html">IN-PROGRESS</a>
+                </div>
+            </div>
+            <a href="medium.html">Medium</a>
+            <a href="wand.html">WAND Protocol</a>
+            <div class="dropdown">
+                <a class="dropbtn" tabindex="0">Conference Presentations ▾</a>
+                <div class="dropdown-content" role="menu">
+                    <a role="menuitem" href="BACN.html">BACN 2025</a>
+                </div>
+            </div>
+            <a href="reading-list.html">Reading List</a>
+            <div class="dropdown">
+                <a class="dropbtn" tabindex="0">CV ▾</a>
+                <div class="dropdown-content">
+                    <a href="assets/Brodie_Mangan_CV.pdf" download="Brodie_Mangan_CV.pdf"
+                        type="application/pdf">Download PDF</a>
+                </div>
+            </div>
+            <a href="consulting.html" aria-current="page">Consulting</a>
+            <a href="contact.html">Contact Me</a>
+        </nav>
+
+        <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
+            <span class="sr-only">Menu</span>
+            <span class="hamburger"></span>
+        </button>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-nav">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">Publications</button>
+            <div class="dropdown-content" role="menu">
+                <a role="menuitem" href="papers.html">PAPERS</a>
+                <a role="menuitem" href="preprints.html">PREPRINTS</a>
+                <a role="menuitem" href="in-progress.html">IN-PROGRESS</a>
+            </div>
+        </div>
+        <a href="medium.html">Medium</a>
+        <a href="wand.html">WAND Protocol</a>
+        <div class="dropdown">
+            <button class="dropbtn">Conference Presentations</button>
+            <div class="dropdown-content" role="menu">
+                <a role="menuitem" href="BACN.html">BACN 2025</a>
+            </div>
+        </div>
+        <a href="reading-list.html">Reading List</a>
+        <div class="dropdown">
+            <button class="dropbtn">CV</button>
+            <div class="dropdown-content">
+                <a href="assets/Brodie_Mangan_CV.pdf" download>Download PDF</a>
+            </div>
+        </div>
+        <a href="consulting.html" aria-current="page">Consulting</a>
+        <a href="contact.html">Contact Me</a>
+    </nav>
+
+    <main class="grid" id="main">
+        <section class="glass">
+            <div class="page-header">
+                <h1>Consulting & Services</h1>
+            </div>
+
+            <p>I offer freelance consulting in EEG methodology, statistical analysis, research methods, and academic
+                editing. All services are available remotely. Most work is asynchronous &mdash; you send your materials,
+                I deliver within an agreed timeframe. Video consultations available on request.</p>
+
+            <h2>EEG Methodology & Pipeline Consulting</h2>
+            <p>I develop state-of-the-art EEG preprocessing and analysis pipelines. Services include: preprocessing
+                pipeline design and implementation (artifact rejection, ICA, channel interpolation), time-frequency
+                analysis (theta-gamma phase-amplitude coupling, specparam/FOOOF), electrode montage and reference scheme
+                guidance, custom MATLAB/Python scripts, experimental design consultation, and pipeline audits.</p>
+
+            <h2>Statistical Analysis & Consulting</h2>
+            <p>Services include: linear mixed-effects models, power analysis and sample size planning, research design
+                consultation, R and Python statistical programming, APA-formatted results and
+                publication-ready figures.</p>
+
+            <h2>Academic Proofreading & Editing</h2>
+            <p>Dissertations, theses, and journal manuscripts &mdash; particularly in psychology and neuroscience.
+                Proofreading and copy-editing, structural and clarity feedback, APA 7th edition
+                formatting, and tailored feedback for ESL authors.</p>
+
+            <h2>Research Methods Tutoring</h2>
+            <p>Online tutoring for undergraduate and postgraduate students in research methods, statistics, and
+                cognitive psychology.</p>
+
+            <div class="consulting-contact">
+                <p style="margin:0">Email me at <a href="mailto:hello@brodiemangan.com">hello@brodiemangan.com</a> with
+                    a brief description of what you need. I'll get back to you within 48 hours with availability and a
+                    quote.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <ul class="footer-socials">
+            <li>
+                <a href="https://orcid.org/0009-0002-8466-5423" target="_blank" rel="noopener"
+                    aria-label="ORCiD Profile">
+                    <i class="fa-brands fa-orcid" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/brodie-neuro" target="_blank" rel="noopener" aria-label="GitHub Profile">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+        <p>© <span id="y"></span> Brodie Mangan • GitHub Pages</p>
+    </footer>
+
+    <script>
+        document.getElementById('y').textContent = new Date().getFullYear();
+
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const body = document.querySelector('body');
+
+        mobileNavToggle.addEventListener('click', () => {
+            const isExpanded = mobileNavToggle.getAttribute('aria-expanded') === 'true';
+            mobileNavToggle.setAttribute('aria-expanded', !isExpanded);
+            body.classList.toggle('nav-open');
+        });
+    </script>
+
+    <script data-goatcounter="https://brodiemangan.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+
+</html>
