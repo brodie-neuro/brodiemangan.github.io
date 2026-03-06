@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#0b0d10">
+    <title>Brodie Mangan | ScholarRef</title>
+
+    <!-- Mobile viewport with user zoom enabled -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+                 minimum-scale=0.5, maximum-scale=5,
+                 user-scalable=yes, viewport-fit=cover">
+
+    <meta name="description"
+        content="ScholarRef — a free Windows desktop app for converting citation styles (APA 7, Harvard, Vancouver) in Microsoft Word .docx manuscripts.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ScholarRef | Brodie Mangan">
+    <meta property="og:description"
+        content="A Windows desktop app for converting citation styles in Word .docx manuscripts. Detects corrupted reference lists and verifies citation integrity.">
+    <meta property="og:url" content="https://brodiemangan.com/scholarref.html">
+    <meta property="og:image" content="https://brodiemangan.com/assets/portrait.png">
+    <meta property="og:site_name" content="Brodie Mangan">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ScholarRef | Brodie Mangan">
+    <meta name="twitter:description"
+        content="A Windows desktop app for converting citation styles (APA 7, Harvard, Vancouver) in Word .docx manuscripts.">
+    <meta name="twitter:image" content="https://brodiemangan.com/assets/portrait.png">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="https://brodiemangan.com/scholarref.html">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico?v=3">
+    <link rel="shortcut icon" href="assets/favicon.ico?v=3">
+
+    <!-- Plausible Analytics -->
+    <script defer data-domain="brodiemangan.com" src="https://plausible.io/js/script.js"></script>
+
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ScholarRef",
+    "description": "A Windows desktop application for converting citation styles (APA 7, Harvard, Vancouver) in Microsoft Word .docx manuscripts.",
+    "applicationCategory": "ScientificApplication",
+    "operatingSystem": "Windows 10, Windows 11",
+    "author": { "@type": "Person", "name": "Brodie E. Mangan" },
+    "codeRepository": "https://github.com/brodie-neuro/ScholarRef",
+    "downloadUrl": "https://github.com/brodie-neuro/ScholarRef/releases/latest",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" }
+  }
+  </script>
+
+    <style>
+        /* ===== Mobile-safe reset and background ===== */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+            -webkit-text-size-adjust: 100%;
+            background: #0b0d10;
+            color: var(--fg, #e8eef6);
+        }
+
+        body {
+            background-image: url('background2.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        @media (max-width: 900px) {
+            body {
+                background-attachment: scroll;
+                background-position: center top;
+            }
+        }
+
+        img,
+        video,
+        canvas,
+        iframe {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            word-break: break-word;
+        }
+
+        /* ===== Page layout ===== */
+        main.grid {
+            display: block;
+            width: min(100%, 960px);
+            margin-inline: auto;
+            padding: clamp(12px, 3vw, 24px);
+        }
+
+        .glass {
+            width: 100%;
+            padding: clamp(16px, 4vw, 32px);
+            border-radius: 14px;
+            background: rgba(18, 22, 27, 0.55);
+            border: 1px solid var(--glass-outline, rgba(255, 255, 255, .08));
+            backdrop-filter: blur(6px);
+        }
+
+        /* ===== ScholarRef hero ===== */
+        .wand-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            align-items: center;
+            gap: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .wand-grid-text .role {
+            font-size: 1.1rem;
+            color: var(--muted, #9aa6b2);
+            margin-top: 0.5rem;
+        }
+
+        .wand-grid-text p {
+            max-width: 75ch;
+        }
+
+        .wand-grid-image {
+            text-align: center;
+        }
+
+        /* ===== Features ===== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--glass-outline, rgba(255, 255, 255, .08));
+        }
+
+        .feature-item h3 {
+            color: var(--accent, #7bdff6);
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: var(--muted, #9aa6b2);
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2.5rem 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--glass-outline, rgba(255, 255, 255, .08));
+        }
+
+        .cta-buttons a,
+        .cta-buttons a:visited {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: rgba(78, 168, 255, 0.15);
+            border: 1px solid var(--accent, #7bdff6);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--accent, #7bdff6);
+            font-weight: bold;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .cta-buttons a:hover {
+            background-color: var(--accent, #7bdff6);
+            color: #14181d;
+        }
+
+        /* ===== Download section ===== */
+        .download-section {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--glass-outline, rgba(255, 255, 255, .08));
+        }
+
+        .download-section h2 {
+            margin-bottom: 0.75rem;
+        }
+
+        .download-note {
+            background: rgba(255, 200, 80, 0.06);
+            border: 1px solid rgba(255, 200, 80, 0.2);
+            border-left: 3px solid rgba(255, 200, 80, 0.5);
+            border-radius: 6px;
+            padding: 0.85rem 1rem;
+            font-size: 0.9rem;
+            color: var(--muted, #9aa6b2);
+            margin: 1rem 0;
+        }
+
+        .download-note strong {
+            color: var(--fg, #e8eef6);
+        }
+
+        .supported-systems {
+            font-size: 0.9rem;
+            color: var(--muted, #9aa6b2);
+            margin-top: 0.75rem;
+        }
+
+        .pip-box {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 0.85rem 1.25rem;
+            border-radius: 8px;
+            border: 1px solid var(--outline, rgba(255, 255, 255, .2));
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+            font-size: 0.9rem;
+            margin: 0.75rem 0 0.5rem;
+            display: inline-block;
+        }
+
+        /* ===== Navigation: single menu per breakpoint ===== */
+        .mobile-nav-toggle {
+            display: none;
+        }
+
+        .mobile-nav {
+            display: none;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        header.masthead {
+            position: relative;
+            z-index: 1002;
+        }
+
+        .nav a {
+            color: var(--fg, #e8eef6);
+            text-decoration: none;
+        }
+
+        @media (max-width: 900px) {
+            .nav {
+                display: none;
+            }
+
+            .masthead {
+                display: flex;
+                justify-content: flex-end;
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+
+            .mobile-nav-toggle {
+                display: block;
+                background: none;
+                border: none;
+                cursor: pointer;
+                z-index: 1003;
+                padding: .5rem;
+                position: relative;
+                width: 34px;
+                height: 34px;
+            }
+
+            .hamburger {
+                width: 24px;
+                height: 2px;
+                background: var(--fg, #e9eef3);
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: background 0.2s ease-out;
+            }
+
+            .hamburger::before,
+            .hamburger::after {
+                content: '';
+                width: 24px;
+                height: 2px;
+                background: var(--fg, #e9eef3);
+                display: block;
+                position: absolute;
+                left: 0;
+                transition: transform 0.2s ease-out, top 0.2s ease-out;
+            }
+
+            .hamburger::before {
+                top: -8px;
+            }
+
+            .hamburger::after {
+                top: 8px;
+            }
+
+            body.nav-open .hamburger {
+                background: transparent;
+            }
+
+            body.nav-open .hamburger::before {
+                transform: rotate(45deg);
+                top: 0;
+            }
+
+            body.nav-open .hamburger::after {
+                transform: rotate(-45deg);
+                top: 0;
+            }
+
+            nav.mobile-nav {
+                position: fixed;
+                inset: 0;
+                left: -100%;
+                width: 100%;
+                height: 100dvh;
+                background: var(--bg, #0b0d10);
+                z-index: 1002;
+                transition: left .3s ease-in-out;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+                padding: 1rem;
+                overflow-y: auto;
+            }
+
+            body.nav-open nav.mobile-nav {
+                left: 0;
+            }
+
+            body.nav-open {
+                overflow: hidden;
+            }
+
+            .mobile-nav a,
+            .mobile-nav .dropbtn {
+                color: var(--fg, #e9eef3);
+                text-decoration: none;
+                font-size: 1.5rem;
+                padding: 0.5rem 1rem;
+                background: none;
+                border: none;
+                font: inherit;
+                cursor: pointer;
+            }
+
+            .mobile-nav .dropdown {
+                text-align: center;
+            }
+
+            .mobile-nav .dropdown-content {
+                position: static;
+                background: none;
+                border: none;
+                display: flex;
+                box-shadow: none;
+                align-items: center;
+                flex-direction: column;
+                gap: 0.5rem;
+                margin-top: 0.5rem;
+            }
+
+            .mobile-nav .dropdown-content a {
+                font-size: 1rem;
+                color: var(--muted, #9aa6b2);
+            }
+
+            /* Stack hero on small screens */
+            .wand-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                text-align: center;
+                margin-bottom: 1.5rem;
+            }
+
+            .wand-grid-text h1,
+            .wand-grid-text .role {
+                text-align: center;
+            }
+
+            .wand-grid-text p {
+                text-align: left;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="masthead">
+        <nav class="nav">
+            <a href="index.html">Home</a>
+
+            <div class="dropdown">
+                <a class="dropbtn" tabindex="0">Publications ▾</a>
+                <div class="dropdown-content" role="menu">
+                    <a role="menuitem" href="papers.html">PAPERS</a>
+                    <a role="menuitem" href="preprints.html">PREPRINTS</a>
+                    <a role="menuitem" href="in-progress.html">IN-PROGRESS</a>
+                </div>
+            </div>
+
+            <a href="medium.html">Medium</a>
+            <div class="dropdown">
+                <a class="dropbtn" tabindex="0">Software ▾</a>
+                <div class="dropdown-content" role="menu">
+                    <a role="menuitem" href="wand.html">WAND Protocol</a>
+                    <a role="menuitem" href="scholarref.html" aria-current="page">ScholarRef</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a class="dropbtn" tabindex="0">Conference Presentations ▾</a>
+                <div class="dropdown-content" role="menu">
+                    <a role="menuitem" href="BACN.html">BACN 2025</a>
+                </div>
+            </div>
+
+            <a href="reading-list.html">Reading List</a>
+
+            <div class="dropdown">
+                <a class="dropbtn" tabindex="0">CV ▾</a>
+                <div class="dropdown-content">
+                    <a href="assets/Brodie_Mangan_CV.pdf" download="Brodie_Mangan_CV.pdf"
+                        type="application/pdf">Download PDF</a>
+                </div>
+            </div>
+
+            <a href="consulting.html">Consulting</a>
+            <a href="contact.html">Contact Me</a>
+        </nav>
+
+        <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
+            <span class="sr-only">Menu</span>
+            <span class="hamburger"></span>
+        </button>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-nav">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">Publications</button>
+            <div class="dropdown-content" role="menu">
+                <a role="menuitem" href="papers.html">PAPERS</a>
+                <a role="menuitem" href="preprints.html">PREPRINTS</a>
+                <a role="menuitem" href="in-progress.html">IN-PROGRESS</a>
+            </div>
+        </div>
+        <a href="medium.html">Medium</a>
+        <div class="dropdown">
+            <button class="dropbtn">Software</button>
+            <div class="dropdown-content" role="menu">
+                <a role="menuitem" href="wand.html">WAND Protocol</a>
+                <a role="menuitem" href="scholarref.html" aria-current="page">ScholarRef</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Conference Presentations</button>
+            <div class="dropdown-content" role="menu">
+                <a role="menuitem" href="BACN.html">BACN 2025</a>
+            </div>
+        </div>
+        <a href="reading-list.html">Reading List</a>
+        <div class="dropdown">
+            <button class="dropbtn">CV</button>
+            <div class="dropdown-content">
+                <a href="assets/Brodie_Mangan_CV.pdf" download>Download PDF</a>
+            </div>
+        </div>
+        <a href="consulting.html">Consulting</a>
+        <a href="contact.html">Contact Me</a>
+    </nav>
+
+    <main class="grid" id="main">
+        <section class="glass">
+
+            <div class="wand-grid">
+                <div class="wand-grid-text">
+                    <h1 id="scholarref-title">ScholarRef</h1>
+                    <p class="role">Format. Convert. Publish.</p>
+                    <p>A Windows desktop app for converting citation styles (APA 7, Harvard, Vancouver) in Microsoft
+                        Word
+                        .docx manuscripts. Detects and corrects corrupted reference lists, verifies citation-reference
+                        integrity,
+                        and outputs clean, journal-ready documents.</p>
+                    <p>Ships as a standalone .exe — no Python install required. Current release:
+                        <strong>v1.0.1</strong>.
+                    </p>
+                </div>
+                <div class="wand-grid-image">
+                    <img src="assets/scholarref-icon.png" alt="ScholarRef icon" id="scholarref-icon"
+                        style="width: 240px; max-width: 100%; height: auto;">
+                </div>
+            </div>
+
+            <div class="features-grid" id="scholarref-features">
+                <div class="feature-item" id="feature-conversion">
+                    <h3>🔄 Multi-Style Conversion</h3>
+                    <p>Bidirectional conversion between APA 7, Harvard, and Vancouver styles. Rewrites both in-text
+                        citations
+                        and reference lists in one pass.</p>
+                </div>
+                <div class="feature-item" id="feature-preflight">
+                    <h3>🛡️ Safety Preflight</h3>
+                    <p>Detects field codes, unsupported document regions, and ambiguous citations before touching any
+                        file.
+                        Refuses to run rather than produce corrupt output.</p>
+                </div>
+                <div class="feature-item" id="feature-integrity">
+                    <h3>🔍 Integrity Verification</h3>
+                    <p>Post-conversion verification engine checks every citation against the rebuilt reference list,
+                        catching
+                        mismatches and style remnants.</p>
+                </div>
+                <div class="feature-item" id="feature-repair">
+                    <h3>📋 Hybrid Reference Repair</h3>
+                    <p>Normalizes corrupted and mixed-style reference lists before conversion. Handles real-world
+                        manuscripts,
+                        not just perfectly formatted ones.</p>
+                </div>
+                <div class="feature-item" id="feature-gui">
+                    <h3>🖥️ Desktop GUI</h3>
+                    <p>Professional customtkinter interface with one-click conversion, activity log, progress tracking,
+                        and
+                        debug info for issue reports.</p>
+                </div>
+                <div class="feature-item" id="feature-standalone">
+                    <h3>📦 No Dependencies</h3>
+                    <p>Ships as a standalone Windows .exe. No Python install needed. Per-user install with no admin
+                        rights
+                        required.</p>
+                </div>
+            </div>
+
+            <!-- Download section -->
+            <div class="download-section" id="scholarref-download-section">
+                <h2>Download</h2>
+                <p>Download the latest release from GitHub. The installer requires no admin rights.</p>
+
+                <div class="cta-buttons" style="padding-top: 0; border-top: none; margin-top: 1rem;">
+                    <a id="cta-scholarref-download" href="https://github.com/brodie-neuro/ScholarRef/releases/latest"
+                        target="_blank" rel="noopener" data-goatcounter-click="scholarref-download"
+                        data-goatcounter-title="ScholarRef Download Click">
+                        ⬇ Download Latest Release
+                    </a>
+                    <a id="cta-scholarref-github" href="https://github.com/brodie-neuro/ScholarRef" target="_blank"
+                        rel="noopener" data-goatcounter-click="scholarref-github"
+                        data-goatcounter-title="ScholarRef GitHub Click">
+                        View on GitHub
+                    </a>
+                </div>
+
+                <div class="download-note" id="scholarref-unsigned-note">
+                    <strong>Note — unsigned freeware release.</strong> Windows SmartScreen may show "Unknown publisher"
+                    on
+                    first run — click <strong>More info → Run anyway</strong>. Verify file integrity with
+                    <code>SHA256SUMS.txt</code> included in the release.
+                </div>
+
+                <p class="supported-systems" id="scholarref-supported-systems">
+                    <strong>Supported systems:</strong> Windows 10 x64, Windows 11 x64
+                </p>
+
+                <h3 id="scholarref-pip-heading">Also available via pip</h3>
+                <p style="font-size:0.9rem; color: var(--muted, #9aa6b2);">Requires Python 3.9+</p>
+                <div class="pip-box" id="scholarref-pip-box">pip install scholarref</div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <ul class="footer-socials">
+            <li>
+                <a href="https://orcid.org/0009-0002-8466-5423" target="_blank" rel="noopener"
+                    aria-label="ORCiD Profile">
+                    <i class="fa-brands fa-orcid" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/brodie-neuro" target="_blank" rel="noopener" aria-label="GitHub Profile">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+        <p>© <span id="y"></span> Brodie Mangan • GitHub Pages</p>
+    </footer>
+
+    <script>
+        // Footer year
+        document.getElementById('y').textContent = new Date().getFullYear();
+
+        // Mobile nav toggle
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const bodyEl = document.body;
+        mobileNavToggle.addEventListener('click', () => {
+            const isExpanded = mobileNavToggle.getAttribute('aria-expanded') === 'true';
+            mobileNavToggle.setAttribute('aria-expanded', String(!isExpanded));
+            bodyEl.classList.toggle('nav-open');
+        });
+    </script>
+
+    <script data-goatcounter="https://brodiemangan.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+
+</html>

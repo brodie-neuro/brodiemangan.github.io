@@ -1,20 +1,22 @@
 <!doctype html>
 <html lang="en-GB">
+
 <head>
   <meta charset="utf-8">
   <meta name="theme-color" content="#0b0d10">
   <title>Brodie Mangan | BACN 2025 Poster</title>
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1,
+  <meta name="viewport" content="width=device-width, initial-scale=1,
                  minimum-scale=0.5, maximum-scale=5,
                  user-scalable=yes, viewport-fit=cover">
 
-  <meta name="description" content="Supplementary material for the BACN 2025 poster presentation: Isolating Active Cognitive Fatigue, A Validation of the WAND Protocol.">
+  <meta name="description"
+    content="Supplementary material for the BACN 2025 poster presentation: Isolating Active Cognitive Fatigue, A Validation of the WAND Protocol.">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="BACN 2025 Poster | Brodie Mangan">
-  <meta property="og:description" content="Supplementary material for the poster: Isolating Active Cognitive Fatigue, A Validation of the WAND Protocol.">
+  <meta property="og:description"
+    content="Supplementary material for the poster: Isolating Active Cognitive Fatigue, A Validation of the WAND Protocol.">
   <meta property="og:url" content="https://brodiemangan.com/BACN.html">
   <meta property="og:image" content="https://brodiemangan.com/assets/wand-poster-preview.png">
   <meta property="og:site_name" content="Brodie Mangan">
@@ -38,27 +40,36 @@
       padding-bottom: 2rem;
       border-bottom: 1px solid var(--glass-outline);
     }
+
     .award-image {
-      flex: 1 1 200px; /* Flex properties for responsive resizing */
+      flex: 1 1 200px;
+      /* Flex properties for responsive resizing */
     }
+
     .award-image img {
       width: 100%;
       border-radius: 12px;
       border: 1px solid var(--glass-outline);
     }
+
     .award-text {
-      flex: 2 1 300px; /* Allows text to take up more space */
+      flex: 2 1 300px;
+      /* Allows text to take up more space */
     }
+
     .award-text h3 {
       margin-top: 0;
-      color: var(--accent); /* Uses your site's accent color */
+      color: var(--accent);
+      /* Uses your site's accent color */
       font-size: 1.5rem;
     }
+
     .award-text p {
       margin-bottom: 0;
       font-size: 1.1rem;
       line-height: 1.6;
     }
+
     @media (max-width: 650px) {
       .award-section {
         text-align: center;
@@ -66,8 +77,14 @@
     }
 
     /* Reset and layout guards */
-    *, *::before, *::after { box-sizing: border-box; }
-    html, body {
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
       margin: 0;
       padding: 0;
       width: 100%;
@@ -77,28 +94,60 @@
       background: #0b0d10;
       color: var(--fg, #e8eef6);
     }
+
     /* Do not include audio here */
-    img, video, canvas, iframe { max-width: 100%; height: auto; }
-    a { word-break: break-word; }
-
-    :root{ --glass-outline: rgba(255,255,255,.08); --accent:#7bdff6; --bg:#0b0d10; --fg:#e8eef6; --muted:#a2b3c2; }
-
-    body{
-      background:url('assets/background2.png') center/cover fixed no-repeat;
-    }
-    @media (max-width: 850px){
-      body{ background-attachment: scroll; background-position: center top; }
+    img,
+    video,
+    canvas,
+    iframe {
+      max-width: 100%;
+      height: auto;
     }
 
-    main.grid{
+    a {
+      word-break: break-word;
+    }
+
+    :root {
+      --glass-outline: rgba(255, 255, 255, .08);
+      --accent: #7bdff6;
+      --bg: #0b0d10;
+      --fg: #e8eef6;
+      --muted: #a2b3c2;
+    }
+
+    body {
+      background: url('assets/background2.png') center/cover fixed no-repeat;
+    }
+
+    @media (max-width: 850px) {
+      body {
+        background-attachment: scroll;
+        background-position: center top;
+      }
+    }
+
+    main.grid {
       display: block;
       width: min(100%, 960px);
       margin-inline: auto;
       padding: clamp(12px, 3vw, 24px);
     }
-    .glass { width: 100%; padding: clamp(16px, 4vw, 32px); border-radius: 14px; background: rgba(18,22,27,0.55); border: 1px solid var(--glass-outline); backdrop-filter: blur(6px); }
 
-    .poster-section { text-align:center; margin-bottom:2.5rem; }
+    .glass {
+      width: 100%;
+      padding: clamp(16px, 4vw, 32px);
+      border-radius: 14px;
+      background: rgba(18, 22, 27, 0.55);
+      border: 1px solid var(--glass-outline);
+      backdrop-filter: blur(6px);
+    }
+
+    .poster-section {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
     .poster-image {
       width: 100%;
       max-width: 800px;
@@ -110,77 +159,241 @@
       display: block;
       margin-inline: auto;
     }
-    .poster-image:hover { transform: scale(1.02); box-shadow: 0 8px 22px rgba(0,0,0,.45); }
+
+    .poster-image:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, .45);
+    }
+
     .download-button {
-      display:inline-block; margin-top:1.5rem; padding:.8rem 1.5rem;
-      background-color: rgba(255,255,255,0.1); border:1px solid var(--glass-outline);
-      border-radius:8px; text-decoration:none; color: var(--fg); font-weight:700;
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: .8rem 1.5rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--glass-outline);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--fg);
+      font-weight: 700;
       transition: background-color .2s ease, color .2s ease;
     }
-    .download-button:hover { background-color: var(--accent); color:#14181d; }
 
-    /* Audio block */
-    .audio-container { text-align:center; margin: 2rem 0; }
-    .audio-container audio { width: 100%; max-width: 600px; min-height: 36px; display:block; margin: 0 auto; }
-
-    .content-section h2, .content-section h3 { border-bottom:1px solid var(--glass-outline); padding-bottom:.5rem; margin-top:2.5rem; margin-bottom:1rem; }
-    .content-section ul { list-style-type: disc; padding-left: 20px; }
-    .content-section li { margin-bottom: 1rem; line-height: 1.6; }
-
-    .reference-list { font-size:.95rem; padding-left:0; list-style-type:none; }
-    .reference-list li { margin-bottom:1rem; line-height:1.5; text-indent:-2em; padding-left:2em; }
-    .reference-list a { color: var(--accent); text-decoration: none; }
-    .reference-list a:hover { text-decoration: underline; }
-
-    /* Nav visibility rules */
-    .mobile-nav-toggle { display:none; }
-    header.masthead{ position:relative; z-index:1002; }
-    .nav a{ color: var(--fg); text-decoration:none; }
-
-    /* Hide the mobile drawer on desktop */
-    .mobile-nav { display: none; }
-
-    @media (max-width: 850px) {
-      .masthead { display:flex; justify-content:flex-end; align-items:center; padding: .5rem; }
-      .nav { display:none; }
-      .mobile-nav-toggle {
-        display:block; background:none; border:none; cursor:pointer; z-index:1003; padding:1rem;
-      }
-      .mobile-nav-toggle .hamburger {
-        width: 24px; height: 2px; background: var(--fg); display:block; position:relative; transition: background .2s ease-out;
-      }
-      .mobile-nav-toggle .hamburger::before,
-      .mobile-nav-toggle .hamburger::after {
-        content:''; width:24px; height:2px; background: var(--fg); display:block; position:absolute; transition: transform .2s ease-out;
-      }
-      .mobile-nav-toggle .hamburger::before { top:-8px; }
-      .mobile-nav-toggle .hamburger::after  { top: 8px; }
-      body.nav-open .mobile-nav-toggle .hamburger { background: transparent; }
-      body.nav-open .mobile-nav-toggle .hamburger::before { transform: rotate(45deg) translate(5px,6px); }
-      body.nav-open .mobile-nav-toggle .hamburger::after  { transform: rotate(-45deg) translate(5px,-6px); }
-
-      nav.mobile-nav{
-        position: fixed; inset: 0; left: -100%;
-        width: 100%; height: 100dvh;
-        background: var(--bg);
-        z-index: 1002; transition: left .3s ease-in-out;
-        display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem;
-        padding: 2rem;
-      }
-      body.nav-open nav.mobile-nav{ left: 0; }
-      .mobile-nav a, .mobile-nav .dropbtn { color: var(--fg); text-decoration:none; font-size:1.25rem; padding:.5rem 1rem; }
-      .mobile-nav .dropdown{ display:flex; flex-direction:column; align-items:center; }
-      .mobile-nav .dropdown-content{ position:static; background:none; border:none; display:flex; flex-direction:column; gap:.5rem; margin-top:.5rem; }
-      .mobile-nav .dropdown-content a{ font-size:1rem; color: var(--muted); }
-
-      .glass{ padding: 1.25rem; }
+    .download-button:hover {
+      background-color: var(--accent);
+      color: #14181d;
     }
 
-    .site-footer{ text-align:center; padding:2rem 1rem; color: var(--muted); }
-    .footer-socials{ list-style:none; padding:0; margin:0 0 1rem 0; display:flex; gap:1rem; justify-content:center; }
-    .footer-socials a{ color: var(--fg); }
+    /* Audio block */
+    .audio-container {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .audio-container audio {
+      width: 100%;
+      max-width: 600px;
+      min-height: 36px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .content-section h2,
+    .content-section h3 {
+      border-bottom: 1px solid var(--glass-outline);
+      padding-bottom: .5rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .content-section ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    .content-section li {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .reference-list {
+      font-size: .95rem;
+      padding-left: 0;
+      list-style-type: none;
+    }
+
+    .reference-list li {
+      margin-bottom: 1rem;
+      line-height: 1.5;
+      text-indent: -2em;
+      padding-left: 2em;
+    }
+
+    .reference-list a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .reference-list a:hover {
+      text-decoration: underline;
+    }
+
+    /* Nav visibility rules */
+    .mobile-nav-toggle {
+      display: none;
+    }
+
+    header.masthead {
+      position: relative;
+      z-index: 1002;
+    }
+
+    .nav a {
+      color: var(--fg);
+      text-decoration: none;
+    }
+
+    /* Hide the mobile drawer on desktop */
+    .mobile-nav {
+      display: none;
+    }
+
+    @media (max-width: 850px) {
+      .masthead {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: .5rem;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .mobile-nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1003;
+        padding: 1rem;
+      }
+
+      .mobile-nav-toggle .hamburger {
+        width: 24px;
+        height: 2px;
+        background: var(--fg);
+        display: block;
+        position: relative;
+        transition: background .2s ease-out;
+      }
+
+      .mobile-nav-toggle .hamburger::before,
+      .mobile-nav-toggle .hamburger::after {
+        content: '';
+        width: 24px;
+        height: 2px;
+        background: var(--fg);
+        display: block;
+        position: absolute;
+        transition: transform .2s ease-out;
+      }
+
+      .mobile-nav-toggle .hamburger::before {
+        top: -8px;
+      }
+
+      .mobile-nav-toggle .hamburger::after {
+        top: 8px;
+      }
+
+      body.nav-open .mobile-nav-toggle .hamburger {
+        background: transparent;
+      }
+
+      body.nav-open .mobile-nav-toggle .hamburger::before {
+        transform: rotate(45deg) translate(5px, 6px);
+      }
+
+      body.nav-open .mobile-nav-toggle .hamburger::after {
+        transform: rotate(-45deg) translate(5px, -6px);
+      }
+
+      nav.mobile-nav {
+        position: fixed;
+        inset: 0;
+        left: -100%;
+        width: 100%;
+        height: 100dvh;
+        background: var(--bg);
+        z-index: 1002;
+        transition: left .3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        padding: 2rem;
+      }
+
+      body.nav-open nav.mobile-nav {
+        left: 0;
+      }
+
+      .mobile-nav a,
+      .mobile-nav .dropbtn {
+        color: var(--fg);
+        text-decoration: none;
+        font-size: 1.25rem;
+        padding: .5rem 1rem;
+      }
+
+      .mobile-nav .dropdown {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .mobile-nav .dropdown-content {
+        position: static;
+        background: none;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        margin-top: .5rem;
+      }
+
+      .mobile-nav .dropdown-content a {
+        font-size: 1rem;
+        color: var(--muted);
+      }
+
+      .glass {
+        padding: 1.25rem;
+      }
+    }
+
+    .site-footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--muted);
+    }
+
+    .footer-socials {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem 0;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .footer-socials a {
+      color: var(--fg);
+    }
   </style>
 </head>
+
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
@@ -196,7 +409,13 @@
         </div>
       </div>
       <a href="medium.html">Medium</a>
-      <a href="wand.html">WAND Protocol</a>
+      <div class="dropdown">
+        <a class="dropbtn" tabindex="0">Software ▾</a>
+        <div class="dropdown-content" role="menu">
+          <a role="menuitem" href="wand.html">WAND Protocol</a>
+          <a role="menuitem" href="scholarref.html">ScholarRef</a>
+        </div>
+      </div>
       <div class="dropdown">
         <a class="dropbtn" tabindex="0">Conference Presentations ▾</a>
         <div class="dropdown-content" role="menu">
@@ -211,7 +430,7 @@
         </div>
       </div>
       <a href="consulting.html">Consulting</a>
-    <a href="contact.html">Contact Me</a>
+      <a href="contact.html">Contact Me</a>
     </nav>
     <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
       <span class="sr-only">Menu</span>
@@ -230,7 +449,13 @@
       </div>
     </div>
     <a href="medium.html">Medium</a>
-    <a href="wand.html">WAND Protocol</a>
+    <div class="dropdown">
+      <button class="dropbtn">Software</button>
+      <div class="dropdown-content" role="menu">
+        <a role="menuitem" href="wand.html">WAND Protocol</a>
+        <a role="menuitem" href="scholarref.html">ScholarRef</a>
+      </div>
+    </div>
     <div class="dropdown">
       <a class="dropbtn" aria-current="page">Conference Presentations</a>
       <div class="dropdown-content" role="menu">
@@ -256,7 +481,8 @@
         </div>
         <div class="award-text">
           <h3>BACN 2025 Poster Prize Winner</h3>
-          <p>I am honoured that this poster was awarded the poster prize at the British Association for Cognitive Neuroscience conference 2025. Thank you to everybody involved in the conference.</p>
+          <p>I am honoured that this poster was awarded the poster prize at the British Association for Cognitive
+            Neuroscience conference 2025. Thank you to everybody involved in the conference.</p>
         </div>
       </div>
       <div class="audio-container">
@@ -269,40 +495,89 @@
 
       <div class="poster-section">
         <a href="assets/BACNP.png" target="_blank" title="View full-size poster">
-          <img src="assets/BACNP.png" alt="Academic poster titled 'Isolating Active Cognitive Fatigue'" class="poster-image">
+          <img src="assets/BACNP.png" alt="Academic poster titled 'Isolating Active Cognitive Fatigue'"
+            class="poster-image">
         </a>
         <a href="assets/BACNP.png" download="BACNP.png" class="download-button">Download Poster (PNG)</a>
       </div>
 
       <div class="content-section">
         <h2>Abstract</h2>
-        <p> Cognitive fatigue research is hindered by methodological imprecision, where paradigms often confound genuine fatigue with task-learning or boredom. We developed the WAND (Working Memory Active Fatigue N-Back Difficulty) protocol to isolate Active Cognitive Fatigue (ACF) by systematically mitigating these issues. WAND uses a novel performance plateauing phase to control for intra-day learning effects, while adaptive difficulty and task variability prevent monotony. In our validation, working memory performance, measured by the sensitivity metric d-prime, declined significantly with a medium to large effect size. Crucially, reaction time remained unchanged, indicating a drop in processing efficiency characteristic of ACF, not passive slowing. This validated protocol now provides a robust foundation for future EEG research investigating the oscillatory mechanisms of cognitive effort.</p>
+        <p> Cognitive fatigue research is hindered by methodological imprecision, where paradigms often confound genuine
+          fatigue with task-learning or boredom. We developed the WAND (Working Memory Active Fatigue N-Back Difficulty)
+          protocol to isolate Active Cognitive Fatigue (ACF) by systematically mitigating these issues. WAND uses a
+          novel performance plateauing phase to control for intra-day learning effects, while adaptive difficulty and
+          task variability prevent monotony. In our validation, working memory performance, measured by the sensitivity
+          metric d-prime, declined significantly with a medium to large effect size. Crucially, reaction time remained
+          unchanged, indicating a drop in processing efficiency characteristic of ACF, not passive slowing. This
+          validated protocol now provides a robust foundation for future EEG research investigating the oscillatory
+          mechanisms of cognitive effort.</p>
       </div>
 
       <div class="content-section">
         <h2>Supplementary Material</h2>
         <h3>Conceptual Confusion and the Necessity for Clear Definition</h3>
-        <p>Research into cognitive fatigue faces substantial theoretical and methodological challenges due to imprecise conceptualisation (Goodman et al., 2025; Pessiglione et al., 2025). This lack of clarity has become so pronounced that some scholars have challenged the construct's scientific validity, comparing its variable operationalisation to 'The Emperor's New Clothes' (Pattyn et al., 2018). These issues stem from an inability to differentiate between mechanistically separate states, resulting in a body of research containing findings that are not merely inconsistent, but potentially erroneous.</p>
+        <p>Research into cognitive fatigue faces substantial theoretical and methodological challenges due to imprecise
+          conceptualisation (Goodman et al., 2025; Pessiglione et al., 2025). This lack of clarity has become so
+          pronounced that some scholars have challenged the construct's scientific validity, comparing its variable
+          operationalisation to 'The Emperor's New Clothes' (Pattyn et al., 2018). These issues stem from an inability
+          to differentiate between mechanistically separate states, resulting in a body of research containing findings
+          that are not merely inconsistent, but potentially erroneous.</p>
 
-        <p>To address this challenge, we introduce and define Active Cognitive Fatigue (ACF) as a condition resulting from prolonged, demanding cognitive activity, marked by measurable, objective deterioration in information processing efficiency. Establishing this clear, comprehensive definition represents a crucial step towards addressing the field's central methodological challenges:</p>
+        <p>To address this challenge, we introduce and define Active Cognitive Fatigue (ACF) as a condition resulting
+          from prolonged, demanding cognitive activity, marked by measurable, objective deterioration in information
+          processing efficiency. Establishing this clear, comprehensive definition represents a crucial step towards
+          addressing the field's central methodological challenges:</p>
 
         <ul>
-          <li><strong>Confusion Between Fatigue Types:</strong> A fundamental issue involves mixing distinct forms of fatigue. The 'Active' designation in ACF indicates that this state emerges from sustained high cognitive yet moderately difficult demands, setting it apart from passive fatigue, which stems from insufficient stimulation and repetitive tasks (Desmond & Hancock, 2001). Contemporary researchers increasingly suggest "passive fatigue" may be better described as boredom or drowsiness (Mangin & Pageaux, 2025). The 'Cognitive' specification further restricts this state to objective information processing performance, differentiating it from subjective 'mental' experiences and from physical fatigue, which has distinct physiological mechanisms (Enoka & Duchateau, 2016).</li>
-          <li><strong>Problems with Fixed Protocols:</strong> Current approaches frequently overlook the dynamic relationship between individual capacity and task requirements. A task presenting appropriate challenge initially may become excessive as fatigue develops, creating a problematic blend of active fatigue and passive withdrawal (Hockey, 2013). Employing fixed protocols is therefore theoretically inappropriate for measuring the intended phenomenon.</li>
-          <li><strong>Opportunistic Task Choice:</strong> Paradigms are frequently selected based on convenience rather than theoretical appropriateness. This repurposing of existing tools risks generating outcomes that reflect statistical artefacts rather than genuine effects. Through adopting a clear, operational approach, we can begin addressing these methodological shortcomings and establish more solid foundations for cognitive fatigue research.</li>
+          <li><strong>Confusion Between Fatigue Types:</strong> A fundamental issue involves mixing distinct forms of
+            fatigue. The 'Active' designation in ACF indicates that this state emerges from sustained high cognitive yet
+            moderately difficult demands, setting it apart from passive fatigue, which stems from insufficient
+            stimulation and repetitive tasks (Desmond & Hancock, 2001). Contemporary researchers increasingly suggest
+            "passive fatigue" may be better described as boredom or drowsiness (Mangin & Pageaux, 2025). The 'Cognitive'
+            specification further restricts this state to objective information processing performance, differentiating
+            it from subjective 'mental' experiences and from physical fatigue, which has distinct physiological
+            mechanisms (Enoka & Duchateau, 2016).</li>
+          <li><strong>Problems with Fixed Protocols:</strong> Current approaches frequently overlook the dynamic
+            relationship between individual capacity and task requirements. A task presenting appropriate challenge
+            initially may become excessive as fatigue develops, creating a problematic blend of active fatigue and
+            passive withdrawal (Hockey, 2013). Employing fixed protocols is therefore theoretically inappropriate for
+            measuring the intended phenomenon.</li>
+          <li><strong>Opportunistic Task Choice:</strong> Paradigms are frequently selected based on convenience rather
+            than theoretical appropriateness. This repurposing of existing tools risks generating outcomes that reflect
+            statistical artefacts rather than genuine effects. Through adopting a clear, operational approach, we can
+            begin addressing these methodological shortcomings and establish more solid foundations for cognitive
+            fatigue research.</li>
         </ul>
       </div>
 
       <div class="content-section">
         <h2>Key References</h2>
         <ul class="reference-list">
-          <li>Desmond, P. A., & Hancock, P. A. (2001). Active and passive fatigue states. In P. A. Hancock & P. A. Desmond (Eds.), <em>Stress, workload, and fatigue</em> (pp. 455–465). CRC Press. <a href="https://doi.org/10.1201/b12791-3.1" target="_blank" rel="noopener">https://doi.org/10.1201/b12791-3.1</a></li>
-          <li>Enoka, R. M., & Duchateau, J. (2016). Translating fatigue to human performance. <em>Medicine &amp; Science in Sports &amp; Exercise, 48</em>(11), 2228–2238. <a href="https://doi.org/10.1249/MSS.0000000000000929" target="_blank" rel="noopener">https://doi.org/10.1249/MSS.0000000000000929</a></li>
-          <li>Goodman, S. P. J., et&nbsp;al. (2025). Approaches to inducing mental fatigue. <em>Behavior Research Methods, 57</em>, 102. <a href="https://doi.org/10.3758/s13428-025-02620-7" target="_blank" rel="noopener">https://doi.org/10.3758/s13428-025-02620-7</a></li>
-          <li>Hockey, G. R. J. (2013). <em>The psychology of fatigue: Work, effort and control</em>. Cambridge University Press. <a href="https://doi.org/10.1017/CBO9781139015394" target="_blank" rel="noopener">https://doi.org/10.1017/CBO9781139015394</a></li>
-          <li>Mangin, T., &amp; Pageaux, B. (2025). It is time to stop using the terminology "passive" fatigue. <em>Motivation Science, 11</em>(1), 125–132. <a href="https://doi.org/10.1037/mot0000375" target="_blank" rel="noopener">https://doi.org/10.1037/mot0000375</a></li>
-          <li>Pattyn, N., Van Cutsem, J., Dessy, E., &amp; Mairesse, O. (2018). Is "cognitive fatigue" a remake of "the emperor's new clothes"? <em>Frontiers in Psychology, 9</em>, 1246. <a href="https://doi.org/10.3389/fpsyg.2018.01246" target="_blank" rel="noopener">https://doi.org/10.3389/fpsyg.2018.01246</a></li>
-          <li>Pessiglione, M., Blain, B., Wiehler, A., &amp; Naik, S. (2025). Origins and consequences of cognitive fatigue. <em>Trends in Cognitive Sciences, 29</em>(8), 730–749. <a href="https://doi.org/10.1016/j.tics.2025.02.005" target="_blank" rel="noopener">https://doi.org/10.1016/j.tics.2025.02.005</a></li>
+          <li>Desmond, P. A., & Hancock, P. A. (2001). Active and passive fatigue states. In P. A. Hancock & P. A.
+            Desmond (Eds.), <em>Stress, workload, and fatigue</em> (pp. 455–465). CRC Press. <a
+              href="https://doi.org/10.1201/b12791-3.1" target="_blank"
+              rel="noopener">https://doi.org/10.1201/b12791-3.1</a></li>
+          <li>Enoka, R. M., & Duchateau, J. (2016). Translating fatigue to human performance. <em>Medicine &amp; Science
+              in Sports &amp; Exercise, 48</em>(11), 2228–2238. <a href="https://doi.org/10.1249/MSS.0000000000000929"
+              target="_blank" rel="noopener">https://doi.org/10.1249/MSS.0000000000000929</a></li>
+          <li>Goodman, S. P. J., et&nbsp;al. (2025). Approaches to inducing mental fatigue. <em>Behavior Research
+              Methods, 57</em>, 102. <a href="https://doi.org/10.3758/s13428-025-02620-7" target="_blank"
+              rel="noopener">https://doi.org/10.3758/s13428-025-02620-7</a></li>
+          <li>Hockey, G. R. J. (2013). <em>The psychology of fatigue: Work, effort and control</em>. Cambridge
+            University Press. <a href="https://doi.org/10.1017/CBO9781139015394" target="_blank"
+              rel="noopener">https://doi.org/10.1017/CBO9781139015394</a></li>
+          <li>Mangin, T., &amp; Pageaux, B. (2025). It is time to stop using the terminology "passive" fatigue.
+            <em>Motivation Science, 11</em>(1), 125–132. <a href="https://doi.org/10.1037/mot0000375" target="_blank"
+              rel="noopener">https://doi.org/10.1037/mot0000375</a></li>
+          <li>Pattyn, N., Van Cutsem, J., Dessy, E., &amp; Mairesse, O. (2018). Is "cognitive fatigue" a remake of "the
+            emperor's new clothes"? <em>Frontiers in Psychology, 9</em>, 1246. <a
+              href="https://doi.org/10.3389/fpsyg.2018.01246" target="_blank"
+              rel="noopener">https://doi.org/10.3389/fpsyg.2018.01246</a></li>
+          <li>Pessiglione, M., Blain, B., Wiehler, A., &amp; Naik, S. (2025). Origins and consequences of cognitive
+            fatigue. <em>Trends in Cognitive Sciences, 29</em>(8), 730–749. <a
+              href="https://doi.org/10.1016/j.tics.2025.02.005" target="_blank"
+              rel="noopener">https://doi.org/10.1016/j.tics.2025.02.005</a></li>
         </ul>
       </div>
     </section>
@@ -310,8 +585,10 @@
 
   <footer class="site-footer">
     <ul class="footer-socials">
-      <li><a href="https://orcid.org/0009-0002-8466-5423" target="_blank" rel="noopener" aria-label="ORCiD Profile">ORCiD</a></li>
-      <li><a href="https://github.com/brodie-neuro" target="_blank" rel="noopener" aria-label="GitHub Profile">GitHub</a></li>
+      <li><a href="https://orcid.org/0009-0002-8466-5423" target="_blank" rel="noopener"
+          aria-label="ORCiD Profile">ORCiD</a></li>
+      <li><a href="https://github.com/brodie-neuro" target="_blank" rel="noopener"
+          aria-label="GitHub Profile">GitHub</a></li>
     </ul>
     <p>© <span id="y"></span> Brodie Mangan • GitHub Pages</p>
   </footer>
@@ -330,32 +607,32 @@
     });
 
     // Analytics events, safe if Plausible or GA4 is absent
-    (function(){
+    (function () {
       const audio = document.querySelector('.audio-container audio');
       if (audio) {
         let playedOnce = false;
-        audio.addEventListener('play', function(){
-          if(!playedOnce){
+        audio.addEventListener('play', function () {
+          if (!playedOnce) {
             playedOnce = true;
-            if (window.plausible) window.plausible('Audio Play', {props:{file:'bacnaudio.mp3'}});
-            if (window.gtag) gtag('event','audio_play',{event_category:'Media', event_label:'BACN audio'});
+            if (window.plausible) window.plausible('Audio Play', { props: { file: 'bacnaudio.mp3' } });
+            if (window.gtag) gtag('event', 'audio_play', { event_category: 'Media', event_label: 'BACN audio' });
           }
         });
-        audio.addEventListener('ended', function(){
-          if (window.plausible) window.plausible('Audio Complete', {props:{file:'bacnaudio.mp3'}});
-          if (window.gtag) gtag('event','audio_complete',{event_category:'Media', event_label:'BACN audio'});
+        audio.addEventListener('ended', function () {
+          if (window.plausible) window.plausible('Audio Complete', { props: { file: 'bacnaudio.mp3' } });
+          if (window.gtag) gtag('event', 'audio_complete', { event_category: 'Media', event_label: 'BACN audio' });
         });
       }
       const posterBtn = document.querySelector('.download-button');
       if (posterBtn) {
-        posterBtn.addEventListener('click', function(){
-          if (window.plausible) window.plausible('Poster Download', {props:{file:'BACNP.png'}});
-          if (window.gtag) gtag('event','download',{event_category:'Poster', event_label:'BACNP.png'});
+        posterBtn.addEventListener('click', function () {
+          if (window.plausible) window.plausible('Poster Download', { props: { file: 'BACNP.png' } });
+          if (window.gtag) gtag('event', 'download', { event_category: 'Poster', event_label: 'BACNP.png' });
         });
       }
     })();
   </script>
-<script data-goatcounter="https://brodiemangan.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+  <script data-goatcounter="https://brodiemangan.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
+
 </html>

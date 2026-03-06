@@ -1,23 +1,27 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="theme-color" content="#0b0d10">
   <title>Brodie Mangan | Medium Articles</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Public-facing articles on cognitive neuroscience, fatigue, and brain health from Brodie Mangan.">
-  
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Medium Articles | Brodie Mangan">
-<meta property="og:description" content="Public-facing writing on cognitive fatigue; working memory; and brain health.">
-<meta property="og:url" content="https://brodiemangan.com/medium.html">
-<meta property="og:image" content="https://brodiemangan.com/assets/portrait.png">
-<meta property="og:site_name" content="Brodie Mangan">
+  <meta name="description"
+    content="Public-facing articles on cognitive neuroscience, fatigue, and brain health from Brodie Mangan.">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Medium Articles | Brodie Mangan">
-<meta name="twitter:description" content="Public-facing writing on cognitive fatigue; working memory; and brain health.">
-<meta name="twitter:image" content="https://brodiemangan.com/assets/portrait.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Medium Articles | Brodie Mangan">
+  <meta property="og:description"
+    content="Public-facing writing on cognitive fatigue; working memory; and brain health.">
+  <meta property="og:url" content="https://brodiemangan.com/medium.html">
+  <meta property="og:image" content="https://brodiemangan.com/assets/portrait.png">
+  <meta property="og:site_name" content="Brodie Mangan">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Medium Articles | Brodie Mangan">
+  <meta name="twitter:description"
+    content="Public-facing writing on cognitive fatigue; working memory; and brain health.">
+  <meta name="twitter:image" content="https://brodiemangan.com/assets/portrait.png">
 
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -29,19 +33,38 @@
 
 
   <style>
-    :root{ --glass-outline: rgba(255,255,255,.08); }
+    :root {
+      --glass-outline: rgba(255, 255, 255, .08);
+    }
 
-    body{
-      background:url('assets/background2.png') center/cover fixed no-repeat;
+    body {
+      background: url('assets/background2.png') center/cover fixed no-repeat;
     }
-    body::before{
-      content:"";position:fixed;inset:0;pointer-events:none;
-      background:inherit;mix-blend-mode:screen;
-      filter:saturate(1.25) brightness(1);opacity:.15;
-      animation:pulseBg 8s ease-in-out infinite;
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: inherit;
+      mix-blend-mode: screen;
+      filter: saturate(1.25) brightness(1);
+      opacity: .15;
+      animation: pulseBg 8s ease-in-out infinite;
     }
-    @keyframes pulseBg{0%,100%{opacity:.15}50%{opacity:.35}}
-    
+
+    @keyframes pulseBg {
+
+      0%,
+      100% {
+        opacity: .15
+      }
+
+      50% {
+        opacity: .35
+      }
+    }
+
     .page-header {
       display: flex;
       justify-content: space-between;
@@ -49,137 +72,258 @@
       gap: 1.5rem;
       margin-bottom: 1rem;
     }
-    .page-header h1 { margin: 0; }
+
+    .page-header h1 {
+      margin: 0;
+    }
+
     .header-icon {
       width: 96px;
       height: auto;
       flex-shrink: 0;
     }
-    
+
     .medium-intro .featured-article {
-        margin-top: 2rem;
-        padding-top: 1.5rem;
-        border-top: 1px solid var(--glass-outline);
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--glass-outline);
     }
-    .medium-intro h2 { margin-bottom: 0.5rem; }
+
+    .medium-intro h2 {
+      margin-bottom: 0.5rem;
+    }
+
     .medium-intro .article-description {
-        font-style: italic;
-        color: #ccc;
+      font-style: italic;
+      color: #ccc;
     }
+
     .medium-button {
-        display: inline-block;
-        margin-top: 1rem;
-        padding: 0.8rem 1.5rem;
-        background-color: rgba(255, 255, 255, 0.1);
-        border: 1px solid var(--glass-outline);
-        border-radius: 8px;
-        text-decoration: none;
-        color: var(--fg);
-        font-weight: bold;
-        transition: background-color 0.2s ease, color 0.2s ease;
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--glass-outline);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--fg);
+      font-weight: bold;
+      transition: background-color 0.2s ease, color 0.2s ease;
     }
+
     .medium-button:hover {
-        background-color: var(--accent);
-        color: #14181d;
+      background-color: var(--accent);
+      color: #14181d;
     }
+
     .profile-link-section {
-        margin-top: 2.5rem;
-        text-align: center;
-        font-size: 0.9rem;
+      margin-top: 2.5rem;
+      text-align: center;
+      font-size: 0.9rem;
     }
-    
+
     /* --- NEW MOBILE NAVIGATION STYLES --- */
-    .mobile-nav-toggle { display: none; }
-    .mobile-nav { display: none; }
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .mobile-nav-toggle {
+      display: none;
+    }
+
+    .mobile-nav {
+      display: none;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
 
     @media (max-width: 900px) {
-        .nav { display: none; }
-        .masthead { justify-content: flex-end; padding-bottom: 0; border-bottom: none; }
-        
-        .mobile-nav-toggle {
-            display: block; background: none; border: none; cursor: pointer;
-            z-index: 1001; padding: .5rem; position: relative; width: 34px; height: 34px;
-        }
-        .hamburger {
-            width: 24px; height: 2px; background: var(--fg, #e9eef3); display: block;
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            transition: background 0.2s ease-out;
-        }
-        .hamburger::before, .hamburger::after {
-            content: ''; width: 24px; height: 2px; background: var(--fg, #e9eef3); display: block;
-            position: absolute; left: 0;
-            transition: transform 0.2s ease-out, top 0.2s ease-out;
-        }
-        .hamburger::before { top: -8px; }
-        .hamburger::after { top: 8px; }
+      .nav {
+        display: none;
+      }
 
-        body.nav-open .hamburger { background: transparent; }
-        body.nav-open .hamburger::before { transform: rotate(45deg); top: 0; }
-        body.nav-open .hamburger::after { transform: rotate(-45deg); top: 0; }
+      .masthead {
+        justify-content: flex-end;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
 
-        .mobile-nav {
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            position: fixed; top: 0; left: -100%; width: 100%; height: 100vh;
-            background: var(--bg, #0b0d10); z-index: 1000; transition: left 0.3s ease-in-out;
-            gap: 1rem; padding: 1rem; box-sizing: border-box; overflow-y: auto;
-        }
-        body.nav-open .mobile-nav { left: 0; }
-        body.nav-open { overflow: hidden; }
-        
-        .mobile-nav a, .mobile-nav .dropbtn {
-            color: var(--fg, #e9eef3); text-decoration: none; font-size: 1.5rem; padding: 0.5rem 1rem;
-            background: none; border: none; font: inherit; cursor: pointer;
-        }
-        .mobile-nav .dropdown { text-align: center; }
-        .mobile-nav .dropdown-content {
-            position: static; background: none; border: none; display: flex; box-shadow: none;
-            align-items: center; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem;
-        }
-        .mobile-nav .dropdown-content a { font-size: 1rem; color: var(--muted, #9aa6b2); }
-        .page-header { flex-direction: column; align-items: flex-start; }
+      .mobile-nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+        padding: .5rem;
+        position: relative;
+        width: 34px;
+        height: 34px;
+      }
+
+      .hamburger {
+        width: 24px;
+        height: 2px;
+        background: var(--fg, #e9eef3);
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: background 0.2s ease-out;
+      }
+
+      .hamburger::before,
+      .hamburger::after {
+        content: '';
+        width: 24px;
+        height: 2px;
+        background: var(--fg, #e9eef3);
+        display: block;
+        position: absolute;
+        left: 0;
+        transition: transform 0.2s ease-out, top 0.2s ease-out;
+      }
+
+      .hamburger::before {
+        top: -8px;
+      }
+
+      .hamburger::after {
+        top: 8px;
+      }
+
+      body.nav-open .hamburger {
+        background: transparent;
+      }
+
+      body.nav-open .hamburger::before {
+        transform: rotate(45deg);
+        top: 0;
+      }
+
+      body.nav-open .hamburger::after {
+        transform: rotate(-45deg);
+        top: 0;
+      }
+
+      .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: var(--bg, #0b0d10);
+        z-index: 1000;
+        transition: left 0.3s ease-in-out;
+        gap: 1rem;
+        padding: 1rem;
+        box-sizing: border-box;
+        overflow-y: auto;
+      }
+
+      body.nav-open .mobile-nav {
+        left: 0;
+      }
+
+      body.nav-open {
+        overflow: hidden;
+      }
+
+      .mobile-nav a,
+      .mobile-nav .dropbtn {
+        color: var(--fg, #e9eef3);
+        text-decoration: none;
+        font-size: 1.5rem;
+        padding: 0.5rem 1rem;
+        background: none;
+        border: none;
+        font: inherit;
+        cursor: pointer;
+      }
+
+      .mobile-nav .dropdown {
+        text-align: center;
+      }
+
+      .mobile-nav .dropdown-content {
+        position: static;
+        background: none;
+        border: none;
+        display: flex;
+        box-shadow: none;
+        align-items: center;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .mobile-nav .dropdown-content a {
+        font-size: 1rem;
+        color: var(--muted, #9aa6b2);
+      }
+
+      .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
+
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-<header class="masthead">
-  <nav class="nav">
-    <a href="index.html">Home</a>
-    <div class="dropdown">
-      <a class="dropbtn" tabindex="0">Publications ▾</a>
-      <div class="dropdown-content" role="menu">
-        <a role="menuitem" href="papers.html">PAPERS</a>
-        <a role="menuitem" href="preprints.html">PREPRINTS</a>
-        <a role="menuitem" href="in-progress.html">IN-PROGRESS</a>
+  <header class="masthead">
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <a class="dropbtn" tabindex="0">Publications ▾</a>
+        <div class="dropdown-content" role="menu">
+          <a role="menuitem" href="papers.html">PAPERS</a>
+          <a role="menuitem" href="preprints.html">PREPRINTS</a>
+          <a role="menuitem" href="in-progress.html">IN-PROGRESS</a>
+        </div>
       </div>
-    </div>
-    <a href="medium.html" aria-current="page">Medium</a>
-    <a href="wand.html">WAND Protocol</a>
-    <div class="dropdown">
-      <a class="dropbtn" tabindex="0">Conference Presentations ▾</a>
-      <div class="dropdown-content" role="menu">
-        <a role="menuitem" href="BACN.html">BACN 2025</a>
+      <a href="medium.html" aria-current="page">Medium</a>
+      <div class="dropdown">
+        <a class="dropbtn" tabindex="0">Software ▾</a>
+        <div class="dropdown-content" role="menu">
+          <a role="menuitem" href="wand.html">WAND Protocol</a>
+          <a role="menuitem" href="scholarref.html">ScholarRef</a>
+        </div>
       </div>
-    </div>
-    <a href="reading-list.html">Reading List</a>
-    <div class="dropdown">
-      <a class="dropbtn" tabindex="0">CV ▾</a>
-      <div class="dropdown-content">
-        <a href="assets/Brodie_Mangan_CV.pdf" download="Brodie_Mangan_CV.pdf" type="application/pdf">Download PDF</a>
+      <div class="dropdown">
+        <a class="dropbtn" tabindex="0">Conference Presentations ▾</a>
+        <div class="dropdown-content" role="menu">
+          <a role="menuitem" href="BACN.html">BACN 2025</a>
+        </div>
       </div>
-    </div>
-    <a href="consulting.html">Consulting</a>
-    <a href="contact.html">Contact Me</a>
-  </nav>
+      <a href="reading-list.html">Reading List</a>
+      <div class="dropdown">
+        <a class="dropbtn" tabindex="0">CV ▾</a>
+        <div class="dropdown-content">
+          <a href="assets/Brodie_Mangan_CV.pdf" download="Brodie_Mangan_CV.pdf" type="application/pdf">Download PDF</a>
+        </div>
+      </div>
+      <a href="consulting.html">Consulting</a>
+      <a href="contact.html">Contact Me</a>
+    </nav>
 
-  <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
-    <span class="sr-only">Menu</span>
-    <span class="hamburger"></span>
-  </button>
-</header>
+    <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
+      <span class="sr-only">Menu</span>
+      <span class="hamburger"></span>
+    </button>
+  </header>
 
-<nav class="mobile-nav" id="mobile-nav">
+  <nav class="mobile-nav" id="mobile-nav">
     <a href="index.html">Home</a>
     <div class="dropdown">
       <button class="dropbtn">Publications</button>
@@ -190,7 +334,13 @@
       </div>
     </div>
     <a href="medium.html" aria-current="page">Medium</a>
-    <a href="wand.html">WAND Protocol</a>
+    <div class="dropdown">
+      <button class="dropbtn">Software</button>
+      <div class="dropdown-content" role="menu">
+        <a role="menuitem" href="wand.html">WAND Protocol</a>
+        <a role="menuitem" href="scholarref.html">ScholarRef</a>
+      </div>
+    </div>
     <div class="dropdown">
       <button class="dropbtn">Conference Presentations</button>
       <div class="dropdown-content" role="menu">
@@ -206,59 +356,66 @@
     </div>
     <a href="consulting.html">Consulting</a>
     <a href="contact.html">Contact Me</a>
-</nav>
+  </nav>
 
 
-<main class="grid" id="main">
-  <section class="glass medium-intro">
-    <div class="page-header">
-      <h1>From the Lab to the Layperson</h1>
-      <img src="assets/book.png" alt="Book Icon" class="header-icon">
-    </div>
-    <p>Beyond formal publications, I believe it's crucial to bridge the gap between academic research and real-world understanding. My articles on Medium are where I step outside the constraints of peer-reviewed papers to explore the broader implications of my work and the fields of cognitive neuroscience, experimental psychology and exercise science.</p>
-    
-    <div class="featured-article">
+  <main class="grid" id="main">
+    <section class="glass medium-intro">
+      <div class="page-header">
+        <h1>From the Lab to the Layperson</h1>
+        <img src="assets/book.png" alt="Book Icon" class="header-icon">
+      </div>
+      <p>Beyond formal publications, I believe it's crucial to bridge the gap between academic research and real-world
+        understanding. My articles on Medium are where I step outside the constraints of peer-reviewed papers to explore
+        the broader implications of my work and the fields of cognitive neuroscience, experimental psychology and
+        exercise science.</p>
+
+      <div class="featured-article">
         <h2>Featured Article</h2>
-        <p class="article-description">My first article explores the critical distinction between active fatigue (from high effort) and passive fatigue (from monotony), explaining why this difference is key to developing effective solutions for high-stakes professions.</p>
-        <a href="https://medium.com/@brodie-neuro/tired-bored-or-truly-fatigued-your-brain-knows-the-difference-4db6a5fda3d4" class="medium-button" target="_blank" rel="noopener">Read "Tired, Bored, or Truly Fatigued?"</a>
-    </div>
+        <p class="article-description">My first article explores the critical distinction between active fatigue (from
+          high effort) and passive fatigue (from monotony), explaining why this difference is key to developing
+          effective solutions for high-stakes professions.</p>
+        <a href="https://medium.com/@brodie-neuro/tired-bored-or-truly-fatigued-your-brain-knows-the-difference-4db6a5fda3d4"
+          class="medium-button" target="_blank" rel="noopener">Read "Tired, Bored, or Truly Fatigued?"</a>
+      </div>
 
-    <div class="profile-link-section">
-        <a href="https://medium.com/@brodie-neuro" class="medium-button" target="_blank" rel="noopener">View All Articles on Medium</a>
-    </div>
-  </section>
-</main>
+      <div class="profile-link-section">
+        <a href="https://medium.com/@brodie-neuro" class="medium-button" target="_blank" rel="noopener">View All
+          Articles on Medium</a>
+      </div>
+    </section>
+  </main>
 
-<footer class="site-footer">
-  <ul class="footer-socials">
-    <li>
-      <a href="https://orcid.org/0009-0002-8466-5423" target="_blank" rel="noopener" aria-label="ORCiD Profile">
-        <i class="fa-brands fa-orcid" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li>
-      <a href="https://github.com/brodie-neuro" target="_blank" rel="noopener" aria-label="GitHub Profile">
-        <i class="fa-brands fa-github" aria-hidden="true"></i>
-      </a>
-    </li>
-  </ul>
-  <p>© <span id="y"></span> Brodie Mangan • GitHub Pages</p>
-</footer>
+  <footer class="site-footer">
+    <ul class="footer-socials">
+      <li>
+        <a href="https://orcid.org/0009-0002-8466-5423" target="_blank" rel="noopener" aria-label="ORCiD Profile">
+          <i class="fa-brands fa-orcid" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/brodie-neuro" target="_blank" rel="noopener" aria-label="GitHub Profile">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+        </a>
+      </li>
+    </ul>
+    <p>© <span id="y"></span> Brodie Mangan • GitHub Pages</p>
+  </footer>
 
-<script>
-document.getElementById('y').textContent = new Date().getFullYear();
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
 
-const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-const body = document.querySelector('body');
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const body = document.querySelector('body');
 
-mobileNavToggle.addEventListener('click', () => {
-    const isExpanded = mobileNavToggle.getAttribute('aria-expanded') === 'true';
-    mobileNavToggle.setAttribute('aria-expanded', !isExpanded);
-    body.classList.toggle('nav-open');
-});
-</script>
+    mobileNavToggle.addEventListener('click', () => {
+      const isExpanded = mobileNavToggle.getAttribute('aria-expanded') === 'true';
+      mobileNavToggle.setAttribute('aria-expanded', !isExpanded);
+      body.classList.toggle('nav-open');
+    });
+  </script>
 
-<script data-goatcounter="https://brodiemangan.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+  <script data-goatcounter="https://brodiemangan.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
+
 </html>
