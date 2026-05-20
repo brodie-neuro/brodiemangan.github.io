@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="en-GB">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="theme-color" content="#0b0d10">
+  <title>Brodie Mangan | ESCAN 2026 Poster</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1,
+                 minimum-scale=0.5, maximum-scale=5,
+                 user-scalable=yes, viewport-fit=cover">
+
+  <meta name="description"
+    content="Supplementary material for the ESCAN 2026 poster presentation: Testing the Missing Link — Does Active Cognitive Fatigue Disrupt Working Memory's Oscillatory Architecture?">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ESCAN 2026 Poster | Brodie Mangan">
+  <meta property="og:description"
+    content="Supplementary material for the poster: Testing the Missing Link — Does Active Cognitive Fatigue Disrupt Working Memory's Oscillatory Architecture?">
+  <meta property="og:url" content="https://brodiemangan.com/ESCAN.html">
+  <meta property="og:site_name" content="Brodie Mangan">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="canonical" href="https://brodiemangan.com/ESCAN.html">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico?v=3">
+  <link rel="shortcut icon" href="assets/favicon.ico?v=3">
+
+  <script defer data-domain="brodiemangan.com" src="https://plausible.io/js/script.js"></script>
+
+  <style>
+    /* Reset and layout guards */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      -webkit-text-size-adjust: 100%;
+      background: #0b0d10;
+      color: var(--fg, #e8eef6);
+    }
+
+    /* Do not include audio here */
+    img,
+    video,
+    canvas,
+    iframe {
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      word-break: break-word;
+    }
+
+    :root {
+      --glass-outline: rgba(255, 255, 255, .08);
+      --accent: #7bdff6;
+      --bg: #0b0d10;
+      --fg: #e8eef6;
+      --muted: #a2b3c2;
+    }
+
+    body {
+      background: url('assets/background2.png') center/cover fixed no-repeat;
+    }
+
+    @media (max-width: 850px) {
+      body {
+        background-attachment: scroll;
+        background-position: center top;
+      }
+    }
+
+    main.grid {
+      display: block;
+      width: min(100%, 960px);
+      margin-inline: auto;
+      padding: clamp(12px, 3vw, 24px);
+    }
+
+    .glass {
+      width: 100%;
+      padding: clamp(16px, 4vw, 32px);
+      border-radius: 14px;
+      background: rgba(18, 22, 27, 0.55);
+      border: 1px solid var(--glass-outline);
+      backdrop-filter: blur(6px);
+    }
+
+    .poster-section {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .poster-image {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid var(--glass-outline);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      display: block;
+      margin-inline: auto;
+    }
+
+    .poster-image:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, .45);
+    }
+
+    .download-button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: .8rem 1.5rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--glass-outline);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--fg);
+      font-weight: 700;
+      transition: background-color .2s ease, color .2s ease;
+    }
+
+    .download-button:hover {
+      background-color: var(--accent);
+      color: #14181d;
+    }
+
+    /* Audio block */
+    .audio-container {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .audio-container audio {
+      width: 100%;
+      max-width: 600px;
+      min-height: 36px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .content-section h2,
+    .content-section h3 {
+      border-bottom: 1px solid var(--glass-outline);
+      padding-bottom: .5rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .content-section ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    .content-section li {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .reference-list {
+      font-size: .95rem;
+      padding-left: 0;
+      list-style-type: none;
+    }
+
+    .reference-list li {
+      margin-bottom: 1rem;
+      line-height: 1.5;
+      text-indent: -2em;
+      padding-left: 2em;
+    }
+
+    .reference-list a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .reference-list a:hover {
+      text-decoration: underline;
+    }
+
+    /* Poster placeholder */
+    .poster-placeholder {
+      width: 100%;
+      max-width: 800px;
+      margin-inline: auto;
+      aspect-ratio: 3/4;
+      border-radius: 12px;
+      border: 2px dashed rgba(123, 223, 246, 0.3);
+      background: rgba(123, 223, 246, 0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 1.1rem;
+      font-style: italic;
+    }
+
+    /* Nav visibility rules */
+    .mobile-nav-toggle {
+      display: none;
+    }
+
+    header.masthead {
+      position: relative;
+      z-index: 1002;
+    }
+
+    .nav a {
+      color: var(--fg);
+      text-decoration: none;
+    }
+
+    /* Hide the mobile drawer on desktop */
+    .mobile-nav {
+      display: none;
+    }
+
+    @media (max-width: 850px) {
+      .masthead {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: .5rem;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .mobile-nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1003;
+        padding: 1rem;
+      }
+
+      .mobile-nav-toggle .hamburger {
+        width: 24px;
+        height: 2px;
+        background: var(--fg);
+        display: block;
+        position: relative;
+        transition: background .2s ease-out;
+      }
+
+      .mobile-nav-toggle .hamburger::before,
+      .mobile-nav-toggle .hamburger::after {
+        content: '';
+        width: 24px;
+        height: 2px;
+        background: var(--fg);
+        display: block;
+        position: absolute;
+        transition: transform .2s ease-out;
+      }
+
+      .mobile-nav-toggle .hamburger::before {
+        top: -8px;
+      }
+
+      .mobile-nav-toggle .hamburger::after {
+        top: 8px;
+      }
+
+      body.nav-open .mobile-nav-toggle .hamburger {
+        background: transparent;
+      }
+
+      body.nav-open .mobile-nav-toggle .hamburger::before {
+        transform: rotate(45deg) translate(5px, 6px);
+      }
+
+      body.nav-open .mobile-nav-toggle .hamburger::after {
+        transform: rotate(-45deg) translate(5px, -6px);
+      }
+
+      nav.mobile-nav {
+        position: fixed;
+        inset: 0;
+        left: -100%;
+        width: 100%;
+        height: 100dvh;
+        background: var(--bg);
+        z-index: 1002;
+        transition: left .3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        padding: 2rem;
+      }
+
+      body.nav-open nav.mobile-nav {
+        left: 0;
+      }
+
+      .mobile-nav a,
+      .mobile-nav .dropbtn {
+        color: var(--fg);
+        text-decoration: none;
+        font-size: 1.25rem;
+        padding: .5rem 1rem;
+      }
+
+      .mobile-nav .dropdown {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .mobile-nav .dropdown-content {
+        position: static;
+        background: none;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        margin-top: .5rem;
+      }
+
+      .mobile-nav .dropdown-content a {
+        font-size: 1rem;
+        color: var(--muted);
+      }
+
+      .glass {
+        padding: 1.25rem;
+      }
+    }
+
+    .site-footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--muted);
+    }
+
+    .footer-socials {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem 0;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .footer-socials a {
+      color: var(--fg);
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="masthead">
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <a class="dropbtn" tabindex="0">Publications ▾</a>
+        <div class="dropdown-content" role="menu">
+          <a role="menuitem" href="papers.html">PAPERS</a>
+          <a role="menuitem" href="preprints.html">PREPRINTS</a>
+          <a role="menuitem" href="in-progress.html">IN-PROGRESS</a>
+        </div>
+      </div>
+      <a href="medium.html">Medium</a>
+      <div class="dropdown">
+        <a class="dropbtn" tabindex="0">Software ▾</a>
+        <div class="dropdown-content" role="menu">
+          <a role="menuitem" href="wand.html">WAND Protocol</a>
+          <a role="menuitem" href="scholarref.html">ScholarRef</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a class="dropbtn" tabindex="0">Conference Presentations ▾</a>
+        <div class="dropdown-content" role="menu">
+          <a role="menuitem" href="BACN.html">BACN 2025</a>
+          <a role="menuitem" href="ESCAN.html" aria-current="page">ESCAN 2026</a>
+        </div>
+      </div>
+      <a href="reading-list.html">Reading List</a>
+      <div class="dropdown">
+        <a class="dropbtn" tabindex="0">CV ▾</a>
+        <div class="dropdown-content">
+          <a href="assets/Brodie_Mangan_CV.pdf" download="Brodie_Mangan_CV.pdf" type="application/pdf">Download PDF</a>
+        </div>
+      </div>
+      <a href="consulting.html">Consulting</a>
+      <a href="contact.html">Contact Me</a>
+    </nav>
+    <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
+      <span class="sr-only">Menu</span>
+      <span class="hamburger"></span>
+    </button>
+  </header>
+
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="index.html">Home</a>
+    <div class="dropdown">
+      <a class="dropbtn">Publications</a>
+      <div class="dropdown-content" role="menu">
+        <a role="menuitem" href="papers.html">PAPERS</a>
+        <a role="menuitem" href="preprints.html">PREPRINTS</a>
+        <a role="menuitem" href="in-progress.html">IN-PROGRESS</a>
+      </div>
+    </div>
+    <a href="medium.html">Medium</a>
+    <div class="dropdown">
+      <button class="dropbtn">Software</button>
+      <div class="dropdown-content" role="menu">
+        <a role="menuitem" href="wand.html">WAND Protocol</a>
+        <a role="menuitem" href="scholarref.html">ScholarRef</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a class="dropbtn" aria-current="page">Conference Presentations</a>
+      <div class="dropdown-content" role="menu">
+        <a role="menuitem" href="BACN.html">BACN 2025</a>
+        <a role="menuitem" href="ESCAN.html">ESCAN 2026</a>
+      </div>
+    </div>
+    <a href="reading-list.html">Reading List</a>
+    <div class="dropdown">
+      <a class="dropbtn">CV</a>
+      <div class="dropdown-content">
+        <a href="assets/Brodie_Mangan_CV.pdf" download="Brodie_Mangan_CV.pdf" type="application/pdf">Download PDF</a>
+      </div>
+    </div>
+    <a href="consulting.html">Consulting</a>
+    <a href="contact.html">Contact Me</a>
+  </nav>
+
+  <main class="grid" id="main">
+    <section class="glass">
+
+      <div class="audio-container">
+        <h3>Poster Audio Walkthrough</h3>
+        <p style="color: var(--muted); font-style: italic;">Audio walkthrough coming soon.</p>
+        <!-- Uncomment when audio file is ready:
+        <audio controls preload="metadata">
+          <source src="assets/escanaudio.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        -->
+      </div>
+
+      <div class="poster-section">
+        <div class="poster-placeholder">
+          Poster will be uploaded before the conference
+        </div>
+        <!-- Uncomment when poster image is ready:
+        <a href="assets/ESCANP.png" target="_blank" title="View full-size poster">
+          <img src="assets/ESCANP.png" alt="Academic poster titled 'Testing the Missing Link'" class="poster-image">
+        </a>
+        <a href="assets/ESCANP.png" download="ESCANP.png" class="download-button">Download Poster (PNG)</a>
+        -->
+      </div>
+
+      <div class="content-section">
+        <h2>Abstract</h2>
+        <p>Cognitive fatigue is widely studied, yet few paradigms distinguish genuine active cognitive fatigue (ACF) from
+          passive disengagement or task-learning artefacts. We previously validated the WAND (Working-memory
+          Adaptive-fatigue with N-back Difficulty) protocol, demonstrating a robust decline in working-memory sensitivity
+          (<em>d</em>&prime;) with a medium-to-large effect size (Cohen&rsquo;s <em>d</em> = &minus;0.71), accompanied by response speeding rather
+          than the slowing associated with passive fatigue (Mangan et al., preprint). However, the neural mechanisms
+          through which ACF disrupts online information processing remain unspecified.</p>
+
+        <p>Here we test the Missing Link Hypothesis (Mangan &amp; Kourtis, 2026): that ACF compromises
+          the cross-frequency oscillatory dynamics that coordinate working memory function. Using EEG
+          recorded during the WAND induction, we examine three complementary neural markers: (1) frontoparietal
+          theta&ndash;gamma phase&ndash;amplitude coupling (TGC), associated with both the temporal organisation
+          of working memory content and the cognitive control operations that regulate it; (2) frontoparietal
+          alpha&ndash;gamma coupling (AGC), linked to top-down gating that suppresses task-irrelevant processing;
+          and (3) posterior P3b amplitude, a broadly observed marker of task-directed attentional processing
+          whose amplitude varies with stimulus relevance and available cognitive resources. Because the N-back
+          task jointly engages working memory and cognitive control, disruption of these markers under ACF
+          would indicate that the oscillatory architecture supporting sustained demanding performance is
+          compromised, though it cannot alone resolve which function is primarily affected.</p>
+      </div>
+
+      <div class="content-section">
+        <h2>Supplementary Material</h2>
+        <h3>The Missing Link: From Cost Models to Mechanistic Targets</h3>
+        <p>Recent fatigue models have become increasingly biologically grounded, explaining why sustained effort becomes
+          harder to maintain through metabolic changes in control-relevant prefrontal regions (Holroyd, 2025;
+          Pessiglione et al., 2025; Wiehler et al., 2022). However, these cost-of-control accounts do not specify
+          <em>how</em> rising control costs translate into concrete failures of online information processing. Working
+          memory is the natural place to look for that missing mechanism: it is the system through which currently
+          relevant representations are maintained, prioritised, refreshed, and updated in the service of behaviour,
+          making it a plausible interface between rising control costs and observable performance decline (D&rsquo;Esposito
+          &amp; Postle, 2015; Miller et al., 2018).</p>
+
+        <h3>Cross-Frequency Dynamics as Candidate Mechanisms</h3>
+        <p>Working memory operates through coordinated oscillatory dynamics rather than a single static store. Two
+          cross-frequency coupling mechanisms are of particular interest:</p>
+
+        <ul>
+          <li><strong>Theta&ndash;Gamma Coupling (TGC):</strong> Theta&ndash;gamma coupling supports both the
+            temporal organisation of working memory content (Lisman &amp; Jensen, 2013) and the frontoparietal
+            cognitive control operations that coordinate it (Daume et al., 2024; Friedrich et al., 2026;
+            Miller et al., 2018). TGC is reduced in Alzheimer&rsquo;s disease and mild cognitive impairment,
+            where it is the strongest predictor of 2-back performance (Goodman et al., 2018), predicts individual
+            differences in WM capacity in psychosis (Papaioannou et al., 2025), and serves as a functional marker
+            of WM coordination difficulty in individuals with elevated autistic traits (Friedrich et al., 2026).
+            In the N-back task, these functions are inseparable: the coupling may index the organisation of
+            maintained items, the control operations that regulate them, or both.</li>
+          <li><strong>Alpha&ndash;Gamma Coupling (AGC):</strong> Alpha-phase modulation of gamma amplitude supports
+            top-down gating, suppressing task-irrelevant processing to protect representational fidelity (Bonnefond
+            &amp; Jensen, 2015, 2025; Miller et al., 2018). Disruption of this mechanism should permit
+            task-irrelevant information through, reducing the fidelity of currently active representations.</li>
+        </ul>
+
+        <p>Importantly, even outside the fatigue context, there is substantial variability in cross-frequency
+          coordination across individuals and performance states. Despite this variability, there is growing evidence
+          that stimulating similar oscillatory markers can improve cognitive performance, including working memory.
+          Cross-frequency stimulation targeting prefrontal theta&ndash;gamma synchronisation has enhanced spatial
+          working memory (Alekseichuk et al., 2016), and individualised cross-frequency tACS targeting
+          theta&ndash;gamma coupling has selectively modulated cognitive control performance and increased the
+          targeted endogenous coupling pattern (Riddle et al., 2021). A recent meta-analysis confirms that active
+          tACS produces reliable improvements in WM performance relative to sham (Nissim et al., 2023). If fatigue
+          weakens the same frequency-specific dynamics that support performance and can be modulated by stimulation,
+          then cross-frequency markers may provide candidate targets for future fatigue countermeasures.</p>
+
+        <h3>Why Standard EEG Markers Are Insufficient</h3>
+        <p>The fatigue literature has largely focused on broad spectral changes such as increased theta or alpha power
+          (Tran et al., 2020). These markers index <em>that</em> fatigue is developing, but they are vague: they do not
+          specify <em>how</em> cross-frequency neural coordination is affected. The ambiguity is consequential:
+          an increase in frontal theta power, for example, could reflect a sleep-onset slowing signal, a compensatory
+          upregulation of cognitive control to maintain performance, or a genuine fatigue-related disruption of
+          processing efficiency. Without examining how these rhythms coordinate with one another, the same spectral
+          observation can support contradictory interpretations. The present study bridges this gap by
+          asking whether fatigue-related behavioural decline is accompanied by disruption in cross-frequency dynamics
+          during a task that places sustained demand on both working memory function and cognitive control.</p>
+
+        <h3>Next Steps</h3>
+        <p>Establishing that ACF disrupts cross-frequency coordination addresses the mechanistic gap, but it opens
+          a further question: <em>which</em> working memory and cognitive control operations are most vulnerable?
+          Because the N-back task engages both simultaneously, future work will need to dissociate these functions
+          using tasks that weight them differently, in order to identify which specific operation becomes vulnerable
+          under fatigue and whether its disruption can be linked to a distinct neural signature.</p>
+      </div>
+
+      <div class="content-section">
+        <h2>Key References</h2>
+        <ul class="reference-list">
+          <li>Alekseichuk, I., Turi, Z., Amador de Lara, G., Antal, A., &amp; Paulus, W. (2016). Spatial working
+            memory in humans depends on theta and high gamma synchronization in the prefrontal cortex.
+            <em>Current Biology, 26</em>(12), 1513&ndash;1521. <a href="https://doi.org/10.1016/j.cub.2016.04.035"
+              target="_blank" rel="noopener">https://doi.org/10.1016/j.cub.2016.04.035</a></li>
+          <li>Bonnefond, M., &amp; Jensen, O. (2015). Gamma activity coupled to alpha phase as a mechanism for
+            top-down controlled gating. <em>PLoS ONE, 10</em>(6), e0128667. <a
+              href="https://doi.org/10.1371/journal.pone.0128667" target="_blank"
+              rel="noopener">https://doi.org/10.1371/journal.pone.0128667</a></li>
+          <li>Daume, J., Kamiński, J., Schjetnan, A. G. P., et&nbsp;al. (2024). Control of working memory by
+            phase&ndash;amplitude coupling of human hippocampal neurons. <em>Nature, 629</em>, 393&ndash;401.
+            <a href="https://doi.org/10.1038/s41586-024-07309-z" target="_blank"
+              rel="noopener">https://doi.org/10.1038/s41586-024-07309-z</a></li>
+          <li>D&rsquo;Esposito, M., &amp; Postle, B. R. (2015). The cognitive neuroscience of working memory.
+            <em>Annual Review of Psychology, 66</em>, 115&ndash;142. <a
+              href="https://doi.org/10.1146/annurev-psych-010814-015031" target="_blank"
+              rel="noopener">https://doi.org/10.1146/annurev-psych-010814-015031</a></li>
+          <li>Goodman, M. S., et&nbsp;al. (2018). Theta-gamma coupling and working memory in Alzheimer&rsquo;s
+            dementia and mild cognitive impairment. <em>Frontiers in Aging Neuroscience, 10</em>, 101. <a
+              href="https://doi.org/10.3389/fnagi.2018.00101" target="_blank"
+              rel="noopener">https://doi.org/10.3389/fnagi.2018.00101</a></li>
+          <li>Lisman, J. E., &amp; Jensen, O. (2013). The theta-gamma neural code. <em>Neuron, 77</em>(6),
+            1002&ndash;1016. <a href="https://doi.org/10.1016/j.neuron.2013.03.007" target="_blank"
+              rel="noopener">https://doi.org/10.1016/j.neuron.2013.03.007</a></li>
+          <li>Bonnefond, M., &amp; Jensen, O. (2025). The role of alpha oscillations in resisting distraction.
+            <em>Trends in Cognitive Sciences, 29</em>(4). <a
+              href="https://doi.org/10.1016/j.tics.2025.02.003" target="_blank"
+              rel="noopener">https://doi.org/10.1016/j.tics.2025.02.003</a></li>
+          <li>Mangan, B. E., &amp; Kourtis, D. (2026). The missing link: Bridging cognitive fatigue with working
+            memory. <em>Journal of Cognitive Neuroscience, 38</em>(4), 669&ndash;679. <a
+              href="https://doi.org/10.1162/JOCN.a.2398" target="_blank"
+              rel="noopener">https://doi.org/10.1162/JOCN.a.2398</a></li>
+          <li>Miller, E. K., Lundqvist, M., &amp; Bastos, A. M. (2018). Working memory 2.0.
+            <em>Neuron, 100</em>(2), 463&ndash;475. <a href="https://doi.org/10.1016/j.neuron.2018.09.023"
+              target="_blank" rel="noopener">https://doi.org/10.1016/j.neuron.2018.09.023</a></li>
+          <li>Pessiglione, M., Blain, B., Wiehler, A., &amp; Naik, S. (2025). Origins and consequences of cognitive
+            fatigue. <em>Trends in Cognitive Sciences, 29</em>(8), 730&ndash;749. <a
+              href="https://doi.org/10.1016/j.tics.2025.02.005" target="_blank"
+              rel="noopener">https://doi.org/10.1016/j.tics.2025.02.005</a></li>
+          <li>Riddle, J., et&nbsp;al. (2021). Brain-based individualization of frequency-coupled transcranial
+            alternating current stimulation for cognitive control. <em>Journal of Cognitive Neuroscience, 33</em>(8),
+            1523&ndash;1537. <a href="https://doi.org/10.1162/jocn_a_01732"
+              target="_blank" rel="noopener">https://doi.org/10.1162/jocn_a_01732</a></li>
+          <li>Tran, Y., Craig, A., Craig, R., Chai, R., &amp; Nguyen, H. (2020). The influence of mental fatigue on
+            brain activity: Evidence from a systematic review with meta-analyses. <em>Psychophysiology, 57</em>(5),
+            e13554. <a href="https://doi.org/10.1111/psyp.13554" target="_blank"
+              rel="noopener">https://doi.org/10.1111/psyp.13554</a></li>
+          <li>Friedrich, E. V. C., Hilla, Y., Sterner, E. F., Ostermeier, S. S., Behnke, L., &amp; Sauseng, P. (2026).
+            Theta-gamma phase amplitude coupling serves as a marker of social cognition and visual working memory
+            deficits in individuals with elevated autistic traits. <em>Communications Psychology, 4</em>, 25.
+            <a href="https://doi.org/10.1038/s44271-025-00392-6" target="_blank"
+              rel="noopener">https://doi.org/10.1038/s44271-025-00392-6</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <ul class="footer-socials">
+      <li><a href="https://orcid.org/0009-0002-8466-5423" target="_blank" rel="noopener"
+          aria-label="ORCiD Profile">ORCiD</a></li>
+      <li><a href="https://github.com/brodie-neuro" target="_blank" rel="noopener"
+          aria-label="GitHub Profile">GitHub</a></li>
+    </ul>
+    <p>&copy; <span id="y"></span> Brodie Mangan &bull; GitHub Pages</p>
+  </footer>
+
+  <script>
+    // Footer year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Mobile nav
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const body = document.body;
+    mobileNavToggle.addEventListener('click', () => {
+      const isExpanded = mobileNavToggle.getAttribute('aria-expanded') === 'true';
+      mobileNavToggle.setAttribute('aria-expanded', String(!isExpanded));
+      body.classList.toggle('nav-open');
+    });
+
+    // Analytics events, safe if Plausible or GA4 is absent
+    (function () {
+      const audio = document.querySelector('.audio-container audio');
+      if (audio) {
+        let playedOnce = false;
+        audio.addEventListener('play', function () {
+          if (!playedOnce) {
+            playedOnce = true;
+            if (window.plausible) window.plausible('Audio Play', { props: { file: 'escanaudio.mp3' } });
+            if (window.gtag) gtag('event', 'audio_play', { event_category: 'Media', event_label: 'ESCAN audio' });
+          }
+        });
+        audio.addEventListener('ended', function () {
+          if (window.plausible) window.plausible('Audio Complete', { props: { file: 'escanaudio.mp3' } });
+          if (window.gtag) gtag('event', 'audio_complete', { event_category: 'Media', event_label: 'ESCAN audio' });
+        });
+      }
+      const posterBtn = document.querySelector('.download-button');
+      if (posterBtn) {
+        posterBtn.addEventListener('click', function () {
+          if (window.plausible) window.plausible('Poster Download', { props: { file: 'ESCANP.png' } });
+          if (window.gtag) gtag('event', 'download', { event_category: 'Poster', event_label: 'ESCANP.png' });
+        });
+      }
+    })();
+  </script>
+  <script data-goatcounter="https://brodiemangan.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+
+</html>
