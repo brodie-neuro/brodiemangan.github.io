@@ -31,19 +31,7 @@
   <link rel="canonical" href="https://brodiemangan.com/wand.html">
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico?v=3">
   <link rel="shortcut icon" href="assets/favicon.ico?v=3">
-
-  <!-- Plausible Analytics (active). Change domain if serving on github.io -->
-  <script defer data-domain="brodiemangan.com" src="https://plausible.io/js/script.js"></script>
-
-  <!-- Google Analytics 4 (optional). Uncomment and insert your Measurement ID.
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
-  </script>
-  -->
+  <script src="assets/analytics.js" defer></script>
 
   <script type="application/ld+json">
   {
@@ -598,25 +586,23 @@
       bodyEl.classList.toggle('nav-open');
     });
 
-    // Analytics: track CTA clicks (Plausible, and GA4 if enabled)
+    // Analytics: track CTA clicks
     (function () {
-      function track(name, props) {
-        if (window.plausible) window.plausible(name, { props: props || {} });
-        if (window.gtag) window.gtag('event', name.replace(/\s+/g, '_').toLowerCase(), props || {});
+      function track(name) {
+        if (window.siteAnalytics) window.siteAnalytics.track(name);
       }
       const map = [
-        ['#cta-github', 'CTA GitHub'],
-        ['#cta-zenodo', 'CTA Zenodo'],
-        ['#cta-joss', 'CTA JOSS']
+        ['#cta-github', 'WAND CTA GitHub'],
+        ['#cta-zenodo', 'WAND CTA Zenodo'],
+        ['#cta-joss', 'WAND CTA JOSS']
       ];
       map.forEach(([sel, evt]) => {
         const el = document.querySelector(sel);
-        if (el) el.addEventListener('click', () => track(evt, { href: el.href }));
+        if (el) el.addEventListener('click', () => track(evt));
       });
     })();
   </script>
 
-  <script data-goatcounter="https://brodiemangan.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 
 </html>

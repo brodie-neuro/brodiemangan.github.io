@@ -27,8 +27,7 @@
   <link rel="canonical" href="https://brodiemangan.com/ESCAN.html">
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico?v=3">
   <link rel="shortcut icon" href="assets/favicon.ico?v=3">
-
-  <script defer data-domain="brodiemangan.com" src="https://plausible.io/js/script.js"></script>
+  <script src="assets/analytics.js" defer></script>
 
   <style>
     /* Reset and layout guards */
@@ -617,7 +616,7 @@
       body.classList.toggle('nav-open');
     });
 
-    // Analytics events, safe if Plausible or GA4 is absent
+    // Analytics events
     (function () {
       const audio = document.querySelector('.audio-container audio');
       if (audio) {
@@ -625,25 +624,21 @@
         audio.addEventListener('play', function () {
           if (!playedOnce) {
             playedOnce = true;
-            if (window.plausible) window.plausible('Audio Play', { props: { file: 'escanaudio.mp3' } });
-            if (window.gtag) gtag('event', 'audio_play', { event_category: 'Media', event_label: 'ESCAN audio' });
+            if (window.siteAnalytics) window.siteAnalytics.track('ESCAN Audio Play');
           }
         });
         audio.addEventListener('ended', function () {
-          if (window.plausible) window.plausible('Audio Complete', { props: { file: 'escanaudio.mp3' } });
-          if (window.gtag) gtag('event', 'audio_complete', { event_category: 'Media', event_label: 'ESCAN audio' });
+          if (window.siteAnalytics) window.siteAnalytics.track('ESCAN Audio Complete');
         });
       }
       const posterBtn = document.querySelector('.download-button');
       if (posterBtn) {
         posterBtn.addEventListener('click', function () {
-          if (window.plausible) window.plausible('Poster Download', { props: { file: 'ESCANP.png' } });
-          if (window.gtag) gtag('event', 'download', { event_category: 'Poster', event_label: 'ESCANP.png' });
+          if (window.siteAnalytics) window.siteAnalytics.track('ESCAN Poster Download');
         });
       }
     })();
   </script>
-  <script data-goatcounter="https://brodiemangan.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 
 </html>
