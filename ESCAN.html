@@ -30,6 +30,49 @@
   <script src="assets/analytics.js" defer></script>
 
   <style>
+    /* Conference highlight styling */
+    .award-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: clamp(16px, 4vw, 32px);
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--glass-outline);
+    }
+
+    .award-image {
+      flex: 1 1 200px;
+    }
+
+    .award-image img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--glass-outline);
+    }
+
+    .award-text {
+      flex: 2 1 300px;
+    }
+
+    .award-text h3 {
+      margin-top: 0;
+      color: var(--accent);
+      font-size: 1.5rem;
+    }
+
+    .award-text p {
+      margin-bottom: 0;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 650px) {
+      .award-section {
+        text-align: center;
+      }
+    }
+
     /* Reset and layout guards */
     *,
     *::before,
@@ -416,6 +459,16 @@
 
   <main class="grid" id="main">
     <section class="glass">
+      <div class="award-section">
+        <div class="award-image">
+          <img src="assets/escanposterreal.png" alt="Brodie Mangan presenting his poster at ESCAN 2026.">
+        </div>
+        <div class="award-text">
+          <h3>ESCAN 2026</h3>
+          <p>Thank you to the ESCAN board, organisers and staff, and to all the wonderful people I met, for the fantastic
+            interest in my work and the thought-provoking talks.</p>
+        </div>
+      </div>
 
       <div class="poster-section">
         <a href="assets/ESCANP.png" target="_blank" title="View full-size poster">
